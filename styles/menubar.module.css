@@ -1,0 +1,19 @@
+.navmenu {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-link .bi {
+  color: #ffffff;
+}
+.links {
+  display: flex;
+  list-style: none;
+}
+
+.navlink {
+  color: #000000 !important;
+  text-decoration: none;
+}
+.navitem {
+  background: red;
+}
