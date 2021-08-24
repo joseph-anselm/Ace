@@ -21,85 +21,101 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.section2}>
-        <div>
-          <h1>
-            How could <span>you help?</span>
-          </h1>
-        </div>
-        <div className={styles.section2tabs}>
+        <Container>
           <div>
-            <Image
-              src="/../public/img/ace1.jpg"
-              width={200}
-              height={200}
-              className={styles.tabimage}
-            />
-            <h3>Expertise skill</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              quisquam, iure inventore animi cum accusantium.
-            </p>
+            <h1>
+              How could <span>you help?</span>
+            </h1>
           </div>
-          <div>
-            <Image
-              src="/../public/img/ace2.jpg"
-              width={200}
-              height={200}
-              className={styles.tabimage}
-            />
-            <h3>Expertise skill</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              quisquam, iure inventore animi cum accusantium.
-            </p>
-          </div>
-          <div>
-            <Image
-              src="/../public/img/ace3.jpg"
-              width={200}
-              height={200}
-              className={styles.tabimage}
-            />
-            <h3>Expertise skill</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              quisquam, iure inventore animi cum accusantium.
-            </p>
-          </div>
-          <div>
-            <Image
-              src="/../public/img/ace4.jpg"
-              width={200}
-              height={200}
-              className={styles.tabimage}
-            />
-            <h3>Expertise skill</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-              quisquam, iure inventore animi cum accusantium.
-            </p>
-          </div>
-        </div>
+          <Row>
+            <Col xs={6} md={3}>
+              <div>
+                <Image
+                  src="/../public/img/ace1.jpg"
+                  width={200}
+                  height={200}
+                  className={styles.tabimage}
+                />
+                <h3>Expertise skill</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Incidunt quisquam, iure inventore animi cum accusantium.
+                </p>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div>
+                <Image
+                  src="/../public/img/ace1.jpg"
+                  width={200}
+                  height={200}
+                  className={styles.tabimage}
+                />
+                <h3>Expertise skill</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Incidunt quisquam, iure inventore animi cum accusantium.
+                </p>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div>
+                <Image
+                  src="/../public/img/ace1.jpg"
+                  width={200}
+                  height={200}
+                  className={styles.tabimage}
+                />
+                <h3>Expertise skill</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Incidunt quisquam, iure inventore animi cum accusantium.
+                </p>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div>
+                <Image
+                  src="/../public/img/ace1.jpg"
+                  width={200}
+                  height={200}
+                  className={styles.tabimage}
+                />
+                <h3>Expertise skill</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Incidunt quisquam, iure inventore animi cum accusantium.
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
+        <div className={styles.section2tabs}></div>
       </div>
       {/* section three */}
-
-      <div className={styles.section3}>
-        <div className={styles.section3tab1}></div>
-        <div className={styles.section3tab2}>
-          <h2>
-            We are <br />
-            non-profit team
-          </h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet
-            corporis deserunt labore cumque iste distinctio exercitationem
-            molestias. Veniam reprehenderit distinctio delectus ea, assumenda
-            quae eum facilis consequuntur aspernatur ut maiores non voluptatem
-            ipsum, amet voluptatum perferendis, nostrum odit? Ab, illum.
-          </p>
-          <button className={styles.section3btn}>Donate now</button>
-        </div>
-      </div>
+      <Container fluid>
+        <Row className={styles.section3}>
+          <Col className={styles.section3tab1} xs={12} md={6}></Col>
+          <Col className={styles.section3tab2} xs={12} md={6}>
+            <div className={styles.section3tab2}>
+              <h2>
+                We are <br />
+                non-profit team
+              </h2>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Eveniet corporis deserunt labore cumque iste distinctio
+                exercitationem molestias. Veniam reprehenderit distinctio
+                delectus ea, assumenda quae eum facilis consequuntur aspernatur
+                ut maiores non voluptatem ipsum, amet voluptatum perferendis,
+                nostrum odit? Ab, illum.
+              </p>
+              <button className={styles.section3btn}>Donate now</button>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
       {/* section four */}
       <div className={styles.section4}>
@@ -109,89 +125,104 @@ export default function Home() {
           </h2>
         </div>
         <Container className={styles.sectioncards}>
-          <Card style={{ width: "18rem" }} className={styles.sectioncards}>
-            <Image
-              variant="top"
-              src="/../public/img/ace1.jpg"
-              width={250}
-              height={200}
-            />
+          <Row>
+            <Col xs={12} md={4}>
+              <Card
+                style={{ width: "20rem", margin: "15px auto" }}
+                className={styles.sectioncards}
+              >
+                <Image
+                  variant="top"
+                  src="/../public/img/ace1.jpg"
+                  width={250}
+                  height={200}
+                />
 
-            <Card.Body className={styles.cardbody}>
-              <ProgressBar
-                now={60}
-                variant="danger"
-                color="primary"
-                className={styles.progress}
-              />
-              <span>
-                <Card.Text>Raised: $300,000</Card.Text>
-                <Card.Text>Goal: $500, 000</Card.Text>
-              </span>
-              <Card.Title className="mb-5">
-                African children need more food and water
-              </Card.Title>
-              <Button variant="dark" className={styles.section4btn}>
-                Donate Now
-              </Button>
-            </Card.Body>
-          </Card>
+                <Card.Body className={styles.cardbody}>
+                  <ProgressBar
+                    now={60}
+                    variant="danger"
+                    color="primary"
+                    className={styles.progress}
+                  />
+                  <span>
+                    <Card.Text>Raised: $300,000</Card.Text>
+                    <Card.Text>Goal: $500, 000</Card.Text>
+                  </span>
+                  <Card.Title className="mb-5">
+                    African children need more food and water
+                  </Card.Title>
+                  <Button variant="dark" className={styles.section4btn}>
+                    Donate Now
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col xs={12} md={4}>
+              <Card
+                style={{ width: "20rem", margin: "15px auto" }}
+                className={styles.sectioncards}
+              >
+                <Image
+                  variant="top"
+                  src="/../public/img/ace1.jpg"
+                  width={250}
+                  height={200}
+                />
 
-          <Card style={{ width: "18rem" }} className={styles.sectioncards}>
-            <Image
-              variant="top"
-              src="/../public/img/ace1.jpg"
-              width={250}
-              height={200}
-            />
+                <Card.Body className={styles.cardbody}>
+                  <ProgressBar
+                    now={60}
+                    variant="danger"
+                    color="primary"
+                    className={styles.progress}
+                  />
+                  <span>
+                    <Card.Text>Raised: $300,000</Card.Text>
+                    <Card.Text>Goal: $500, 000</Card.Text>
+                  </span>
+                  <Card.Title className="mb-5">
+                    African children need more food and water
+                  </Card.Title>
+                  <Button variant="dark" className={styles.section4btn}>
+                    Donate Now
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col xs={12} md={4}>
+              <Card
+                style={{ width: "20rem", margin: "15px auto" }}
+                className={styles.sectioncards}
+              >
+                <Image
+                  variant="top"
+                  src="/../public/img/ace1.jpg"
+                  width={250}
+                  height={200}
+                />
 
-            <Card.Body className={styles.cardbody}>
-              <ProgressBar
-                now={60}
-                variant="danger"
-                color="primary"
-                className={styles.progress}
-              />
-              <span>
-                <Card.Text>Raised: $300,000</Card.Text>
-                <Card.Text>Goal: $500, 000</Card.Text>
-              </span>
-              <Card.Title className="mb-5">
-                African children need more food and water
-              </Card.Title>
-              <Button variant="dark" className={styles.section4btn}>
-                Donate Now
-              </Button>
-            </Card.Body>
-          </Card>
-
-          <Card style={{ width: "18rem" }} className={styles.sectioncards}>
-            <Image
-              variant="top"
-              src="/../public/img/ace1.jpg"
-              width={250}
-              height={200}
-            />
-
-            <Card.Body className={styles.cardbody}>
-              <ProgressBar
-                now={60}
-                variant="danger"
-                color="primary"
-                className={styles.progress}
-              />
-              <span>
-                <Card.Text>Raised: $300,000</Card.Text>
-                <Card.Text>Goal: $500, 000</Card.Text>
-              </span>
-              <Card.Title className="mb-5">
-                African children need more food and water
-              </Card.Title>
-              <Button variant="dark" className={styles.section4btn}>
-                Donate Now
-              </Button>
-            </Card.Body>
-          </Card>
+                <Card.Body className={styles.cardbody}>
+                  <ProgressBar
+                    now={60}
+                    variant="danger"
+                    color="primary"
+                    className={styles.progress}
+                  />
+                  <span>
+                    <Card.Text>Raised: $300,000</Card.Text>
+                    <Card.Text>Goal: $500, 000</Card.Text>
+                  </span>
+                  <Card.Title className="mb-5">
+                    African children need more food and water
+                  </Card.Title>
+                  <Button variant="dark" className={styles.section4btn}>
+                    Donate Now
+                  </Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Container>
       </div>
 
@@ -219,7 +250,7 @@ export default function Home() {
                 Blogs <span>& </span>Events
               </h2>
             </div>
-            <Col justify-content-md-center>
+            <Col xs={6} md={3} justify-content-md-center>
               <div className={styles.section6tabs}>
                 <Image
                   src="/../public/img/ace1.jpg"
@@ -234,7 +265,7 @@ export default function Home() {
                 </p>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} md={3}>
               <div className={styles.section6tabs}>
                 <Image
                   src="/../public/img/ace1.jpg"
@@ -249,7 +280,7 @@ export default function Home() {
                 </p>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} md={3}>
               <div className={styles.section6tabs}>
                 <Image
                   src="/../public/img/ace1.jpg"
@@ -264,7 +295,7 @@ export default function Home() {
                 </p>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} md={3}>
               <div className={styles.section6tabs}>
                 <Image
                   src="/../public/img/ace1.jpg"
