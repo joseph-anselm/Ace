@@ -1,4 +1,3 @@
-import Link from "next/Link";
 import Image from "next/image";
 import styles from "../styles/menubar.module.css";
 import { Container, Navbar, Nav } from "react-bootstrap";
