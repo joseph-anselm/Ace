@@ -132,7 +132,7 @@ export default function Home() {
               >
                 <Image
                   variant="top"
-                  src="/../public/img/ace1.jpg"
+                  src="/img/ace1.jpg"
                   width={250}
                   height={200}
                 />
