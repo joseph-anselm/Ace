@@ -16,7 +16,7 @@ const classNames = require("classnames");
 
 const Menubar = () => {
   return (
-    <div>
+    <div fixed="top">
       <div className="bg-dark">
         <ul className="nav bg-dark justify-content-end container">
           <li className="nav-item">
