@@ -45,7 +45,7 @@ export default function Home() {
             <Col xs={6} md={3}>
               <div>
                 <Image
-                  src="/../img/ace1.jpg"
+                  src="/img/ace1.jpg"
                   width={200}
                   height={200}
                   className={styles.tabimage}
