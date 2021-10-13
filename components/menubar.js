@@ -36,22 +36,29 @@ const Menubar = () => {
         </ul>
       </div>
 
-      <Navbar bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">
-            {" "}
-            <FontAwesomeIcon
-              icon={faRibbon}
-              style={{ color: "#f13e4b", width: 30 }}
-              className="icon"
+          <Navbar.Brand href="/" className={styles.logoimg}>
+            <Image
+              src="/logo.png"
+              width="30"
+              height="40"
+              className="d-inline-block align-top logoimg"
+              alt="Bloom logo"
             />
-            Ace Initiatives
           </Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">About us</Nav.Link>
-            <Nav.Link href="/contact">Contact us</Nav.Link>
-          </Nav>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Container class="ml-auto">
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav>
+                <Nav.Link href="/about">About us</Nav.Link>
+                <Nav.Link href="/services">Services</Nav.Link>
+                <Nav.Link href="/gallery">Gallery</Nav.Link>
+                <Nav.Link href="/updates">News and Updates</Nav.Link>
+                <Nav.Link href="/contact">Contact</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
         </Container>
       </Navbar>
     </div>
