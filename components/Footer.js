@@ -60,12 +60,12 @@ const Footer = () => {
             <Col xs={12} md={3}>
               <h2>Gallery</h2>
               <div>
-                <Image src="/../public/img/ace2.jpg" width={90} height={75} />
-                <Image src="/../public/img/ace1.jpg" width={90} height={75} />
-                <Image src="/../public/img/ace3.jpg" width={90} height={75} />
-                <Image src="/../public/img/ace4.jpg" width={90} height={75} />
-                <Image src="/../public/img/ace1.jpg" width={90} height={75} />
-                <Image src="/../public/img/ace2.jpg" width={90} height={75} />
+                <Image src="/img/ace2.jpg" width={90} height={75} />
+                <Image src="/img/ace1.jpg" width={90} height={75} />
+                <Image src="/img/ace3.jpg" width={90} height={75} />
+                <Image src="/img/ace4.jpg" width={90} height={75} />
+                <Image src="/img/ace1.jpg" width={90} height={75} />
+                <Image src="/img/ace2.jpg" width={90} height={75} />
               </div>
             </Col>
 
