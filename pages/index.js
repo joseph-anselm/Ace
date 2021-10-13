@@ -30,21 +30,6 @@ export default function Home() {
             <Col xs={6} md={3}>
               <div>
                 <Image
-                  src="/ace1.jpg"
-                  width={200}
-                  height={200}
-                  className={styles.tabimage}
-                />
-                <h3>Expertise skill</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt quisquam, iure inventore animi cum accusantium.
-                </p>
-              </div>
-            </Col>
-            <Col xs={6} md={3}>
-              <div>
-                <Image
                   src="/img/ace1.jpg"
                   width={200}
                   height={200}
@@ -75,7 +60,22 @@ export default function Home() {
             <Col xs={6} md={3}>
               <div>
                 <Image
-                  src="/ace1.jpg"
+                  src="/img/ace1.jpg"
+                  width={200}
+                  height={200}
+                  className={styles.tabimage}
+                />
+                <h3>Expertise skill</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Incidunt quisquam, iure inventore animi cum accusantium.
+                </p>
+              </div>
+            </Col>
+            <Col xs={6} md={3}>
+              <div>
+                <Image
+                  src="/img/ace1.jpg"
                   width={200}
                   height={200}
                   className={styles.tabimage}
@@ -132,7 +132,7 @@ export default function Home() {
               >
                 <Image
                   variant="top"
-                  src="/images/ace1.jpg"
+                  src="/img/ace1.jpg"
                   width={250}
                   height={200}
                 />
@@ -164,7 +164,7 @@ export default function Home() {
               >
                 <Image
                   variant="top"
-                  src="/images/ace1.jpg"
+                  src="/img/ace1.jpg"
                   width={250}
                   height={200}
                 />
