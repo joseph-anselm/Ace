@@ -38,7 +38,15 @@ const Menubar = () => {
 
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#">Ace Initiatives</Navbar.Brand>
+          <Navbar.Brand href="#">
+            <img
+              alt=""
+              src="/img/ace-logo.png"
+              width="150"
+              height="55"
+              className="d-inline-block align-top"
+            />{" "}
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
