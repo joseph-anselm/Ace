@@ -45,7 +45,7 @@ export default function Home() {
             <Col xs={6} md={3}>
               <div>
                 <Image
-                  src="/../public/img/ace1.jpg"
+                  src="/img/ace1.jpg"
                   width={200}
                   height={200}
                   className={styles.tabimage}
@@ -60,7 +60,7 @@ export default function Home() {
             <Col xs={6} md={3}>
               <div>
                 <Image
-                  src="/../public/img/ace1.jpg"
+                  src="/img/ace1.jpg"
                   width={200}
                   height={200}
                   className={styles.tabimage}
@@ -130,7 +130,12 @@ export default function Home() {
                 style={{ width: "20rem", margin: "15px auto" }}
                 className={styles.sectioncards}
               >
-                <Image variant="top" src="/ace1.jpg" width={250} height={200} />
+                <Image
+                  variant="top"
+                  src="/images/ace1.jpg"
+                  width={250}
+                  height={200}
+                />
 
                 <Card.Body className={styles.cardbody}>
                   <ProgressBar
@@ -159,7 +164,7 @@ export default function Home() {
               >
                 <Image
                   variant="top"
-                  src="/../public/img/ace1.jpg"
+                  src="/images/ace1.jpg"
                   width={250}
                   height={200}
                 />
