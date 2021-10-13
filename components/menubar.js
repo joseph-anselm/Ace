@@ -38,7 +38,7 @@ const Menubar = () => {
 
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <img
               alt=""
               src="/img/ace-logo.png"

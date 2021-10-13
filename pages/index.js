@@ -17,7 +17,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Welcome to Ace Initiatives Website</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/favicon.png" />
       </Head>
       <div className={styles.section2}>
         <Container>
