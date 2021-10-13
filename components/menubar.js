@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../styles/menubar.module.css";
 import { Container, Navbar, Nav } from "react-bootstrap";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import { ReactElement } from "react";
 import {
   faCoffee,
@@ -36,29 +36,40 @@ const Menubar = () => {
         </ul>
       </div>
 
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/" className={styles.logoimg}>
-            <Image
-              src="/logo.png"
-              width="30"
-              height="40"
-              className="d-inline-block align-top logoimg"
-              alt="Bloom logo"
-            />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Container class="ml-auto">
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav>
-                <Nav.Link href="/about">About us</Nav.Link>
-                <Nav.Link href="/services">Services</Nav.Link>
-                <Nav.Link href="/gallery">Gallery</Nav.Link>
-                <Nav.Link href="/updates">News and Updates</Nav.Link>
-                <Nav.Link href="/contact">Contact</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
+          <Navbar.Brand href="#">Ace Initiatives</Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="ms-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            >
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/about">About us</Nav.Link>
+              {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
+                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action5">
+                  Something else here
+                </NavDropdown.Item>
+              </NavDropdown> */}
+              <Nav.Link href="/projects">Projects</Nav.Link>
+            </Nav>
+            {/* <Form className="d-flex">
+              <FormControl
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-success">Search</Button>
+            </Form> */}
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </div>
