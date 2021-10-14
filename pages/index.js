@@ -50,7 +50,7 @@ export default function Home() {
                   height={200}
                   className={styles.tabimage}
                 />
-                <h3>Expertise skill</h3>
+                <h3>Donations Passion</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Incidunt quisquam, iure inventore animi cum accusantium.
@@ -65,7 +65,7 @@ export default function Home() {
                   height={200}
                   className={styles.tabimage}
                 />
-                <h3>Expertise skill</h3>
+                <h3>Volunteering</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Incidunt quisquam, iure inventore animi cum accusantium.
@@ -80,7 +80,7 @@ export default function Home() {
                   height={200}
                   className={styles.tabimage}
                 />
-                <h3>Expertise skill</h3>
+                <h3>Research</h3>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Incidunt quisquam, iure inventore animi cum accusantium.
