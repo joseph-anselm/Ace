@@ -41,7 +41,7 @@ const Menubar = () => {
           <Navbar.Brand href="/">
             <img
               alt=""
-              src="/img/ace-logo.png"
+              src="/img/logo-1.png"
               width="150"
               height="55"
               className="d-inline-block align-top"

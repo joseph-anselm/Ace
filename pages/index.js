@@ -140,7 +140,7 @@ export default function Home() {
                 <Card.Body className={styles.cardbody}>
                   <ProgressBar
                     now={60}
-                    variant="danger"
+                    variant="success"
                     color="primary"
                     className={styles.progress}
                   />
@@ -172,7 +172,7 @@ export default function Home() {
                 <Card.Body className={styles.cardbody}>
                   <ProgressBar
                     now={60}
-                    variant="danger"
+                    variant="success"
                     color="primary"
                     className={styles.progress}
                   />
@@ -204,7 +204,7 @@ export default function Home() {
                 <Card.Body className={styles.cardbody}>
                   <ProgressBar
                     now={60}
-                    variant="danger"
+                    variant="success"
                     color="primary"
                     className={styles.progress}
                   />

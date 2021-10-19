@@ -72,13 +72,13 @@ const Footer = () => {
             <Col xs={12} md={3}>
               <h3>Contact Us</h3>
               <div className={styles.contactinfo}>
-                <i className="bi bi-telephone" style={{ color: "red" }}>
+                <i className="bi bi-telephone" style={{ color: "#3C9234" }}>
                   <span> Head office</span>
                 </i>
                 <span>126 , Ijebu Ode , Lagos Ajah Nigeria</span>
               </div>
               <div className={styles.contactinfo}>
-                <i className="bi bi-telephone" style={{ color: "red" }}>
+                <i className="bi bi-telephone" style={{ color: "#3C9234" }}>
                   {" "}
                   <span>Phone</span>{" "}
                 </i>
@@ -86,7 +86,7 @@ const Footer = () => {
                 <span>+2348032516519</span>
               </div>
               <div className={styles.contactinfo}>
-                <i className="bi bi-envelope" style={{ color: "red" }}>
+                <i className="bi bi-envelope" style={{ color: "#3C9234" }}>
                   {" "}
                   <span>Email</span>{" "}
                 </i>

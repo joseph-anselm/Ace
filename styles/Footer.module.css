@@ -7,7 +7,7 @@
 }
 .prefooter {
   display: flex;
-  background: #f13e4b;
+  background: #3c9234;
   justify-content: space-evenly;
   align-items: center;
   color: #ffffff;
@@ -58,7 +58,7 @@
 @media (max-width: 720px) {
   .prefooter {
     display: grid;
-    background: #f13e4b;
+    background: #3c9234;
     justify-content: space-evenly;
     align-items: center;
     color: #ffffff;

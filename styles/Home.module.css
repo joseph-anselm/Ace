@@ -127,7 +127,7 @@
   margin: 50px 10px;
 }
 .section2 span {
-  color: #f13e4b;
+  color: #3c9234;
 }
 
 .section2tabs {
@@ -154,7 +154,7 @@
   flex: 50%;
 }
 .section3tab2 {
-  background: #f13e4b;
+  background: #3c9234;
   flex: 50%;
   padding: 30px 60px;
   color: white;
@@ -182,7 +182,7 @@
   margin-top: 50px;
 }
 .section4title span {
-  color: red;
+  color: #3c9234;
 }
 
 .section4btn {
@@ -208,11 +208,11 @@
 }
 
 .cardbody .progress {
-  color: red !important;
+  color: #3c9234 !important;
 }
 
 .sectioncard .bar {
-  background: red;
+  background: #3c9234;
   position: relative;
   border-radius: 40px;
 }
@@ -230,7 +230,7 @@
   font-size: 0.8em;
 }
 .cardbody {
-  background-color: #f13e4b;
+  background-color: #3c9234;
   color: #ffffff;
 }
 
@@ -273,7 +273,7 @@
   margin: 50px 0;
 }
 .section6title h2 span {
-  color: #f13e4b;
+  color: #3c9234;
 }
 .section6tabs {
   text-align: center;
@@ -313,7 +313,7 @@
     flex: 100%;
   }
   .section3tab2 {
-    background: #f13e4b;
+    background: #3c9234;
     padding: 70px 60px;
     color: white;
     flex: 100%;
