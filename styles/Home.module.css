@@ -319,3 +319,10 @@
     flex: 100%;
   }
 }
+
+/* Notfound page css */
+.notfound {
+  display: grid;
+  place-items: center;
+  min-height: 400px;
+}

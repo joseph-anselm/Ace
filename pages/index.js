@@ -37,8 +37,9 @@ export default function Home() {
                 />
                 <h3>Expertise skill</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt quisquam, iure inventore animi cum accusantium.
+                  We welcome skilled and experienced professionals who are
+                  willing to commit to the cause of the organization. your
+                  expertise can make the work faster
                 </p>
               </div>
             </Col>
@@ -52,8 +53,9 @@ export default function Home() {
                 />
                 <h3>Donations Passion</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt quisquam, iure inventore animi cum accusantium.
+                  We rely strongly on donations and fundings to enable us carry
+                  out our specific activities, every penny goes along way in
+                  making that required change we truly desire.
                 </p>
               </div>
             </Col>
@@ -67,8 +69,9 @@ export default function Home() {
                 />
                 <h3>Volunteering</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt quisquam, iure inventore animi cum accusantium.
+                  Our pool of Volunteers have made many of our accomplishments
+                  possible, you too can make a difference by becoming a
+                  volunteer member
                 </p>
               </div>
             </Col>
@@ -82,8 +85,9 @@ export default function Home() {
                 />
                 <h3>Research</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Incidunt quisquam, iure inventore animi cum accusantium.
+                  Research & analysis is the bedrock upon which our major
+                  activities is built upon, you can volunteer as a key member of
+                  our research team and make a difference today
                 </p>
               </div>
             </Col>
@@ -103,12 +107,12 @@ export default function Home() {
                 non-profit team
               </h2>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Eveniet corporis deserunt labore cumque iste distinctio
-                exercitationem molestias. Veniam reprehenderit distinctio
-                delectus ea, assumenda quae eum facilis consequuntur aspernatur
-                ut maiores non voluptatem ipsum, amet voluptatum perferendis,
-                nostrum odit? Ab, illum.
+                We are committed to see Africa develop by bridging the gap
+                through research, intervention programmes and community
+                development activities. We are a non profit team with passion to
+                ensure growth and measurable development in Africa. Our projects
+                relies heavily on both human and financial resources from donors
+                and volunterr members.
               </p>
               <button className={styles.section3btn}>Donate now</button>
             </div>

@@ -21,7 +21,7 @@ const Footer = () => {
               <div className={styles.prefooter}>
                 <i className="bi bi-telephone" style={{ color: "white" }}></i>
                 <span> Do you have a question</span>
-                <h1>+2348032516519</h1>
+                <h1>+2348032501608</h1>
                 <form action="" className={styles.form}>
                   <input type="email" placeholder="enter email" />
                   <button>Subscribe</button>
@@ -37,11 +37,12 @@ const Footer = () => {
             <Col xs={12} md={3}>
               <h2>Our Mission</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                sit mollitia nostrum tenetur explicabo fuga, voluptatibus, est
-                officiis ipsam possimus fugit adipisci assumenda corporis.
-                Laboriosam neque repellat nihil tempore aperiam ducimus qui fuga
-                excepturi obcaecati?
+                Ace initiatives major projects currently aims at using research,
+                orientation, training and specific technology to empower and
+                educate our target audience towards buidling a modern community
+                approach to getting things done especially in rural communities.
+                We stay commited to our objectives in all we do especially when
+                reaching out to the public.
               </p>
             </Col>
 
@@ -75,14 +76,14 @@ const Footer = () => {
                 <i className="bi bi-telephone" style={{ color: "#3C9234" }}>
                   <span> Head office</span>
                 </i>
-                <span>126 , Ijebu Ode , Lagos Ajah Nigeria</span>
+                <span>44 Olisa street Ijebu Ode, Ogun Nigeria</span>
               </div>
               <div className={styles.contactinfo}>
                 <i className="bi bi-telephone" style={{ color: "#3C9234" }}>
                   {" "}
                   <span>Phone</span>{" "}
                 </i>
-                <span>+2348032516519</span>
+                <span>+2348032501608</span>
                 <span>+2348032516519</span>
               </div>
               <div className={styles.contactinfo}>

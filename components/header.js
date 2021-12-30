@@ -3,7 +3,7 @@ const Header = () => {
   return (
     <div className={styles.hero}>
       <h1>
-        <span>We are core</span>
+        <span>We are</span>
         <br /> Sustainable development
         <br /> focused group
       </h1>
