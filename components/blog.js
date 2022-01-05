@@ -2,35 +2,31 @@ import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 
-const Blog = ({ posts }) => {
+function Blog(props) {
+  Blog.getInitialProps = async () => ({
+    posts: await client.fetch(groq`
+    *[_type == "post" && publishedAt < now()]|order(publishedAt desc)
+  `),
+  });
+  const { posts = [] } = props;
   return (
     <div>
       <h1>Welcome to a blog!</h1>
-      {posts?.length > 1 &&
+      {posts.length > 0 &&
         posts.map(
-          ({ _id, title = "", slug = "", publishedAt = "" }) =>
+          ({ _id, title = "", slug = "", _updatedAt = "" }) =>
             slug && (
               <li key={_id}>
-                <Link href="/post/[slug]" as={`/post/${slug.current}`}>
+                <Link prefetch href="/post/[slug]" as={`/post/${slug.current}`}>
                   <a>{title}</a>
+                  <h2>{slug}</h2>
                 </Link>{" "}
-                ({new Date(publishedAt).toDateString()})
+                ({new Date(_updatedAt).toDateString()})
               </li>
             )
         )}
     </div>
   );
-};
-
-export async function getStaticProps() {
-  const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-    `);
-  return {
-    props: {
-      posts,
-    },
-  };
 }
 
 export default Blog;
