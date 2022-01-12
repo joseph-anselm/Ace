@@ -1,11 +1,12 @@
 import Link from "next/link";
 import groq from "groq";
 import client from "../client";
+import { useState, useEffect } from "react";
 
 function Blog(props) {
   Blog.getInitialProps = async () => ({
     posts: await client.fetch(groq`
-    *[_type == "post" && publishedAt < now()]|order(publishedAt desc)
+    '*[_type == "post" && slug.current == $slug][0]{title, "name": author->name}', { slug }
   `),
   });
   const { posts = [] } = props;
