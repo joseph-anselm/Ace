@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
 import Layout from "../components/layouts";
-import Blog from "../components/blog";
+// import Blog from "../components/blog";
 import "bootstrap/dist/css/bootstrap.css"; // own css files here
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";

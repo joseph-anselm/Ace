@@ -259,47 +259,54 @@ export default function Index({ posts }) {
                 </h2>
               </div>
               {posts.length > 0 &&
-                posts.map(
-                  ({
-                    _id,
-                    title = "",
-                    slug = "",
-                    body = "",
-                    publishedAt = "",
-                  }) =>
-                    slug && (
-                      <Col xs={6} md={3} justify-content-md-center>
-                        <div className={styles.section6tabs}>
-                          <div>
+                posts
+                  .map(
+                    ({
+                      _id,
+                      title = "",
+                      slug = "",
+                      excerpt = "",
+                      body = "",
+                      publishedAt = "",
+                    }) =>
+                      slug && (
+                        <Col xs={6} md={3} justify-content-md-center>
+                          <div className={styles.section6tabs}>
                             <div>
-                              <Link
-                                href="/post/[slug]"
-                                as={`/post/${slug.current}`}
-                              >
-                                <a>
-                                  <Image
-                                    src="/img/ace1.jpg"
-                                    width={200}
-                                    height={150}
-                                    className={styles.section6image}
-                                  />
-                                  <h6>{title}</h6>
+                              <div>
+                                <Link
+                                  href="/blog/[slug]"
+                                  as={`/blog/${slug.current}`}
+                                >
+                                  <a>
+                                    <Image
+                                      src="/img/ace1.jpg"
+                                      width={200}
+                                      height={150}
+                                      className={styles.section6image}
+                                    />
+                                    <h6>{title}</h6>
 
-                                  <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Id, dolorum.
-                                  </p>
-                                </a>
-                              </Link>
+                                    <p>
+                                      {excerpt.replace(
+                                        /^(.{50}[^\s]*).*/,
+                                        "$1"
+                                      )}
+                                    </p>
+                                  </a>
+                                </Link>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </Col>
-                    )
-                )}
+                        </Col>
+                      )
+                  )
+                  .slice(0, 4)}
             </Row>
             <div className={styles.section6btn}>
-              <a>more blogs >>>></a>
+              <a>
+                <Nav.Link href="/blog">more blogs >>>></Nav.Link>
+              </a>
             </div>
           </Container>
         </div>

@@ -4,16 +4,23 @@ import Header from "./header";
 import Header2 from "./header2";
 import Home from "../pages/index";
 import { useRouter } from "next/router";
+import { useHistory } from "react-router";
+import { useEffect } from "react";
 
-function Layouts({ children }) {
+Layouts.links;
+function Layouts({ children, title }) {
   const router = useRouter();
+  // let links = ["/about", "/contact"];
+
   const showHeader = router.asPath === "/" ? true : false;
-  const showHeader2 = router.asPath === "/about" ? true : false;
+  const showHeader2 = router.asPath === Layouts.links ? true : false;
+
   return (
     <div>
       <Menubar />
       {showHeader && <Header />}
-      {showHeader2 && <Header2 />}
+      {showHeader2 && <Header2 {...title} />}
+
       {children}
       <Footer />
     </div>

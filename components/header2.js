@@ -1,9 +1,14 @@
 import styles from "../styles/header.module.css";
+import { useEffect } from "react";
+import Layouts from "../components/layouts";
+
 const Header2 = () => {
+  Header2.title;
+
   return (
     <div className={styles.hero}>
       <h1>
-        <span>About page</span>
+        <span>{Header2.title}</span>
         <br /> Sustainable development
         <br /> focused group
       </h1>
