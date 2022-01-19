@@ -43,7 +43,7 @@ const Post = ({ post }) => {
 };
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
-  title,
+  "title": title,
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
