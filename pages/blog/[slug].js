@@ -8,8 +8,14 @@ function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
-const Blog = ({ post }) => {
-  const { title = " ", name = "", categories, authorImage, body = [] } = post;
+const Post = ({ post }) => {
+  const {
+    title = "Missing title",
+    name = "Missing name",
+    categories,
+    authorImage,
+    body = [],
+  } = post;
   return (
     <article>
       <h1>{title}</h1>
@@ -64,4 +70,4 @@ export async function getStaticProps(context) {
     },
   };
 }
-export default Blog;
+export default Post;
