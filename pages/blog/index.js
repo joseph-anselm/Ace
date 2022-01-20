@@ -15,7 +15,7 @@ const Index = ({ posts }) => {
           ({ _id, title = "", slug = "", publishedAt = "" }) =>
             slug && (
               <li key={_id}>
-                <Link href="/blog/[slug]" as={`/blog/${slug.current}`}>
+                <Link href="/post/[slug]" as={`/post/${slug.current}`}>
                   <a>{title}</a>
                 </Link>{" "}
                 ({new Date(publishedAt).toDateString()})
