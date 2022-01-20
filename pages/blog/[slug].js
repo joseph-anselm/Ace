@@ -9,18 +9,11 @@ function urlFor(source) {
 }
 
 const Post = ({ post }) => {
-  const {
-    title = "",
-    name = "",
-    categories = "",
-    authorImage = "",
-    body = [],
-  } = post;
   return (
     <article>
       <h1>{post.title}</h1>
-      <span>By {name}</span>
-      {categories && (
+      <span>By {post.name}</span>
+      {post.categories && (
         <ul>
           Posted in
           {categories.map((category) => (
@@ -28,13 +21,13 @@ const Post = ({ post }) => {
           ))}
         </ul>
       )}
-      {authorImage && (
+      {post.authorImage && (
         <div>
-          <img src={urlFor(authorImage).width(50).url()} />
+          <img src={urlFor(post.authorImage).width(50).url()} />
         </div>
       )}
       <BlockContent
-        blocks={body}
+        blocks={post.body}
         imageOptions={{ w: 320, h: 240, fit: "max" }}
         {...client.config()}
       />
