@@ -9,7 +9,13 @@ function urlFor(source) {
 }
 
 const Post = ({ post }) => {
-  const { title, name, categories, authorImage, body = [] } = post;
+  const {
+    title = null,
+    name = null,
+    categories = null,
+    authorImage = null,
+    body = [],
+  } = post;
   return (
     <article>
       <h1>{title}</h1>
