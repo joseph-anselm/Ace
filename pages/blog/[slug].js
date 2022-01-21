@@ -2,21 +2,20 @@
 import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
-import client from "../client";
-import {
-  useRouter
-} from "next/router";
+import client from "../../client";
+import {useRouter} from "next/router";
+
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
-const Post = ({
+const Post = ({title,
   post
 }) => {
-  const router = useRouter();
+  
   const {
-    title,
+    
     name = null,
     categories = null,
     authorImage = null,
