@@ -3,17 +3,26 @@ import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import client from "../../client";
+import { useRouter } from "next/router";
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 
 const Post = ({ post }) => {
+  const router = useRouter();
+  const {
+    title = null,
+    name = null,
+    categories = null,
+    authorImage = null,
+    body = [],
+  } = post;
   return (
     <article>
-      <h1>{post.title}</h1>
-      <span>By {post.name}</span>
-      {post.categories && (
+      <h1>{title}</h1>
+      <span>By {name}</span>
+      {categories && (
         <ul>
           Posted in
           {categories.map((category) => (
@@ -21,13 +30,13 @@ const Post = ({ post }) => {
           ))}
         </ul>
       )}
-      {post.authorImage && (
+      {authorImage && (
         <div>
-          <img src={urlFor(post.authorImage).width(50).url()} />
+          <img src={urlFor(authorImage).width(50).url()} />
         </div>
       )}
       <BlockContent
-        blocks={post.body}
+        blocks={body}
         imageOptions={{ w: 320, h: 240, fit: "max" }}
         {...client.config()}
       />
