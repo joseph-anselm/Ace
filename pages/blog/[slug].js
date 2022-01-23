@@ -10,6 +10,7 @@ function urlFor(source) {
 }
 
 const Post = ({ post }) => {
+<<<<<<< HEAD
   const {
     title = null,
     name = null,
@@ -17,31 +18,31 @@ const Post = ({ post }) => {
     authorImage = null,
     body = [],
   } = post;
+=======
+  if (!post) return null;
+>>>>>>> fec3664c4575949a7372f918987f287a88ecfd1d
   return (
     <article>
-      <h1> {title} </h1> <span> By {name} </span>{" "}
-      {categories && (
+      <h1>{post?.title}</h1>
+      <span>By {post?.name}</span>
+      {post?.categories && (
         <ul>
-          Posted in{" "}
+          Posted in
           {categories.map((category) => (
-            <li key={category}> {category} </li>
-          ))}{" "}
+            <li key={category}>{category}</li>
+          ))}
         </ul>
-      )}{" "}
-      {authorImage && (
+      )}
+      {post?.authorImage && (
         <div>
-          <img src={urlFor(authorImage).width(50).url()} />{" "}
+          <img src={urlFor(post?.authorImage).width(50).url()} />
         </div>
-      )}{" "}
+      )}
       <BlockContent
-        blocks={body}
-        imageOptions={{
-          w: 320,
-          h: 240,
-          fit: "max",
-        }}
+        blocks={post?.body}
+        imageOptions={{ w: 320, h: 240, fit: "max" }}
         {...client.config()}
-      />{" "}
+      />
     </article>
   );
 };
@@ -59,11 +60,7 @@ export async function getStaticPaths() {
   );
 
   return {
-    paths: paths.map((slug) => ({
-      params: {
-        slug,
-      },
-    })),
+    paths: paths.map((slug) => ({ params: { slug } })),
     fallback: true,
   };
 }
@@ -71,9 +68,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
-  const post = await client.fetch(query, {
-    slug,
-  });
+  const post = await client.fetch(query, { slug });
   return {
     props: {
       post,
