@@ -10,7 +10,6 @@ function urlFor(source) {
 }
 
 const Post = ({ post }) => {
-  const { categories = null, authorImage = null, body = [] } = post;
   if (!post) return null;
   return (
     <article>
@@ -24,13 +23,13 @@ const Post = ({ post }) => {
           ))}
         </ul>
       )}
-      {authorImage && (
+      {post?.authorImage && (
         <div>
-          <img src={urlFor(authorImage).width(50).url()} />
+          <img src={urlFor(post?.authorImage).width(50).url()} />
         </div>
       )}
       <BlockContent
-        blocks={body}
+        blocks={post?.body}
         imageOptions={{ w: 320, h: 240, fit: "max" }}
         {...client.config()}
       />
