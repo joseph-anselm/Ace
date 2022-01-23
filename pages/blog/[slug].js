@@ -11,7 +11,7 @@ function urlFor(source) {
 
 const Post = ({ post }) => {
   const {
-    title = "empty",
+    title = null,
     name = null,
     categories = null,
     authorImage = null,
