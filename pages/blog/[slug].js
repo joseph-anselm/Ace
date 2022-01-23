@@ -11,7 +11,7 @@ function urlFor(source) {
 
 const Post = ({ post }) => {
   const { categories = null, authorImage = null, body = [] } = post;
-
+  if (!post) return null;
   return (
     <article>
       <h1>{post?.title}</h1>
