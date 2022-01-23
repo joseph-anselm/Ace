@@ -10,19 +10,13 @@ function urlFor(source) {
 }
 
 const Post = ({ post }) => {
-  const router = useRouter();
-  const {
-    title = null,
-    name = null,
-    categories = null,
-    authorImage = null,
-    body = [],
-  } = post;
+  const { categories = null, authorImage = null, body = [] } = post;
+
   return (
     <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      {categories && (
+      <h1>{post?.title}</h1>
+      <span>By {post?.name}</span>
+      {post?.categories && (
         <ul>
           Posted in
           {categories.map((category) => (
