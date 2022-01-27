@@ -4,6 +4,9 @@ import Link from "next/link";
 import groq from "groq";
 import client from "../client";
 import Image from "next/image";
+import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from "../client";
+import { useState, useEffect } from "react";
 import {
   Container,
   Nav,
@@ -15,7 +18,36 @@ import {
   Col,
 } from "react-bootstrap";
 
-export default function Index({ posts }) {
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+  return builder.image(source);
+}
+
+const Home = ({ posts, slug, post }) => {
+  const [postData, setPost] = useState(null);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[slug.current == "${slug}"]{
+                title,
+                _id,
+                slug,
+                mainImage{
+                    asset->{
+                        _id,
+                        url
+                    }
+                },
+                body,
+                "name": author->name,
+                "authorImage": author->image
+            }`
+      )
+      .then((data) => setPost(data))
+      .catch(console.error);
+  }, [slug]);
+
   return (
     <div>
       <div>
@@ -263,6 +295,7 @@ export default function Index({ posts }) {
                   .map(
                     ({
                       _id,
+                      mainImage = "",
                       title = "",
                       slug = "",
                       excerpt = "",
@@ -279,12 +312,12 @@ export default function Index({ posts }) {
                                   as={`/blog/${slug.current}`}
                                 >
                                   <a>
-                                    <Image
-                                      src="/img/ace1.jpg"
-                                      width={200}
-                                      height={150}
+                                    <img
+                                      src={posts?.mainImage?.asset?.url}
+                                      alt={post?.mainImage?.alt}
                                       className={styles.section6image}
                                     />
+
                                     <h6>{title}</h6>
 
                                     <p>
@@ -326,7 +359,7 @@ export default function Index({ posts }) {
       </div>
     </div>
   );
-}
+};
 export async function getStaticProps() {
   const posts = await client.fetch(groq`
       *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
@@ -337,3 +370,4 @@ export async function getStaticProps() {
     },
   };
 }
+export default Home;

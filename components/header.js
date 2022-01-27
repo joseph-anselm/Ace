@@ -3,8 +3,8 @@ const Header = () => {
   return (
     <div className={styles.hero}>
       <h1>
-        <span>We are</span>
-        <br /> Sustainable development
+        <span>We are Ace</span>
+        <br /> A Sustainable development
         <br /> focused group
       </h1>
       <p>

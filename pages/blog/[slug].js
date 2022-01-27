@@ -3,24 +3,40 @@ import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import client from "../../client";
-import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
+import styles from "../../styles/header.module.css";
+import sanityClient from "../../client";
 
+const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
-  return imageUrlBuilder(client).image(source);
+  return builder.image(source);
 }
 
-const Post = ({ post }) => {
-<<<<<<< HEAD
-  const {
-    title = null,
-    name = null,
-    categories = null,
-    authorImage = null,
-    body = [],
-  } = post;
-=======
-  if (!post) return null;
->>>>>>> fec3664c4575949a7372f918987f287a88ecfd1d
+const Post = ({ post, slug }) => {
+  const [postData, setPost] = useState(null);
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[slug.current == "${slug}"]{
+                title,
+                _id,
+                slug,
+                mainImage{
+                    asset->{
+                        _id,
+                        url
+                    }
+                },
+                body,
+                "name": author->name,
+                "authorImage": author->image
+            }`
+      )
+      .then((data) => setPost(data))
+      .catch(console.error);
+  }, [slug]);
+
   return (
     <article>
       <h1>{post?.title}</h1>
@@ -35,7 +51,7 @@ const Post = ({ post }) => {
       )}
       {post?.authorImage && (
         <div>
-          <img src={urlFor(post?.authorImage).width(50).url()} />
+          <img src={urlFor(post?.authorImage).width(100).url()} />
         </div>
       )}
       <BlockContent
@@ -43,13 +59,27 @@ const Post = ({ post }) => {
         imageOptions={{ w: 320, h: 240, fit: "max" }}
         {...client.config()}
       />
+
+      <div>
+        <img
+          src={post?.mainImage?.asset?.url}
+          alt={post?.mainImage}
+          className={styles.mainImage}
+        />
+      </div>
     </article>
   );
 };
-
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
-  title,
+  title,   
   "name": author->name,
+  mainImage{
+    asset->{
+      _id,
+      url,
+    },
+    alt
+  },
   "categories": categories[]->title,
   "authorImage": author->image,
   body
