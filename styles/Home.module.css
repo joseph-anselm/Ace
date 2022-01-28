@@ -24,7 +24,14 @@
   justify-content: center;
   align-items: center;
 }
-
+.bloglinks {
+  text-decoration: none;
+  color: #000000;
+}
+a .bloglinks {
+  text-decoration: none;
+  color: #000000;
+}
 .footer img {
   margin-left: 0.5rem;
 }

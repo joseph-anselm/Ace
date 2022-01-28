@@ -12,7 +12,7 @@
 }
 
 .mainImage {
-  width: 50%;
+  /* width: 100%; */
 }
 .hero::after {
   content: "";

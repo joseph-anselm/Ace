@@ -51,7 +51,7 @@ const Post = ({ post, slug }) => {
       )}
       {post?.authorImage && (
         <div>
-          <img src={urlFor(post?.authorImage).width(100).url()} />
+          <img src={urlFor(post?.authorImage).width(200).url()} />
         </div>
       )}
       <BlockContent
@@ -63,6 +63,8 @@ const Post = ({ post, slug }) => {
       <div>
         <img
           src={post?.mainImage?.asset?.url}
+          width={250}
+          height={200}
           alt={post?.mainImage}
           className={styles.mainImage}
         />

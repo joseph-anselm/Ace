@@ -1,12 +1,13 @@
+import groq from "groq";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import groq from "groq";
+import BlockContent from "@sanity/block-content-to-react";
 import client from "../client";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "../client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Nav,
@@ -23,26 +24,23 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Home = ({ posts, slug, post }) => {
+const Index = ({ posts, slug, post }) => {
   const [postData, setPost] = useState(null);
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[slug.current == "${slug}"]{
-                title,
-                _id,
-                slug,
-                mainImage{
-                    asset->{
-                        _id,
-                        url
-                    }
-                },
-                body,
-                "name": author->name,
-                "authorImage": author->image
-            }`
+        `*[_type == "post"]| order(date desc, _createdAt desc){
+          title,
+          slug,
+          excerpt,
+          mainImage{
+            asset->{
+            _id,
+            url
+          }
+        }
+      }`
       )
       .then((data) => setPost(data))
       .catch(console.error);
@@ -287,87 +285,85 @@ const Home = ({ posts, slug, post }) => {
             <Row>
               <div className={styles.section6title}>
                 <h2>
-                  Blogs <span>& </span>Events
+                  Blogs <span> & </span>Events
                 </h2>
               </div>
-              {posts.length > 0 &&
-                posts
-                  .map(
-                    ({
-                      _id,
-                      mainImage = "",
-                      title = "",
-                      slug = "",
-                      excerpt = "",
-                      body = "",
-                      publishedAt = "",
-                    }) =>
-                      slug && (
-                        <Col xs={6} md={3} justify-content-md-center>
-                          <div className={styles.section6tabs}>
-                            <div>
-                              <div>
-                                <Link
-                                  href="/blog/[slug]"
-                                  as={`/blog/${slug.current}`}
-                                >
-                                  <a>
-                                    <img
-                                      src={posts?.mainImage?.asset?.url}
-                                      alt={post?.mainImage?.alt}
-                                      className={styles.section6image}
-                                    />
+              {postData &&
+                postData
+                  .map((post, index, slug) => (
+                    <Col xs={6} md={3} justify-content-md-center>
+                      <div className={styles.section6tabs}>
+                        <div>
+                          <div>
+                            <Link
+                              href="/blog/[slug]"
+                              as={`/blog/${post.slug.current}`}
+                              className={styles.bloglinks}
+                            >
+                              <a className={styles.bloglinks}>
+                                <img
+                                  src={post.mainImage?.asset.url}
+                                  width={250}
+                                  height={200}
+                                  alt={post.mainImage?.alt}
+                                  className={styles.section6image}
+                                />
 
-                                    <h6>{title}</h6>
+                                <h6>{post.title}</h6>
 
-                                    <p>
-                                      {excerpt.replace(
-                                        /^(.{50}[^\s]*).*/,
-                                        "$1"
-                                      )}
-                                    </p>
-                                  </a>
-                                </Link>
-                              </div>
-                            </div>
+                                <p>{post.excerpt}</p>
+                              </a>
+                            </Link>
                           </div>
-                        </Col>
-                      )
-                  )
+                        </div>
+                      </div>
+                    </Col>
+                  ))
                   .slice(0, 4)}
             </Row>
             <div className={styles.section6btn}>
-              <a>
-                <Nav.Link href="/blog">more blogs >>>></Nav.Link>
+              <a className={styles.bloglinks}>
+                <Nav.Link href="/blog" className={styles.bloglinks}>
+                  more blogs >>>>
+                </Nav.Link>
               </a>
             </div>
           </Container>
         </div>
-        {/* <h1>Welcome to a blog!</h1>
-        {posts.length > 0 &&
-          posts.map(
-            ({ _id, title = "", slug = "", publishedAt = "" }) =>
-              slug && (
-                <li key={_id}>
-                  <Link href="/post/[slug]" as={`/post/${slug.current}`}>
-                    <a>{title}</a>
-                  </Link>{" "}
-                  ({new Date(publishedAt).toDateString()})
-                </li>
-              )
-          )} */}
       </div>
     </div>
   );
 };
+
 export async function getStaticProps() {
-  const posts = await client.fetch(groq`
-      *[_type == "post" && publishedAt < now()] | order(publishedAt desc)
-    `);
+  const allPosts = await client.fetch(groq`
+  *[_type == "post"] | order(date desc, _createdAt desc) {
+    _id,
+    title,
+    slug,
+    excerpt,
+    author -> {
+      name,
+      image {
+        asset ->
+      }
+    },
+    mainImage {
+      asset -> {
+        _id,
+        url
+      }
+    },
+    categories[0] ->,
+    publishedAt,
+    body,
+  }`);
+
   return {
     props: {
-      posts,
+      posts: allPosts,
     },
   };
 }
-export default Home;
+
+export default Index;
