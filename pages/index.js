@@ -338,7 +338,7 @@ const Index = ({ posts, slug, post }) => {
 };
 
 export async function getStaticProps() {
-  const allPosts = await client.fetch(groq`
+  const allPosts = await client.fetch(`
   *[_type == "post"] | order(date desc, _createdAt desc) {
     _id,
     title,
@@ -364,8 +364,6 @@ export async function getStaticProps() {
   return {
     props: {
       posts: allPosts,
-      revalidate: 10, // 10 seconds
-      notFound: true,
     },
   };
 }
