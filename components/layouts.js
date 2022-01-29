@@ -15,6 +15,7 @@ function Layouts({ children, title }) {
 
   const showHeader = router.asPath === "/" ? true : false;
   const showHeader2 = router.asPath === Layouts.links ? true : false;
+  const showBlog = router.asPath === "/" ? true : false;
 
   return (
     <div>
@@ -23,7 +24,7 @@ function Layouts({ children, title }) {
       {showHeader2 && <Header2 {...title} />}
 
       {children}
-      <Homeblog />
+      {showBlog && <Homeblog />}
       <Footer />
     </div>
   );

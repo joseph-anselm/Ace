@@ -19,28 +19,35 @@ import {
   Col,
 } from "react-bootstrap";
 
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source) {
-  return builder.image(source);
-}
-const Homeblog = ({ posts, post, slug }) => {
+const Homeblog = ({ post, slug }) => {
   const [postData, setPost] = useState(null);
+
+  const posts = groq`
+*[_type == "post"] | order(date desc, _createdAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  author -> {
+    name,
+    image {
+      asset ->
+    }
+  },
+  mainImage {
+    asset -> {
+      _id,
+      url
+    }
+  },
+  categories[0] ->,
+  publishedAt,
+  body,
+}`;
 
   useEffect(() => {
     sanityClient
-      .fetch(
-        `*[_type == "post"]| order(date desc, _createdAt desc){
-            title,
-            slug,
-            excerpt,
-            mainImage{
-              asset->{
-              _id,
-              url
-            }
-          }
-        }`
-      )
+      .fetch(posts)
       .then((data) => setPost(data))
       .catch(console.error);
   }, [slug]);
@@ -57,28 +64,28 @@ const Homeblog = ({ posts, post, slug }) => {
           </div>
           {postData &&
             postData
-              .map((post) => (
+              .map((posts) => (
                 <Col xs={6} md={3} justify-content-md-center>
                   <div className={styles.section6tabs}>
                     <div>
                       <div>
                         <Link
                           href="/blog/[slug]"
-                          as={`/blog/${post.slug.current}`}
+                          as={`/blog/${posts.slug.current}`}
                           className={styles.bloglinks}
                         >
                           <a className={styles.bloglinks}>
                             <img
-                              src={post.mainImage?.asset.url}
+                              src={posts.mainImage?.asset.url}
                               width={250}
                               height={200}
                               alt={post?.mainImage?.alt}
                               className={styles.section6image}
                             />
 
-                            <h6>{post.title}</h6>
+                            <h6>{posts.title}</h6>
 
-                            <p>{post.excerpt}</p>
+                            <p>{posts.excerpt}</p>
                           </a>
                         </Link>
                       </div>
