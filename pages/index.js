@@ -8,6 +8,7 @@ import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "../client";
 import React, { useState, useEffect } from "react";
+
 import {
   Container,
   Nav,
@@ -357,13 +358,12 @@ const query = groq`
   publishedAt,
   body,
 }`;
-export async function getStaticProps(context) {
-  const slug = context.params;
-  const allPosts = await client.fetch(query, slug);
+export async function getStaticProps() {
+  const allPosts = await client.fetch(query);
 
   return {
     props: {
-      posts: allPosts,
+      post: allPosts,
     },
   };
 }
