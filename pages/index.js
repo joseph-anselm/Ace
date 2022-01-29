@@ -291,7 +291,7 @@ const Home = ({ posts, post, slug }) => {
               </div>
               {postData &&
                 postData
-                  .map((post, posts, slug) => (
+                  .map((post) => (
                     <Col xs={6} md={3} justify-content-md-center>
                       <div className={styles.section6tabs}>
                         <div>
