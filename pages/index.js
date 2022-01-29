@@ -27,8 +27,6 @@ function urlFor(source) {
 const Home = ({ posts, slug, post }) => {
   const [postData, setPost] = useState(null);
 
-  if (!posts) return null;
-
   useEffect(() => {
     sanityClient
       .fetch(
@@ -360,7 +358,7 @@ export async function getStaticProps() {
     publishedAt,
     body,
   }`);
-
+  if (!allPosts) return null;
   return {
     props: {
       posts: allPosts,
