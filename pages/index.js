@@ -364,6 +364,8 @@ export async function getStaticProps(context) {
   return {
     props: {
       posts: allPosts,
+      notFound: true,
+      revalidate: 300,
     },
   };
 }
