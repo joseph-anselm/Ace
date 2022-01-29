@@ -290,7 +290,7 @@ const Index = ({ posts, slug, post }) => {
               </div>
               {postData &&
                 postData
-                  .map((post, index, slug) => (
+                  .map((post, index) => (
                     <Col xs={6} md={3} justify-content-md-center>
                       <div className={styles.section6tabs}>
                         <div>
@@ -322,7 +322,7 @@ const Index = ({ posts, slug, post }) => {
                   .slice(0, 4)}
             </Row>
             <div className={styles.section6btn}>
-              <a className={styles.bloglinks}>
+              <a>
                 <Nav.Link href="/blog" className={styles.bloglinks}>
                   more blogs >>>>
                 </Nav.Link>
