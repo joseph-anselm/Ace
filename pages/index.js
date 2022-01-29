@@ -358,7 +358,7 @@ export async function getStaticProps(context) {
     publishedAt,
     body,
   }`);
-
+  if (!allPosts) return null;
   return {
     props: {
       posts: allPosts,
