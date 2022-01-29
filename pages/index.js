@@ -335,7 +335,7 @@ const Index = ({ posts, slug, post }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   const allPosts = await client.fetch(groq`
   *[_type == "post"] | order(date desc, _createdAt desc) {
     _id,
