@@ -306,7 +306,7 @@ const Home = ({ posts, post, slug }) => {
                                   src={post.mainImage?.asset.url}
                                   width={250}
                                   height={200}
-                                  alt={post.mainImage?.alt}
+                                  alt={post?.mainImage?.alt}
                                   className={styles.section6image}
                                 />
 
@@ -336,36 +336,36 @@ const Home = ({ posts, post, slug }) => {
   );
 };
 
-// const query = groq`
-// *[_type == "post"] | order(date desc, _createdAt desc) {
-//   _id,
-//   title,
-//   slug,
-//   excerpt,
-//   author -> {
-//     name,
-//     image {
-//       asset ->
-//     }
-//   },
-//   mainImage {
-//     asset -> {
-//       _id,
-//       url
-//     }
-//   },
-//   categories[0] ->,
-//   publishedAt,
-//   body,
-// }`;
-// export async function getStaticProps() {
-//   const allPosts = await client.fetch(query);
+const query = groq`
+*[_type == "post"] | order(date desc, _createdAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  author -> {
+    name,
+    image {
+      asset ->
+    }
+  },
+  mainImage {
+    asset -> {
+      _id,
+      url
+    }
+  },
+  categories[0] ->,
+  publishedAt,
+  body,
+}`;
+export async function getStaticProps() {
+  const allPosts = await client.fetch(query);
 
-//   return {
-//     props: {
-//       post: allPosts,
-//     },
-//   };
-// }
+  return {
+    props: {
+      posts: allPosts,
+    },
+  };
+}
 
 export default Home;
