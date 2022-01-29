@@ -24,7 +24,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Home = ({ posts, slug, post }) => {
+const Home = ({ posts, post, slug }) => {
   const [postData, setPost] = useState(null);
 
   useEffect(() => {
@@ -335,29 +335,31 @@ const Home = ({ posts, slug, post }) => {
   );
 };
 
-export async function getStaticProps() {
-  const allPosts = await client.fetch(groq`
-  *[_type == "post"] | order(date desc, _createdAt desc) {
-    _id,
-    title,
-    slug,
-    excerpt,
-    author -> {
-      name,
-      image {
-        asset ->
-      }
-    },
-    mainImage {
-      asset -> {
-        _id,
-        url
-      }
-    },
-    categories[0] ->,
-    publishedAt,
-    body,
-  }`);
+const query = groq`
+*[_type == "post"] | order(date desc, _createdAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  author -> {
+    name,
+    image {
+      asset ->
+    }
+  },
+  mainImage {
+    asset -> {
+      _id,
+      url
+    }
+  },
+  categories[0] ->,
+  publishedAt,
+  body,
+}`;
+export async function getStaticProps(context) {
+  const slug = context.params;
+  const allPosts = await client.fetch(query, slug);
 
   return {
     props: {
