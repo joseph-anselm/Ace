@@ -292,28 +292,28 @@ const Index = ({ posts, slug, post }) => {
               </div>
               {postData &&
                 postData
-                  .map((post, index) => (
+                  .map((post) => (
                     <Col xs={6} md={3} justify-content-md-center>
                       <div className={styles.section6tabs}>
                         <div>
                           <div>
                             <Link
                               href="/blog/[slug]"
-                              as={`/blog/${post.slug.current}`}
+                              as={`/blog/${post?.slug.current}`}
                               className={styles.bloglinks}
                             >
                               <a className={styles.bloglinks}>
                                 <img
-                                  src={post.mainImage?.asset.url}
+                                  src={post?.mainImage?.asset.url}
                                   width={250}
                                   height={200}
-                                  alt={post.mainImage?.alt}
+                                  alt={post?.mainImage?.alt}
                                   className={styles.section6image}
                                 />
 
-                                <h6>{post.title}</h6>
+                                <h6>{post?.title}</h6>
 
-                                <p>{post.excerpt}</p>
+                                <p>{post?.excerpt}</p>
                               </a>
                             </Link>
                           </div>
