@@ -336,36 +336,36 @@ const Home = ({ posts, post, slug }) => {
   );
 };
 
-const query = groq`
-*[_type == "post"] | order(date desc, _createdAt desc) {
-  _id,
-  title,
-  slug,
-  excerpt,
-  author -> {
-    name,
-    image {
-      asset ->
-    }
-  },
-  mainImage {
-    asset -> {
-      _id,
-      url
-    }
-  },
-  categories[0] ->,
-  publishedAt,
-  body,
-}`;
-export async function getStaticProps() {
-  const allPosts = await client.fetch(query);
+// const query = groq`
+// *[_type == "post"] | order(date desc, _createdAt desc) {
+//   _id,
+//   title,
+//   slug,
+//   excerpt,
+//   author -> {
+//     name,
+//     image {
+//       asset ->
+//     }
+//   },
+//   mainImage {
+//     asset -> {
+//       _id,
+//       url
+//     }
+//   },
+//   categories[0] ->,
+//   publishedAt,
+//   body,
+// }`;
+// export async function getStaticProps() {
+//   const allPosts = await client.fetch(query);
 
-  return {
-    props: {
-      post: allPosts,
-    },
-  };
-}
+//   return {
+//     props: {
+//       post: allPosts,
+//     },
+//   };
+// }
 
 export default Home;
