@@ -24,7 +24,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Index = ({ posts, slug, post }) => {
+const Home = ({ posts, slug, post }) => {
   const [postData, setPost] = useState(null);
 
   if (!posts) return null;
@@ -338,7 +338,7 @@ const Index = ({ posts, slug, post }) => {
 };
 
 export async function getStaticProps() {
-  const allPosts = await client.fetch(`
+  const allPosts = await client.fetch(groq`
   *[_type == "post"] | order(date desc, _createdAt desc) {
     _id,
     title,
@@ -368,4 +368,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Index;
+export default Home;
