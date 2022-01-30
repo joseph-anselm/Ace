@@ -87,7 +87,7 @@ const Homeblog = ({ posts, post }) => {
                               <a className={styles.bloglinks}>
                                 <img
                                   src={mainImage?.asset?.url}
-                                  width={250}
+                                  width={200}
                                   height={200}
                                   alt={mainImage?.alt}
                                   className={styles.section6image}

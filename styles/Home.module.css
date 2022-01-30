@@ -287,6 +287,9 @@ a .bloglinks {
 }
 .section6tabs .section6image {
   border-radius: 10px;
+  width: 100%;
+
+  max-height: 150px;
 }
 .section6btn {
   text-align: right;
