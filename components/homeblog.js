@@ -118,32 +118,30 @@ const Homeblog = ({ posts, post }) => {
   );
 };
 
-// const query = groq`
-// *[_type == "post"] | order(date desc, _createdAt desc) {
-//   _id,
-//   title,
-//   slug,
-//   excerpt,
-//   author -> {
-//     name,
-//     image {
-//       asset ->
-//     }
-//   },
-//   mainImage {
-//     asset -> {
-//       _id,
-//       url
-//     }
-//   },
-//   categories[0] ->,
-//   publishedAt,
-//   body,
-// }`;
+const query = groq`
+*[_type == "post"] | order(date desc, _createdAt desc) {
+  _id,
+  title,
+  slug,
+  excerpt,
+  author -> {
+    name,
+    image {
+      asset ->
+    }
+  },
+  mainImage {
+    asset -> {
+      _id,
+      url
+    }
+  },
+  categories[0] ->,
+  publishedAt,
+  body,
+}`;
 export async function getStaticProps() {
-  const allPosts = await client.fetch(groq`
-  *[_type == "post" && publishedAt < now()]|order(publishedAt desc)
-`);
+  const allPosts = await client.fetch(query);
 
   return {
     props: {
