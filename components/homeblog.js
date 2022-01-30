@@ -14,7 +14,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-const Homeblog = ({ posts }) => {
+const Homeblog = ({ posts, post }) => {
   const [postData, setPost] = useState(null);
 
   const postItems = groq`
@@ -80,7 +80,7 @@ const Homeblog = ({ posts }) => {
                           <div>
                             <Link
                               href="/blog/[slug]"
-                              as={`/blog/${post.slug?.current}`}
+                              as={`/blog/${slug.current}`}
                               className={styles.bloglinks}
                             >
                               <a className={styles.bloglinks}>
