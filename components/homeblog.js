@@ -2,8 +2,6 @@ import groq from "groq";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import client from "../client";
-import Image from "next/image";
-import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useEffect } from "react";
 import {
   Container,
@@ -47,7 +45,7 @@ const Homeblog = ({ posts }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, []);
+  }, [posts]);
 
   /* Section Six */
   return (
@@ -61,7 +59,7 @@ const Homeblog = ({ posts }) => {
           </div>
           {postData &&
             postData
-              .map((post, index) => (
+              .map((post, posts) => (
                 <Col xs={6} md={3} justify-content-md-center>
                   <div className={styles.section6tabs}>
                     <div>
@@ -131,7 +129,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts: allPosts,
+      allPosts,
     },
   };
 }
