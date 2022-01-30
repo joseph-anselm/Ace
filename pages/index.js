@@ -34,12 +34,12 @@ const index = ({}) => {
               <Col xs={6} md={3}>
                 <div>
                   <Image
-                    src="/img/ace1.jpg"
+                    src="/img/exp1.jpg"
                     width={200}
                     height={200}
                     className={styles.tabimage}
                   />
-                  <h3>Expertise skill</h3>
+                  <h3>Expertise</h3>
                   <p>
                     We welcome skilled and experienced professionals who are
                     willing to commit to the cause of the organization. your
@@ -50,7 +50,7 @@ const index = ({}) => {
               <Col xs={6} md={3}>
                 <div>
                   <Image
-                    src="/img/ace1.jpg"
+                    src="/img/donation2.jpg"
                     width={200}
                     height={200}
                     className={styles.tabimage}
@@ -66,12 +66,12 @@ const index = ({}) => {
               <Col xs={6} md={3}>
                 <div>
                   <Image
-                    src="/img/ace1.jpg"
+                    src="/img/volunteer1.jpg"
                     width={200}
                     height={200}
                     className={styles.tabimage}
                   />
-                  <h3>Volunteering</h3>
+                  <h3>Volunteers</h3>
                   <p>
                     Our pool of Volunteers have made many of our accomplishments
                     possible, you too can make a difference by becoming a
@@ -82,7 +82,7 @@ const index = ({}) => {
               <Col xs={6} md={3}>
                 <div>
                   <Image
-                    src="/img/ace1.jpg"
+                    src="/img/research1.jpg"
                     width={200}
                     height={200}
                     className={styles.tabimage}
