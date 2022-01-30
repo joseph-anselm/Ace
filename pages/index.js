@@ -20,7 +20,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-const Home = ({ posts }) => {
+const index = ({ posts }) => {
   return (
     <div>
       <div>
@@ -258,4 +258,4 @@ const Home = ({ posts }) => {
   );
 };
 
-export default Home;
+export default index;
