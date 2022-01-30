@@ -25,7 +25,6 @@ function Layouts({ children, title }) {
 
       {children}
       {showBlog && <Homeblog />}
-      <Homeblog />
       <Footer />
     </div>
   );

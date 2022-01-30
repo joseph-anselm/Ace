@@ -15,7 +15,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-const index = ({ post, postData, posts }) => {
+const index = ({}) => {
   return (
     <div>
       <div>

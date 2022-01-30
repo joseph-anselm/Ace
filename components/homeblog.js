@@ -1,6 +1,7 @@
 import groq from "groq";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import sanityClient from "../client";
 import client from "../client";
 import React, { useState, useEffect } from "react";
 import {
@@ -15,7 +16,7 @@ import {
 } from "react-bootstrap";
 
 const Homeblog = ({ posts, post }) => {
-  const [postData, setPost] = useState(null);
+  const [postData, setPost] = useState("");
 
   const postItems = groq`
 *[_type == "post"] | order(date desc, _createdAt desc) {
@@ -41,11 +42,11 @@ const Homeblog = ({ posts, post }) => {
 }`;
 
   useEffect(() => {
-    client
+    sanityClient
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [posts]);
+  }, [post]);
 
   /* Section Six */
   return (
