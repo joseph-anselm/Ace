@@ -3,6 +3,7 @@ import Menubar from "./menubar";
 import Header from "./header";
 import Header2 from "./header2";
 import Homeblog from "./homeblog";
+import Indexblog from "./homeblog";
 import Home from "../pages/index";
 import { useRouter } from "next/router";
 import { useHistory } from "react-router";
@@ -24,7 +25,7 @@ function Layouts({ children, title }) {
       {showHeader2 && <Header2 {...title} />}
 
       {children}
-      {showBlog && <Homeblog />}
+      {showBlog && <Indexblog />}
       <Footer />
     </div>
   );
