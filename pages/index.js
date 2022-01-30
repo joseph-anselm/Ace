@@ -2,12 +2,7 @@ import groq from "groq";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import BlockContent from "@sanity/block-content-to-react";
-import client from "../client";
 import Image from "next/image";
-import imageUrlBuilder from "@sanity/image-url";
-import sanityClient from "../client";
-import React, { useState, useEffect } from "react";
 
 import {
   Container,
@@ -20,7 +15,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-const index = ({}) => {
+const index = ({ post, postData, posts }) => {
   return (
     <div>
       <div>
