@@ -59,35 +59,50 @@ const Homeblog = ({ posts }) => {
           </div>
           {postData &&
             postData
-              .map((post, posts) => (
-                <Col xs={6} md={3} justify-content-md-center>
-                  <div className={styles.section6tabs}>
-                    <div>
-                      <div>
-                        <Link
-                          href="/blog/[slug]"
-                          as={`/blog/${post.slug.current}`}
-                          className={styles.bloglinks}
-                        >
-                          <a className={styles.bloglinks}>
-                            <img
-                              src={post.mainImage?.asset.url}
-                              width={250}
-                              height={200}
-                              alt={post.mainImage?.alt}
-                              className={styles.section6image}
-                            />
+              .map(
+                (
+                  {
+                    _id,
+                    title = "",
+                    slug = "",
+                    publishedAt = "",
+                    mainImage = "",
+                    excerpt = "",
+                  },
+                  allPosts,
+                  post,
+                  posts
+                ) =>
+                  slug && (
+                    <Col xs={6} md={3} justify-content-md-center>
+                      <div className={styles.section6tabs}>
+                        <div>
+                          <div>
+                            <Link
+                              href="/blog/[slug]"
+                              as={`/blog/${post.slug?.current}`}
+                              className={styles.bloglinks}
+                            >
+                              <a className={styles.bloglinks}>
+                                <img
+                                  src={mainImage?.asset?.url}
+                                  width={250}
+                                  height={200}
+                                  alt={mainImage?.alt}
+                                  className={styles.section6image}
+                                />
 
-                            <h6>{post.title}</h6>
+                                <h6>{title}</h6>
 
-                            <p>{post.excerpt}</p>
-                          </a>
-                        </Link>
+                                <p>{excerpt}</p>
+                              </a>
+                            </Link>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </Col>
-              ))
+                    </Col>
+                  )
+              )
               .slice(0, 4)}
         </Row>
         <div className={styles.section6btn}>
@@ -129,7 +144,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      allPosts,
+      posts: allPosts,
     },
   };
 }
