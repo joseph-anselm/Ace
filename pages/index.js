@@ -20,7 +20,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-const index = ({ posts }) => {
+const index = ({}) => {
   return (
     <div>
       <div>

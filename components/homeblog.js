@@ -1,12 +1,9 @@
 import groq from "groq";
-import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
-import BlockContent from "@sanity/block-content-to-react";
 import client from "../client";
 import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
-import sanityClient from "../client";
 import React, { useState, useEffect } from "react";
 import {
   Container,
@@ -19,10 +16,10 @@ import {
   Col,
 } from "react-bootstrap";
 
-const Homeblog = ({}) => {
+const Homeblog = ({ posts }) => {
   const [postData, setPost] = useState(null);
 
-  const posts = groq`
+  const postItems = groq`
 *[_type == "post"] | order(date desc, _createdAt desc) {
   _id,
   title,
@@ -46,8 +43,8 @@ const Homeblog = ({}) => {
 }`;
 
   useEffect(() => {
-    sanityClient
-      .fetch(posts)
+    client
+      .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
   }, []);
