@@ -74,7 +74,7 @@ const Homeblog = ({ posts, post }) => {
                   post,
                   posts
                 ) =>
-                  slug && (
+                  post && (
                     <Col xs={6} md={3} justify-content-md-center>
                       <div className={styles.section6tabs}>
                         <div>
