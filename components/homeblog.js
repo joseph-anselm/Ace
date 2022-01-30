@@ -64,28 +64,28 @@ const Homeblog = ({ post, slug }) => {
           </div>
           {postData &&
             postData
-              .map((posts) => (
+              .map((post) => (
                 <Col xs={6} md={3} justify-content-md-center>
                   <div className={styles.section6tabs}>
                     <div>
                       <div>
                         <Link
                           href="/blog/[slug]"
-                          as={`/blog/${posts.slug.current}`}
+                          as={`/blog/${post.slug.current}`}
                           className={styles.bloglinks}
                         >
                           <a className={styles.bloglinks}>
                             <img
-                              src={posts.mainImage?.asset.url}
+                              src={post.mainImage?.asset.url}
                               width={250}
                               height={200}
                               alt={post?.mainImage?.alt}
                               className={styles.section6image}
                             />
 
-                            <h6>{posts.title}</h6>
+                            <h6>{post.title}</h6>
 
-                            <p>{posts.excerpt}</p>
+                            <p>{post.excerpt}</p>
                           </a>
                         </Link>
                       </div>
