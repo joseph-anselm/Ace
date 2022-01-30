@@ -19,7 +19,7 @@ import {
   Col,
 } from "react-bootstrap";
 
-const Homeblog = ({ post, slug }) => {
+const Homeblog = ({}) => {
   const [postData, setPost] = useState(null);
 
   const posts = groq`
@@ -50,7 +50,7 @@ const Homeblog = ({ post, slug }) => {
       .fetch(posts)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [slug]);
+  }, []);
 
   /* Section Six */
   return (
@@ -64,7 +64,7 @@ const Homeblog = ({ post, slug }) => {
           </div>
           {postData &&
             postData
-              .map((post) => (
+              .map((post, index) => (
                 <Col xs={6} md={3} justify-content-md-center>
                   <div className={styles.section6tabs}>
                     <div>
@@ -79,7 +79,7 @@ const Homeblog = ({ post, slug }) => {
                               src={post.mainImage?.asset.url}
                               width={250}
                               height={200}
-                              alt={post?.mainImage?.alt}
+                              alt={post.mainImage?.alt}
                               className={styles.section6image}
                             />
 
