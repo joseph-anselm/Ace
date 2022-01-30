@@ -55,7 +55,7 @@ const index = ({}) => {
                     height={200}
                     className={styles.tabimage}
                   />
-                  <h3>Donations Passion</h3>
+                  <h3>Donations</h3>
                   <p>
                     We rely strongly on donations and fundings to enable us
                     carry out our specific activities, every penny goes along

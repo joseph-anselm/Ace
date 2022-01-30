@@ -91,9 +91,14 @@ const Homeblog = ({ posts, post }) => {
                                   className={styles.section6image}
                                 />
 
-                                <h6>{title}</h6>
+                                <h6>
+                                  {title.replace(/^(.{10}[^\s]*).*/, "$1")}
+                                </h6>
 
-                                <p>{excerpt}</p>
+                                <p>
+                                  {excerpt?.replace(/^(.{20}[^\s]*).*/, "$1")}
+                                  ...
+                                </p>
                               </a>
                             </Link>
                           </div>
