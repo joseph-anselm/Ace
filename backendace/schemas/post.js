@@ -14,6 +14,13 @@ export default {
       description: "Keep excerpt short!",
       title: "Excerpt",
       type: "string",
+      description: "Make it catchy",
+      validation: (Rule) => [
+        Rule.required()
+          .min(50)
+          .error("A title of min. 50 characters is required"),
+        Rule.max(50).warning("Shorter titles are usually better"),
+      ],
     },
     {
       name: "slug",

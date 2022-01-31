@@ -237,14 +237,14 @@ const index = ({}) => {
         <div className={styles.section5}>
           <Container className={styles.section5tab}>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-              alias beatae ipsa? Cum possimus tenetur enim sint asperiores
-              consectetur aliquid? Lorem ipsum, dolor sit amet consectetur
-              adipisicing elit. Amet labore iusto nam laboriosam accusamus.
-              Architecto dolores delectus fugiat. Eius tempore eum fugiat
-              delectus repudiandae quam dolore, optio corporis? Nesciunt
-              suscipit sequi illo harum soluta exercitationem aperiam impedit
-              quam corrupti iure.
+              We are simply passionate about intense development of minds,
+              people and environment with a strategic focus on Nigeria and the
+              Africa continent, pursuing causes that will only ensure a
+              sustainable development for Africa and a more civilized way of
+              getting things done. Our quest is to build a system that will last
+              and add values to our immediate environment and the continent of
+              Africa. We remain committed to this cause and we daily ensure that
+              all activities are focused on achieving our goals.
             </p>
           </Container>
         </div>
