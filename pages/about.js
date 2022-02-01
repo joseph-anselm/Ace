@@ -50,6 +50,7 @@ const about = ({ author }) => {
   }, [author]);
   return (
     <div>
+      {/* section 3 */}
       <>
         <Container>
           <Row className={styles.section3}>
@@ -79,7 +80,7 @@ const about = ({ author }) => {
                     <Col xs={6} md={3}>
                       <div className={styles.section3team}>
                         <img src={urlFor(image).url()} />
-                        <h6>{name}</h6>
+                        <h5>{name}</h5>
                         <p>{memberPosition}</p>
                         <div className={styles.socialicons}>
                           <i className="bi bi-facebook"></i>
@@ -94,6 +95,7 @@ const about = ({ author }) => {
           </Row>
         </Container>
       </>
+      {/* section 2 */}
       <>
         <Row fluid className={styles.section2}>
           <Col xs={12} md={6}>
@@ -113,7 +115,49 @@ const about = ({ author }) => {
         </Row>
       </>
 
-      {/* section 3 */}
+      {/* section 4 */}
+      <>
+        <Container className={styles.section4}>
+          <Row fluid className={styles.section4}>
+            <Col xs={12} md={6}>
+              <p>
+                Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem
+                ipsum' will uncover many web sites still in their infancy.
+                Various versions have evolved over the years, sometimes by
+                accident, sometimes on purpose (injected humour and the like).
+              </p>
+
+              <p>
+                Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem
+                ipsum' will uncover many web sites still in their infancy.
+                Various versions have evolved over the years, sometimes by
+                accident, sometimes on purpose (injected humour and the like).
+              </p>
+            </Col>
+            <Col xs={12} md={6}>
+              <p>
+                Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem
+                ipsum' will uncover many web sites still in their infancy.
+                Various versions have evolved over the years, sometimes by
+                accident, sometimes on purpose (injected humour and the like).
+              </p>
+              <p>
+                <ul>
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                </ul>
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </>
     </div>
   );
 };
