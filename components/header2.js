@@ -4,24 +4,21 @@ import Layouts from "../components/layouts";
 
 const Header2 = () => {
   Header2.title;
+  Header2.image;
+  Header2.excerpt;
 
   return (
-    <div className={styles.hero}>
-      <h1>
-        <span>{Header2.title}</span>
-        <br /> Sustainable development
-        <br /> focused group
-      </h1>
-      <p>
-        We aim to see Africa develop through research and strategic orientation
-      </p>
-      <div className="bton">
-        <button className="headbutton">
-          <a href="">Donate Now</a>{" "}
-        </button>
-        <button className="header-button">
-          <a>Volunteer</a>
-        </button>
+    <div className={styles.hero2}>
+      <div className={styles.headoverlay}>
+        <h1>
+          <span>{Header2.title}</span>
+        </h1>
+        <p>{Header2.excerpt}</p>
+        <div className="bton">
+          <button className="header-button">
+            <a>Volunteer</a>
+          </button>
+        </div>
       </div>
     </div>
   );
