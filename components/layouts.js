@@ -3,7 +3,6 @@ import Menubar from "./menubar";
 import Header from "./header";
 import Header2 from "./header2";
 import Homeblog from "./homeblog";
-
 import { useRouter } from "next/router";
 import { useHistory } from "react-router";
 import { useEffect } from "react";
