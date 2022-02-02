@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import Menubar from "./menubar";
 import Header from "./header";
 import Header2 from "./header2";
+import Homeblog from "./homeblog";
 
 import { useRouter } from "next/router";
 import { useHistory } from "react-router";
@@ -23,7 +24,7 @@ function Layouts({ children, title }) {
       {showHeader2 && <Header2 {...title} />}
 
       {children}
-
+      {showBlog && <Homeblog />}
       <Footer />
     </div>
   );
