@@ -1,14 +1,20 @@
 import styles from "../styles/header.module.css";
 import { useEffect } from "react";
-import Layouts from "../components/layouts";
+
+import { withRouter } from "react-router-dom";
+
+import Header from "./header";
 
 const Header2 = () => {
   Header2.title;
   Header2.image;
   Header2.excerpt;
-
+  Header2.imgsrc;
   return (
-    <div className={styles.hero2}>
+    <div
+      className={styles.hero2}
+      style={{ backgroundImage: `url("${Header2.imgsrc}")` }}
+    >
       <div className={styles.headoverlay}>
         <h1>
           <span>{Header2.title}</span>

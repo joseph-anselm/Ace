@@ -14,6 +14,11 @@ export default {
       type: "string",
     },
     {
+      name: "linkedin",
+      title: "LinkedIn Url",
+      type: "string",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

@@ -2,8 +2,7 @@
   "root": true,
   "project": {
     "name": "backend-ace",
-    "basePath": "/backend"
-
+    "basePath": "https://backend.aceinitiatives.com"
   },
   "api": {
     "projectId": "i8p530en",
@@ -17,9 +16,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

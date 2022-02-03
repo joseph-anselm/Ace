@@ -6,21 +6,20 @@ import Homeblog from "./homeblog";
 import { useRouter } from "next/router";
 import { useHistory } from "react-router";
 import { useEffect } from "react";
-
+import { img1 } from "../public/img/ace2.jpg";
 Layouts.links;
-function Layouts({ children, title }) {
+function Layouts({ children, title, imgsrc }) {
   const router = useRouter();
-  // let links = ["/about", "/contact"];
 
   const showHeader = router.asPath === "/" ? true : false;
-  const showHeader2 = router.asPath === Layouts.links ? true : false;
+  const showHeader2 = router.asPath === "/about" ? true : false;
   const showBlog = router.asPath === "/" ? true : false;
 
   return (
     <div>
       <Menubar />
       {showHeader && <Header />}
-      {showHeader2 && <Header2 {...title} />}
+      {showHeader2 && <Header2 />}
 
       {children}
       {showBlog && <Homeblog />}
