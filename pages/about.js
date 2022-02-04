@@ -1,10 +1,12 @@
 import Link from "next/link";
+import Head from "next/head";
 import Layouts from "../components/layouts";
+import styles from "../styles/About.module.css";
 import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useEffect } from "react";
 import Header2 from "../components/header2";
-import styles from "../styles/About.module.css";
+
 import sanityClient from "../client";
 import groq from "groq";
 import {
