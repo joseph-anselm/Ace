@@ -6,9 +6,6 @@
   margin: 20px 0;
 }
 
-.section2 {
-  margin-top: 40px;
-}
 .section1tabs img {
   width: 100%;
   height: auto;
@@ -17,21 +14,26 @@
 
 .section2tab1 {
   margin-top: 30px;
-  text-align: right;
+  text-align: left;
+}
+/* section 2 */
+.section2 {
+  margin: 60px 30px;
 }
 .section2tab1 h1 {
   border-bottom: 2px solid #333333;
   padding-bottom: 20px;
   display: inline-block;
 }
-.section2tab2 {
-  background: url("../public/img/ace3.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 300px;
-  width: 100%;
-}
 
+.section2 img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+.section3 {
+  background: #eeebeb;
+}
 .section3 h2 {
   display: flex;
   justify-content: center;
@@ -86,8 +88,8 @@
 }
 
 /* section 5 */
-.setion5 {
-  margin: 30px 0;
+.section5 {
+  margin: 60px 30px;
 }
 
 .section5tabs img {

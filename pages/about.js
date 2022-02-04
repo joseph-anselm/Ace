@@ -96,7 +96,7 @@ const about = ({ author }) => {
 
       {/* section 3 */}
       <>
-        <Container>
+        <Container fluid>
           <Row className={styles.section3}>
             <h2>Meet our team/volunteers</h2>
             <h6>
@@ -139,9 +139,15 @@ const about = ({ author }) => {
           </Row>
         </Container>
       </>
+
       {/* section 2 */}
-      <Container>
-        <Row fluid className={styles.section2}>
+      <Container className={styles.section2}>
+        <Row>
+          <Col xs={12} md={6}>
+            <div>
+              <img src="/img/research1.jpg" />
+            </div>
+          </Col>
           <Col xs={12} md={6}>
             <div className={styles.section2tab1}>
               <h1>Our Journey</h1>
@@ -153,16 +159,13 @@ const about = ({ author }) => {
               <p>Contrary to popular belief, Lorem Ipsum</p>
             </div>
           </Col>
-          <Col xs={12} md={6}>
-            <div className={styles.section2tab2}></div>
-          </Col>
         </Row>
       </Container>
 
       {/* section 4 */}
       <>
         <Container className={styles.section4}>
-          <Row fluid className={styles.section4}>
+          <Row className={styles.section4}>
             <Col xs={12} md={6}>
               <p>
                 Many desktop publishing packages and web page editors now use
@@ -219,7 +222,7 @@ const about = ({ author }) => {
                   discovered the undoubtable source
                 </p>
                 <Button variant="dark" size="lg">
-                  Be a part
+                  be a part
                 </Button>{" "}
               </div>
             </Col>
