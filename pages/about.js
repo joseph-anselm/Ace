@@ -20,7 +20,6 @@ import {
   Col,
 } from "react-bootstrap";
 
-Layouts.links = "/about";
 Header2.title = "About Page";
 Header2.imgsrc = "/img/ace1.jpg";
 Header2.excerpt =

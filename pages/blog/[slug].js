@@ -8,8 +8,6 @@ import styles from "../../styles/header.module.css";
 import sanityClient from "../../client";
 import Layouts from "../../components/layouts";
 
-Layouts.links = "/blog/[slug]";
-
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);

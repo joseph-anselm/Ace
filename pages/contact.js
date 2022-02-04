@@ -1,9 +1,9 @@
 import Header2 from "../components/header2";
 import Layouts from "../components/layouts";
-Layouts.links = "/contact";
+
 Header2.title = "Contact Page";
 
-Layouts.links = "/contact";
+const links = "/contact";
 Header2.title = "Reach out to us";
 Header2.imgsrc = "/img/ace3.jpg";
 Header2.excerpt =
