@@ -53,6 +53,47 @@ const about = ({ author }) => {
   }, [author]);
   return (
     <div>
+      {/* section 1 */}
+      <Container>
+        <Row className={styles.section1}>
+          <Col xs={12} md={4}>
+            <div className={styles.section1tabs}>
+              <img src="/img/research2.jpg" width={250} height={250} />
+              <h5>There are many variations</h5>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} md={4}>
+            {" "}
+            <div className={styles.section1tabs}>
+              <img src="/img/research3.jpg" width={250} height={250} />
+              <h5>There are many variations</h5>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected
+              </p>
+            </div>
+          </Col>
+          <Col xs={12} md={4}>
+            {" "}
+            <div className={styles.section1tabs}>
+              <img src="/img/research1.jpg" width={250} height={250} />
+              <h5>There are many variations</h5>
+              <p>
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
       {/* section 3 */}
       <>
         <Container>
@@ -99,7 +140,7 @@ const about = ({ author }) => {
         </Container>
       </>
       {/* section 2 */}
-      <>
+      <Container>
         <Row fluid className={styles.section2}>
           <Col xs={12} md={6}>
             <div className={styles.section2tab1}>
@@ -116,7 +157,7 @@ const about = ({ author }) => {
             <div className={styles.section2tab2}></div>
           </Col>
         </Row>
-      </>
+      </Container>
 
       {/* section 4 */}
       <>
@@ -157,6 +198,33 @@ const about = ({ author }) => {
                   <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
                 </ul>
               </p>
+            </Col>
+          </Row>
+        </Container>
+      </>
+
+      <>
+        <Container className={styles.section5}>
+          <Row className={styles.section5tabs}>
+            <Col xs={12} md={6}>
+              <div>
+                <h3>
+                  Specialist moves? we are a company that can deliver it always
+                </h3>
+                <p>
+                  Richard McClintock, a Latin professor at Hampden-Sydney
+                  College in Virginia, looked up one of the more obscure Latin
+                  words, consectetur, from a Lorem Ipsum passage, and going
+                  through the cites of the word in classical literature,
+                  discovered the undoubtable source
+                </p>
+                <Button variant="dark" size="lg">
+                  Be a part
+                </Button>{" "}
+              </div>
+            </Col>
+            <Col xs={12} md={6}>
+              <img src="/img/volunteer2.jpg" />
             </Col>
           </Row>
         </Container>
