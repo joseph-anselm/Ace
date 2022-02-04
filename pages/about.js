@@ -4,10 +4,8 @@ import client from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useEffect } from "react";
 import Header2 from "../components/header2";
-import img1 from "../public/img/ace2.jpg";
 import styles from "../styles/About.module.css";
 import sanityClient from "../client";
-
 import groq from "groq";
 import {
   Container,
