@@ -3,7 +3,7 @@ import Layouts from "../components/layouts";
 Layouts.links = "/contact";
 Header2.title = "Contact Page";
 
-Layouts.links = "/about";
+Layouts.links = "/contact";
 Header2.title = "Reach out to us";
 Header2.imgsrc = "/img/ace3.jpg";
 Header2.excerpt =

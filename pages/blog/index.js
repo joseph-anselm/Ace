@@ -6,6 +6,7 @@ import Layouts from "../../components/layouts";
 
 Layouts.links = "/blog";
 Header2.title = "Blog post";
+Header2.imgsrc = "/img/ace3.jpg";
 const Index = ({ posts }) => {
   return (
     <div>

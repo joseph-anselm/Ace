@@ -9,7 +9,10 @@ Header2.excerpt =
 
 Layouts.links = "/projects";
 Header2.title = "Projects Page";
-const contact = () => {
+
+Header2.title = "Our recents projects";
+Header2.imgsrc = "/img/ace3.jpg";
+const projects = () => {
   return (
     <div>
       <h1>Projects</h1>
@@ -17,4 +20,4 @@ const contact = () => {
   );
 };
 
-export default contact;
+export default projects;
