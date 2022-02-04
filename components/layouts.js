@@ -12,8 +12,7 @@ function Layouts({ children, title, imgsrc }) {
   const router = useRouter();
 
   const showHeader = router.asPath === "/" ? true : false;
-  const showHeader2 = router.asPath === Layouts.links ? true : false;
-
+  const showHeader2 = router.asPath === "/about" ? true : false;
   const showBlog = router.asPath === "/" ? true : false;
 
   return (
