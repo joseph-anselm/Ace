@@ -13,6 +13,7 @@ function Layouts({ children, title, imgsrc }) {
 
   const showHeader = router.asPath === "/" ? true : false;
   const showHeader2 = router.asPath === "/about" ? true : false;
+  const showHeader3 = router.asPath === "/contact" ? true : false;
   const showBlog = router.asPath === "/" ? true : false;
 
   return (
@@ -20,6 +21,7 @@ function Layouts({ children, title, imgsrc }) {
       <Menubar />
       {showHeader && <Header />}
       {showHeader2 && <Header2 />}
+      {showHeader3 && <Header2 />}
 
       {children}
       {showBlog && <Homeblog />}
