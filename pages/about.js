@@ -220,8 +220,8 @@ const about = ({ author }) => {
                   through the cites of the word in classical literature,
                   discovered the undoubtable source
                 </p>
-                <Button variant="dark" size="lg">
-                  be a part
+                <Button variant="dark" size="md">
+                  Be a part
                 </Button>{" "}
               </div>
             </Col>

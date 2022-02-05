@@ -1,0 +1,10 @@
+/* section 1 form  */
+
+.form {
+  margin: 50px;
+}
+.form img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
