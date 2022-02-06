@@ -12,8 +12,8 @@
 }
 
 .section2 p {
-  line-height: 15px;
   font-size: 0.9em;
+  line-height: normal;
 }
 .section2tabs {
   padding: 5px 10px;
@@ -24,6 +24,6 @@
 @media screen and (max-width: 600px) {
   .section2 p {
     font-size: 0.8em;
-    line-height: 5px;
+    line-height: normal;
   }
 }
