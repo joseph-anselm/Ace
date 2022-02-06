@@ -25,13 +25,13 @@ const contact = () => {
     // section 1 form
     <div>
       <>
-        <Container className={styles.form}>
+        <Container className={styles.section1}>
           <Row>
             <Col xs={12} md={6}>
-              <img src="/img/con3.jpg" />
+              <img src="/img/con5pp.png" />
             </Col>
 
-            <Col xs={12} md={6}>
+            <Col xs={12} md={6} className={styles.form}>
               <div>
                 <h2>You can reach out to us now!</h2>
                 <p>We always respon between 24 - 48 hours.</p>
@@ -94,9 +94,9 @@ const contact = () => {
 
       {/* Section 2 */}
       <>
-        <Container>
+        <Container className={styles.section2}>
           <Row>
-            <Col xs={6} md={3}>
+            <Col xs={6} md={3} className={styles.section2tabs}>
               <div>
                 <h5>
                   <i
@@ -109,7 +109,7 @@ const contact = () => {
                 <p>Ajah, Lekki. Nigeria</p>
               </div>
             </Col>
-            <Col xs={6} md={3}>
+            <Col xs={6} md={3} className={styles.section2tabs}>
               <div>
                 <h5>
                   <i
@@ -122,7 +122,7 @@ const contact = () => {
                 <p>+2348032501608</p>
               </div>
             </Col>
-            <Col xs={6} md={3}>
+            <Col xs={6} md={3} className={styles.section2tabs}>
               <div>
                 <h5>
                   <i
@@ -135,7 +135,7 @@ const contact = () => {
                 <p>help@aceinitiatives.com</p>
               </div>
             </Col>
-            <Col xs={6} md={3}>
+            <Col xs={6} md={3} className={styles.section2tabs}>
               <div>
                 <h5>
                   <i
@@ -144,8 +144,8 @@ const contact = () => {
                   ></i>
                   Live chat
                 </h5>
-                <p>We are avaliable online during the week</p>
-                <p>To respond to your queries, between 9am - 5pm</p>
+                <p>We are avaliable online Mon - Fri</p>
+                <p>For your queries, between 9am - 5pm</p>
               </div>
             </Col>
           </Row>
