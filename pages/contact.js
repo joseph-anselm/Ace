@@ -144,8 +144,8 @@ const contact = () => {
                   ></i>
                   Live chat
                 </h5>
-                <p>We are avaliable online Mon - Fri</p>
-                <p>For your queries, between 9am - 5pm</p>
+                <p>Avaliable online Mon - Fri</p>
+                <p>For your queries, 9am - 5pm</p>
               </div>
             </Col>
           </Row>
