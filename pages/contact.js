@@ -85,7 +85,7 @@ const contact = () => {
                   <Button
                     variant="primary"
                     type="submit"
-                    size="md"
+                    size="lg"
                     style={{
                       background: "#3c9234",
                     }}

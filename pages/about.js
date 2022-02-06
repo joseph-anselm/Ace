@@ -99,10 +99,10 @@ const about = ({ author }) => {
           <Row className={styles.section3}>
             <h2>Meet our team/volunteers</h2>
             <h6>
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised words which don't look even
-              slightly believable.
+              Ace Initiatives is anchored and sustained by passionate
+              individuals who finds love in helping humanity, supporting
+              positive cause and ensuring the goals and organization's
+              objectives are actualized.
             </h6>
 
             {postData &&
