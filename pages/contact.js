@@ -34,18 +34,18 @@ const contact = () => {
             <Col xs={12} md={6} className={styles.form}>
               <div>
                 <h2>You can reach out to us now!</h2>
-                <p>We always respon between 24 - 48 hours.</p>
+                <p>We always respond between 24 - 48 hours.</p>
 
                 <Form>
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label>First Name</Form.Label>
-                      <Form.Control type="email" placeholder="Enter email" />
+                      <Form.Control type="email" placeholder="Enter name" />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="password" placeholder="Password" />
+                      <Form.Control type="password" placeholder="Email" />
                     </Form.Group>
                   </Row>
                   <Row className="mb-3">
@@ -55,7 +55,7 @@ const contact = () => {
                       controlId="formGridAddress1"
                     >
                       <Form.Label>Phone number</Form.Label>
-                      <Form.Control placeholder="1234 Main St" />
+                      <Form.Control placeholder="1234567890" />
                     </Form.Group>
 
                     <Form.Group
@@ -64,7 +64,7 @@ const contact = () => {
                       controlId="formGridAddress2"
                     >
                       <Form.Label>Subject</Form.Label>
-                      <Form.Control placeholder="Apartment, studio, or floor" />
+                      <Form.Control placeholder="Message subject" />
                     </Form.Group>
                   </Row>
 
@@ -73,7 +73,7 @@ const contact = () => {
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1"
                     >
-                      <Form.Label>message</Form.Label>
+                      <Form.Label>Message</Form.Label>
                       <Form.Control as="textarea" rows={3} />
                     </Form.Group>
                   </Row>
@@ -82,7 +82,14 @@ const contact = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                   </Form.Group>
 
-                  <Button variant="primary" type="submit" size="md">
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    size="md"
+                    style={{
+                      background: "#3c9234",
+                    }}
+                  >
                     Submit
                   </Button>
                 </Form>
