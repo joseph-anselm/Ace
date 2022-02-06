@@ -55,7 +55,7 @@
   text-align: center;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 800px) {
   .prefooter {
     display: grid;
     background: #3c9234;

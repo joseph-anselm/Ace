@@ -108,9 +108,13 @@
 
 /* media queries */
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 500px) {
   .section3team p {
-    font-size: 0.6em;
+    font-size: 0.7em;
     word-wrap: normal;
+  }
+
+  .section3team h5 {
+    font-size: 0.9em;
   }
 }

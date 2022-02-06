@@ -18,7 +18,7 @@ Header2.title = "Contact Page";
 Header2.title = "Reach out to us";
 Header2.imgsrc = "/img/ace3.jpg";
 Header2.excerpt =
-  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ";
+  "We ensure all queries are well attended to, all our available contact options is a way to help us reach our audience and also keep us connected always  ";
 
 const contact = () => {
   return (
