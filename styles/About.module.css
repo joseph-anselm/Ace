@@ -10,6 +10,7 @@
   width: 100%;
   height: auto;
   max-height: 250px;
+  object-fit: cover;
 }
 
 .section2tab1 {
@@ -30,6 +31,7 @@
   width: 100%;
   height: auto;
   max-height: 300px;
+  object-fit: cover;
 }
 .section3 {
   background: #eeebeb;
@@ -96,6 +98,7 @@
   width: 100%;
   height: auto;
   max-height: 300px;
+  object-fit: cover;
 }
 
 .section5tabs Button {

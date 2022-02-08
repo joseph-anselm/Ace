@@ -285,12 +285,12 @@ a .bloglinks {
 .section6tabs {
   text-align: center;
 }
-.section6tabs .section6image {
+.section6image {
   border-radius: 10px;
   width: 100%;
   height: auto;
-  height: 170px;
-  max-height: 170px;
+  min-height: 200px;
+  object-fit: cover;
 }
 .section6btn {
   text-align: right;

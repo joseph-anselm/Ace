@@ -78,7 +78,7 @@ const Homeblog = ({ posts, post }) => {
                     <Col xs={6} md={3} justify-content-md-center>
                       <div className={styles.section6tabs}>
                         <div>
-                          <div>
+                          <div class="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow">
                             <Link
                               href="/blog/[slug]"
                               as={`/blog/${slug.current}`}

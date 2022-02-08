@@ -34,7 +34,7 @@ const Footer = () => {
       <div className={styles.footercol}>
         <Container>
           <Row>
-            <Col xs={12} md={3}>
+            <Col xs={12} md={3} className={styles.footercol1}>
               <h2>Our Mission</h2>
               <p>
                 Ace initiatives major projects currently aims at using research,
@@ -46,7 +46,7 @@ const Footer = () => {
               </p>
             </Col>
 
-            <Col xs={12} md={3}>
+            <Col xs={12} md={3} className={styles.footercol2}>
               <h2>Quick Links</h2>
               <ul>
                 <li>Home</li>
@@ -60,17 +60,17 @@ const Footer = () => {
 
             <Col xs={12} md={3}>
               <h2>Gallery</h2>
-              <div>
-                <Image src="/img/ace2.jpg" width={90} height={75} />
-                <Image src="/img/ace1.jpg" width={90} height={75} />
-                <Image src="/img/ace3.jpg" width={90} height={75} />
-                <Image src="/img/ace4.jpg" width={90} height={75} />
-                <Image src="/img/ace1.jpg" width={90} height={75} />
-                <Image src="/img/ace2.jpg" width={90} height={75} />
+              <div className={styles.footerimg}>
+                <img src="/img/ace2.jpg" width={90} height={75} />
+                <img src="/img/ace1.jpg" width={90} height={75} />
+                <img src="/img/ace3.jpg" width={90} height={75} />
+                <img src="/img/ace4.jpg" width={90} height={75} />
+                <img src="/img/ace1.jpg" width={90} height={75} />
+                <img src="/img/ace2.jpg" width={90} height={75} />
               </div>
             </Col>
 
-            <Col xs={12} md={3}>
+            <Col xs={12} md={3} className={styles.footercol4}>
               <h3>Contact Us</h3>
               <div className={styles.contactinfo}>
                 <i className="bi bi-telephone" style={{ color: "#3C9234" }}>
