@@ -289,7 +289,7 @@ a .bloglinks {
   border-radius: 10px;
   width: 100%;
   height: auto;
-  min-height: 200px;
+  max-height: 200px;
   object-fit: cover;
 }
 .section6btn {
