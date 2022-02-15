@@ -96,7 +96,7 @@ const Homeblog = ({ posts, post }) => {
                                 </h6>
 
                                 <p>
-                                  {excerpt?.replace(/^(.{50}[^\s]*).*/, "$1")}
+                                  {excerpt?.replace(/^(.{20}[^\s]*).*/, "$1")}
                                   ...
                                 </p>
                               </a>

@@ -2,7 +2,7 @@
   "root": true,
   "project": {
     "name": "backend-ace",
-    "basePath": "https://backend.aceinitiatives.com"
+    "basePath": "/backendace"
   },
   "api": {
     "projectId": "i8p530en",

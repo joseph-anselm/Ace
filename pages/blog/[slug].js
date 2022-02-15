@@ -39,11 +39,11 @@ const Post = ({ post, slug }) => {
       )
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [slug]);
+  }, []);
 
   return (
     <article>
-      <h1>{post?.title}</h1>
+      <h1>{post.title}</h1>
       <span>By {post?.name}</span>
       {post?.categories && (
         <ul>

@@ -10,7 +10,7 @@ const Index = ({ posts }) => {
   return (
     <div>
       <h1>Welcome to a blog!</h1>
-      {posts.length > 0 &&
+      {posts &&
         posts.map(
           ({ _id, title = "", slug = "", publishedAt = "" }) =>
             slug && (

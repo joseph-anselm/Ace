@@ -97,7 +97,7 @@ const about = ({ author }) => {
       <>
         <Container fluid>
           <Row className={styles.section3}>
-            <h2>Meet our team/volunteers</h2>
+            <h2>Meet the team</h2>
             <h6>
               Ace Initiatives is anchored and sustained by passionate
               individuals who finds love in helping humanity, supporting
@@ -262,7 +262,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      posts: allPosts,
+      allPosts,
     },
   };
 
