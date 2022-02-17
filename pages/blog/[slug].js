@@ -5,19 +5,21 @@ import BlockContent from "@sanity/block-content-to-react";
 import Header2 from "../../components/header2";
 import client from "../../client";
 import React, { useState, useEffect } from "react";
-import styles from "../../styles/header.module.css";
+import styles from "../../styles/singlepost.module.css";
 import sanityClient from "../../client";
 import Layouts from "../../components/layouts";
-
-Header2.imgsrc = "/img/ace3.jpg";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
 }
 
-const Post = ({ post, slug }) => {
+const Post = ({ post, slug, mainImage, title }) => {
   const [postData, setPost] = useState(null);
+  const headimage = post?.mainImage?.asset?.url;
+  Header2.imgsrc = headimage;
+
+  Header2.title = post?.title;
 
   useEffect(() => {
     sanityClient
@@ -55,7 +57,7 @@ const Post = ({ post, slug }) => {
       )}
       {post?.authorImage && (
         <div>
-          <img src={urlFor(post?.authorImage).width(200).url()} />
+          <img src={urlFor(post?.authorImage).width(100).url()} />
         </div>
       )}
       <BlockContent

@@ -70,8 +70,8 @@ const Profile = ({ data, slug, author, allPosts }) => {
             <Col xs={6} md={3}>
               <div className={styles.section3team}>
                 <img src={urlFor(image).url()} />
-                <h5>{slug}</h5>
-                <p>{memberPosition}</p>
+                <h5>{allPosts.slug}</h5>
+                <p>{allPosts.memberPosition}</p>
                 <div className={styles.socialicons}>
                   <i className="bi bi-facebook"></i>
                   <i className="bi bi-linkedin"></i>

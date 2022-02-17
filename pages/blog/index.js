@@ -4,7 +4,7 @@ import client from "../../client";
 import Header2 from "../../components/header2";
 import Layouts from "../../components/layouts";
 
-Header2.title = "Blog post";
+Header2.title = "Post, News and Events";
 Header2.imgsrc = "/img/ace3.jpg";
 const Index = ({ posts }) => {
   return (
