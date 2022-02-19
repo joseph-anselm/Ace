@@ -38,7 +38,9 @@ const Galleries = ({ gallery, images }) => {
   return (
     <div>
       <div>
-        <img src={`${gallery.images}`} />
+        {gallery?.galleryImage && (
+          <img src={urlFor(gallery?.galleryImage).url()} />
+        )}
       </div>
     </div>
   );
@@ -48,8 +50,8 @@ const query = groq`
 *[_type == "gallery"]  { 
   
  
-  images{
-    asset->url
+ "galleryImage" :  images{
+    asset->
   },
  
 }`;
