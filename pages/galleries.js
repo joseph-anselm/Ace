@@ -15,15 +15,15 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Galleries = ({ gallery, images }) => {
+const Galleries = ({ gallery }) => {
   const [postData, setPost] = useState("");
 
   const postItems = groq`
 *[_type == "gallery"]  {  
-  images,
-  images{
-    asset->url
-  }
+  "galleryImage" :  images{
+    asset->
+  },
+ 
   
   
 }`;
@@ -33,7 +33,7 @@ const Galleries = ({ gallery, images }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [images]);
+  }, []);
 
   return (
     <div>
@@ -56,11 +56,11 @@ const query = groq`
  
 }`;
 export async function getStaticProps() {
-  const allPosts = await client.fetch(query);
+  const gallery = await client.fetch(query);
 
   return {
     props: {
-      gallery: allPosts,
+      gallery,
     },
   };
 }

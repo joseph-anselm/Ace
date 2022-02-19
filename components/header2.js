@@ -3,10 +3,11 @@ import { useEffect } from "react";
 
 import { withRouter } from "react-router-dom";
 
-import Header from "./header";
+
 
 const Header2 = ({ title }) => {
   Header2.image;
+  Header2.title;
   Header2.excerpt;
   Header2.imgsrc;
   return (
@@ -16,7 +17,7 @@ const Header2 = ({ title }) => {
     >
       <div className={styles.headoverlay}>
         <h1>
-          <span>{title}</span>
+          <span>{Header2.title}</span>
         </h1>
         <p>{Header2.excerpt}</p>
         <div className="bton">
