@@ -30,11 +30,11 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const about = ({ author }) => {
-  const [postData, setPost] = useState("");
+const about = ({ author, slug }) => {
+  const [postData, setPost] = useState(null);
 
-  const postItems = groq`
-*[_type == "author"]  {
+  const postItems = `
+*[_type == "author" ]  {
   
   name,
   memberPosition,
@@ -49,7 +49,7 @@ const about = ({ author }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [author]);
+  }, [slug]);
   return (
     <div>
       {/* section 1 */}
@@ -122,9 +122,16 @@ const about = ({ author }) => {
                   author && (
                     <Col xs={6} md={3}>
                       <div className={styles.section3team}>
-                        <img src={urlFor(image).url()} />
-                        <h5>{name}</h5>
-                        <p>{memberPosition}</p>
+                        <Link href="/[slug]" as={`/${slug?.current}`}>
+                          <a>
+                            <div>
+                              <img src={urlFor(image).url()} />
+                              <h5>{name}</h5>
+                              <p>{memberPosition}</p>
+                            </div>
+                          </a>
+                        </Link>
+
                         <div className={styles.socialicons}>
                           <i className="bi bi-facebook"></i>
                           <i className="bi bi-linkedin"></i>
@@ -236,26 +243,14 @@ const about = ({ author }) => {
 };
 
 const query = groq`
-*[_type == "post"] | order(date desc, _createdAt desc) {
-  _id,
-  title,
+*[_type == "author"  && slug]  {
+  
+  name,
+  memberPosition,
   slug,
-  excerpt,
-  author -> {
-    name,
-    image {
-      asset ->
-    }
-  },
-  mainImage {
-    asset -> {
-      _id,
-      url
-    }
-  },
-  categories[0] ->,
+  image ,  
   publishedAt,
-  body,
+  bio,
 }`;
 export async function getStaticProps() {
   const allPosts = await client.fetch(query);

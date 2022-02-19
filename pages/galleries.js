@@ -14,12 +14,16 @@ const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
 }
-const Galleries = ({ gallery }) => {
+
+const Galleries = ({ gallery, images }) => {
   const [postData, setPost] = useState("");
 
   const postItems = groq`
 *[_type == "gallery"]  {  
   images,
+  images{
+    asset->url
+  }
   
   
 }`;
@@ -29,19 +33,13 @@ const Galleries = ({ gallery }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [gallery]);
+  }, [images]);
 
   return (
     <div>
-      {postData &&
-        postData.map(
-          ({ images = "" }, posts) =>
-            gallery && (
-              <div>
-                <Img src={images} />
-              </div>
-            )
-        )}
+      <div>
+        <img src={`${gallery.images}`} />
+      </div>
     </div>
   );
 };
@@ -49,8 +47,10 @@ const Galleries = ({ gallery }) => {
 const query = groq`
 *[_type == "gallery"]  { 
   
-  images,
-  
+ 
+  images{
+    asset->url
+  },
  
 }`;
 export async function getStaticProps() {

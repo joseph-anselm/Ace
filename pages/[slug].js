@@ -5,7 +5,7 @@ import BlockContent from "@sanity/block-content-to-react";
 import Header2 from "../components/header2";
 import client from "../client";
 import React, { useState, useEffect } from "react";
-import styles from "../styles/header.module.css";
+import styles from "../styles/singleprofile.module.css";
 import Layouts from "../components/layouts";
 import sanityClient from "../client";
 
@@ -27,14 +27,15 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Profile = ({ data, slug, author, allPosts }) => {
+const Profile = ({ post, slug, author, allPosts, image }) => {
   const [postData, setPost] = useState(null);
+  const title = author?.memberPosition;
 
   useEffect(() => {
     sanityClient
       .fetch(
         `
-      *[slug.current == "${author}"]{
+      *[slug.current == "${slug}"]{
         
         name,
         memberPosition,
@@ -50,38 +51,25 @@ const Profile = ({ data, slug, author, allPosts }) => {
 
   return (
     <article>
-      <h5>Profile page {allPosts?.memberPosition}</h5>
-
-      {postData &&
-        ((
-          {
-            name = "",
-            slug = "",
-            publishedAt = "",
-            image = "",
-            memberPosition = "",
-            bio = "",
-          },
-          allPosts,
-          author,
-          posts
-        ) =>
-          author && (
-            <Col xs={6} md={3}>
-              <div className={styles.section3team}>
-                <img src={urlFor(image).url()} />
-                <h5>{allPosts.slug}</h5>
-                <p>{allPosts.memberPosition}</p>
-                <div className={styles.socialicons}>
-                  <i className="bi bi-facebook"></i>
-                  <i className="bi bi-linkedin"></i>
-                  <i className="bi bi-twitter"></i>
-                  <i className="bi bi-instagram"></i>
-                  <p>{bio}</p>
-                </div>
-              </div>
-            </Col>
-          ))}
+      <Container>
+        <Row className={styles.profile}>
+          {author?.authorImage && (
+            <div>
+              <img
+                src={urlFor(author?.authorImage).url()}
+                alt={author?.authorImage}
+              />
+            </div>
+          )}
+          <h5>{author?.name}</h5>
+          <p>{author?.memberPosition}</p>
+          <BlockContent
+            blocks={author?.bio}
+            imageOptions={{ w: 320, h: 240, fit: "max" }}
+            {...client.config()}
+          />
+        </Row>
+      </Container>
     </article>
   );
 };
@@ -89,6 +77,12 @@ const query = groq`*[_type == "author" && slug.current == $slug][0]{
   name,   
   memberPosition,
   bio,
+  "authorImage":     
+    image {
+      asset ->
+    }
+  ,
+  
 }`;
 export async function getStaticPaths() {
   const paths = await client.fetch(
@@ -104,12 +98,10 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
-  const allPosts = await client.fetch(query, { slug });
+  const author = await client.fetch(query, { slug });
   return {
     props: {
-      data: {
-        allPosts,
-      },
+      author,
     },
   };
 }

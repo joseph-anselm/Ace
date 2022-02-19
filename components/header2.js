@@ -5,8 +5,7 @@ import { withRouter } from "react-router-dom";
 
 import Header from "./header";
 
-const Header2 = () => {
-  Header2.title;
+const Header2 = ({ title }) => {
   Header2.image;
   Header2.excerpt;
   Header2.imgsrc;
@@ -17,7 +16,7 @@ const Header2 = () => {
     >
       <div className={styles.headoverlay}>
         <h1>
-          <span>{Header2.title}</span>
+          <span>{title}</span>
         </h1>
         <p>{Header2.excerpt}</p>
         <div className="bton">
