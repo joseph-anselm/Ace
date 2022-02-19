@@ -16,10 +16,10 @@ function urlFor(source) {
 
 const Post = ({ post, slug, mainImage, title }) => {
   const [postData, setPost] = useState(null);
-  const headImage = mainImage?.asset.url;
+  const headImage = `(${post?.mainImage?.asset?.url})`;
   Header2.imgsrc = headImage;
 
-  title = post?.title;
+  Header2.title = [`(post?.title)`];
 
   useEffect(() => {
     sanityClient

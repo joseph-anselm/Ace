@@ -1,11 +1,9 @@
 import styles from "../styles/header.module.css";
 import { useEffect } from "react";
-
 import { withRouter } from "react-router-dom";
+import Breadcrumb from "react-bootstrap/Breadcrumb";
 
-
-
-const Header2 = ({ title }) => {
+const Header2 = () => {
   Header2.image;
   Header2.title;
   Header2.excerpt;
@@ -13,7 +11,10 @@ const Header2 = ({ title }) => {
   return (
     <div
       className={styles.hero2}
-      style={{ backgroundImage: `url("${Header2.imgsrc}")` }}
+      style={{
+        backgroundImage: `url${Header2.imgsrc}`,
+        objectFit: "contain",
+      }}
     >
       <div className={styles.headoverlay}>
         <h1>
@@ -25,6 +26,13 @@ const Header2 = ({ title }) => {
             <a>Volunteer</a>
           </button>
         </div>
+        <Breadcrumb className={styles.breadcrumb}>
+          <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+          <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
+            Library
+          </Breadcrumb.Item>
+          <Breadcrumb.Item active>Data</Breadcrumb.Item>
+        </Breadcrumb>
       </div>
     </div>
   );
