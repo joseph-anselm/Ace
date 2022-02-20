@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
 
-const Header2 = () => {
+const Header2 = ({ title }) => {
   Header2.image;
   Header2.title;
   Header2.excerpt;
@@ -12,7 +12,7 @@ const Header2 = () => {
     <div
       className={styles.hero2}
       style={{
-        backgroundImage: `url${Header2.imgsrc}`,
+        backgroundImage: `url(${Header2.imgsrc})`,
         objectFit: "contain",
       }}
     >

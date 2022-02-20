@@ -1,6 +1,6 @@
 export default {
   title: "Poster",
-  name: "image",
+  name: "imageposter",
   type: "document",
   options: {
     hotspot: true, // <-- Defaults to false
@@ -19,6 +19,11 @@ export default {
       name: "attribution",
       type: "string",
       title: "Attribution",
+    },
+    {
+      name: "image",
+      title: "Gallery",
+      type: "gallery",
     },
   ],
 };

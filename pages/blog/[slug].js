@@ -14,12 +14,13 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Post = ({ post, slug, mainImage, title }) => {
+const Post = ({ post, slug }) => {
   const [postData, setPost] = useState(null);
-  const headImage = `(${post?.mainImage?.asset?.url})`;
-  Header2.imgsrc = headImage;
 
-  Header2.title = [`(post?.title)`];
+  const headImage = post?.mainImage?.asset?.url;
+  Header2.imgsrc = headImage;
+  const headtitle = post?.title;
+  Header2.title = headtitle;
 
   useEffect(() => {
     sanityClient
@@ -113,4 +114,5 @@ export async function getStaticProps(context) {
     },
   };
 }
+
 export default Post;

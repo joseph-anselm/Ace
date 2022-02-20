@@ -5,6 +5,14 @@ export default {
 
   fields: [
     {
+      name: "caption",
+      type: "string",
+      title: "Caption",
+      options: {
+        isHighlighted: true, // <-- make this field easily accessible
+      },
+    },
+    {
       name: "images",
       type: "array",
       title: "Images",

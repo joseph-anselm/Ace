@@ -18,7 +18,11 @@
 .section2tabs {
   padding: 5px 10px;
 }
-
+.map iframe {
+  width: 100%;
+  max-height: 350px;
+  margin-bottom: 50px;
+}
 /* media queries */
 
 @media screen and (max-width: 600px) {

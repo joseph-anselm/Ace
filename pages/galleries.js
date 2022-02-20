@@ -15,16 +15,17 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Galleries = ({ gallery }) => {
+const Galleries = ({ gallery, caption, images }) => {
   const [postData, setPost] = useState("");
 
-  const postItems = groq`
-*[_type == "gallery"]  {  
-  "galleryImage" :  images{
-    asset->
-  },
- 
-  
+  const postItems = `
+*[_type == "gallery"]*[].images  {  
+  images,
+  caption,
+  images[0]{
+    asset->{
+     url
+    }},  
   
 }`;
 
@@ -33,26 +34,39 @@ const Galleries = ({ gallery }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, []);
+  }, [gallery]);
 
   return (
     <div>
       <div>
-        {gallery?.galleryImage && (
-          <img src={urlFor(gallery?.galleryImage).url()} />
-        )}
+        <img src={gallery?.images?.asset?.url} />
+        <p>{gallery?.caption}</p>
       </div>
+
+      {gallery.images && (
+        <div>
+          <img src={gallery.image} />
+          <p>{gallery?.caption}</p>
+        </div>
+      )}
+      {gallery.imageUrls && (
+        <div>
+          <img src={gallery?.imageUrls} />
+        </div>
+      )}
     </div>
   );
 };
 
-const query = groq`
-*[_type == "gallery"]  { 
-  
+const query = `
+*[_type == "gallery"][0]{   
  
- "galleryImage" :  images{
-    asset->
-  },
+  "imageUrls": images[3].asset->url,
+caption,
+"image": images[2]{
+  asset->{    
+    url,
+  }},
  
 }`;
 export async function getStaticProps() {

@@ -99,6 +99,25 @@ const contact = () => {
         </Container>
       </>
 
+      {/* map section */}
+
+      <>
+        <Col fluid>
+          <div className={styles.map}>
+            <iframe
+              width="1600"
+              height="400"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=44%20Olisa%20street%20Ijebu%20Ode&t=k&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+          </div>
+        </Col>
+      </>
+
       {/* Section 2 */}
       <>
         <Container className={styles.section2}>
