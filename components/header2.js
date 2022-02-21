@@ -27,11 +27,9 @@ const Header2 = ({ title }) => {
           </button>
         </div>
         <Breadcrumb className={styles.breadcrumb}>
-          <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="https://getbootstrap.com/docs/4.0/components/breadcrumb/">
-            Library
-          </Breadcrumb.Item>
-          <Breadcrumb.Item active>Data</Breadcrumb.Item>
+          <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+          <Breadcrumb.Item href="/blog">Blog</Breadcrumb.Item>
+          <Breadcrumb.Item active>current page</Breadcrumb.Item>
         </Breadcrumb>
       </div>
     </div>

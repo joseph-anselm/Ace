@@ -99,11 +99,18 @@ export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
   const author = await client.fetch(query, { slug });
-  return {
-    props: {
-      author,
-    },
-  };
+
+  if (!author) {
+    return {
+      notfound: true,
+    };
+  } else {
+    return {
+      props: {
+        author,
+      },
+    };
+  }
 }
 
 export default Profile;

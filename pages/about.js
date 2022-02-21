@@ -23,7 +23,7 @@ import {
 Header2.title = "About Page";
 Header2.imgsrc = "/img/ace1.jpg";
 Header2.excerpt =
-  "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. ";
+  "We are a dedicated and focused group aiming to achieve sustainable development in Africa through research, intervention programmes and community development activities. ";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -188,8 +188,6 @@ const about = ({ author, slug }) => {
                 Various versions have evolved over the years, sometimes by
                 accident, sometimes on purpose (injected humour and the like).
               </p>
-            </Col>
-            <Col xs={12} md={6}>
               <p>
                 Many desktop publishing packages and web page editors now use
                 Lorem Ipsum as their default model text, and a search for 'lorem
@@ -197,14 +195,45 @@ const about = ({ author, slug }) => {
                 Various versions have evolved over the years, sometimes by
                 accident, sometimes on purpose (injected humour and the like).
               </p>
+            </Col>
+            <Col xs={12} md={6}>
+              <h3>Our Objectives</h3>
               <p>
                 <ul>
-                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
-                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
-                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
-                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
-                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
-                  <li>Contrary to popular belief, Lorem Ipsum is not simply</li>
+                  <li>
+                    To carry out research which are related to achieving
+                    sustainable developments in developing countries.
+                  </li>
+                  <li>
+                    To carry out research which are related to achieving
+                    sustainable developments in developing countries.
+                  </li>
+                  <li>
+                    To sensitize the public on research outcomes, especially
+                    relating to Sustainable development goals (SDGs).
+                  </li>
+                  <li>
+                    To develop intervention programmes which is targeted at
+                    ensuring sustainable developments in developing countries.
+                  </li>
+                  <li>
+                    To contribute immensely through community development
+                    programmes which will empower developing countries to meet
+                    up with the SDGs.
+                  </li>
+                  <li>
+                    To coordinate programmes in both rural and urban areas that
+                    is aimed at empowering developing countries to attain
+                    sustainable developments.
+                  </li>
+                  <li>
+                    To empower the less privilege in skills to that will be of
+                    economic values.
+                  </li>
+                  <li>
+                    To advocate for sustainable development in developing
+                    countries.
+                  </li>
                 </ul>
               </p>
             </Col>

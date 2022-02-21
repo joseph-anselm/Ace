@@ -61,9 +61,9 @@ const Galleries = ({ gallery, caption, images }) => {
 const query = `
 *[_type == "gallery"][0]{   
  
-  "imageUrls": images[3].asset->url,
+  "imageUrls": images[].asset->url,
 caption,
-"image": images[2]{
+images{
   asset->{    
     url,
   }},
