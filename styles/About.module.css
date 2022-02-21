@@ -14,8 +14,11 @@
 }
 
 .section2tab1 {
-  margin-top: 30px;
   text-align: left;
+}
+
+.section2tab2 {
+  margin-top: 30px;
 }
 /* section 2 */
 .section2 {
@@ -30,7 +33,7 @@
 .section2 img {
   width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: 400px;
   object-fit: cover;
 }
 .section3 {

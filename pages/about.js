@@ -156,48 +156,7 @@ const about = ({ author, slug }) => {
           </Col>
           <Col xs={12} md={6}>
             <div className={styles.section2tab1}>
-              <h1>Our Journey</h1>
-              <p>
-                Contrary to popular belief, Lorem Ipsum is not simply random
-                text
-              </p>
-              <p>Contrary to popular belief, Lorem Ipsum is not</p>
-              <p>Contrary to popular belief, Lorem Ipsum</p>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-
-      {/* section 4 */}
-      <>
-        <Container className={styles.section4}>
-          <Row className={styles.section4}>
-            <Col xs={12} md={6}>
-              <p>
-                Many desktop publishing packages and web page editors now use
-                Lorem Ipsum as their default model text, and a search for 'lorem
-                ipsum' will uncover many web sites still in their infancy.
-                Various versions have evolved over the years, sometimes by
-                accident, sometimes on purpose (injected humour and the like).
-              </p>
-
-              <p>
-                Many desktop publishing packages and web page editors now use
-                Lorem Ipsum as their default model text, and a search for 'lorem
-                ipsum' will uncover many web sites still in their infancy.
-                Various versions have evolved over the years, sometimes by
-                accident, sometimes on purpose (injected humour and the like).
-              </p>
-              <p>
-                Many desktop publishing packages and web page editors now use
-                Lorem Ipsum as their default model text, and a search for 'lorem
-                ipsum' will uncover many web sites still in their infancy.
-                Various versions have evolved over the years, sometimes by
-                accident, sometimes on purpose (injected humour and the like).
-              </p>
-            </Col>
-            <Col xs={12} md={6}>
-              <h3>Our Objectives</h3>
+              <h1>Our Objectives</h1>
               <p>
                 <ul>
                   <li>
@@ -236,10 +195,10 @@ const about = ({ author, slug }) => {
                   </li>
                 </ul>
               </p>
-            </Col>
-          </Row>
-        </Container>
-      </>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
       <>
         <Container className={styles.section5}>
