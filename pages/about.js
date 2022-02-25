@@ -209,11 +209,10 @@ const about = ({ author, slug }) => {
                   Specialist moves? we are a company that can deliver it always
                 </h3>
                 <p>
-                  Richard McClintock, a Latin professor at Hampden-Sydney
-                  College in Virginia, looked up one of the more obscure Latin
-                  words, consectetur, from a Lorem Ipsum passage, and going
-                  through the cites of the word in classical literature,
-                  discovered the undoubtable source
+                  We are committed to see Africa develop by bridging the gap
+                  through research, intervention programmes and community
+                  development activities. We constantly ensure our cause is
+                  maintained through strategic activities
                 </p>
                 <Button variant="dark" size="md">
                   Be a part

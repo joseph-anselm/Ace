@@ -19,18 +19,37 @@ const Menubar = () => {
       <div className="bg-dark">
         <ul className="nav bg-dark justify-content-end container">
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href="https://twitter.com/AceInitiatives">
               <i className="bi bi-twitter" style={{ color: "white" }}></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="https://web.facebook.com/aceinitiatives">
               <i className="bi bi-facebook" style={{ color: "white" }}></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a
+              class="nav-link"
+              href="https://www.instagram.com/official.aceinitiatives/"
+            >
               <i className="bi bi-instagram" style={{ color: "white" }}></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.linkedin.com/company/aceinitiatives/"
+            >
+              <i className="bi bi-linkedin" style={{ color: "white" }}></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://www.youtube.com/channel/UC0fK9gU51kYvaPJvsDdbN5g"
+            >
+              <i className="bi bi-youtube" style={{ color: "white" }}></i>
             </a>
           </li>
         </ul>

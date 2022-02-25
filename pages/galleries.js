@@ -15,14 +15,14 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Galleries = ({ gallery, caption, images }) => {
+const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
   const [postData, setPost] = useState("");
 
   const postItems = `
-*[_type == "gallery"]*[].images  {  
+*[_type == "gallery"][0] {  
   images,
   caption,
-  images[0]{
+  images[]{
     asset->{
      url
     }},  
@@ -34,36 +34,39 @@ const Galleries = ({ gallery, caption, images }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [gallery]);
+  }, [images]);
 
   return (
     <div>
       <div>
-        <img src={gallery?.images?.asset?.url} />
+        <img src={gallery.imageUrls} width={400} />
         <p>{gallery?.caption}</p>
       </div>
 
-      {gallery.images && (
-        <div>
-          <img src={gallery.image} />
-          <p>{gallery?.caption}</p>
-        </div>
-      )}
-      {gallery.imageUrls && (
-        <div>
-          <img src={gallery?.imageUrls} />
-        </div>
-      )}
+      <div>
+        {galleries &&
+          galleries.map(
+            ({ gallery }) =>
+              images && (
+                <div>
+                  <img src={gallery.images.asset.url} width={400} />
+                </div>
+              )
+          )}
+        ;
+        <img src={gallery.images?.asset?.url} width={400} />
+        <p>{caption}test</p>
+      </div>
     </div>
   );
 };
 
-const query = `
+const query = groq`
 *[_type == "gallery"][0]{   
  
-  "imageUrls": images[].asset->url,
+  "imageUrls": images[*].asset->url,
 caption,
-images{
+images[0]{
   asset->{    
     url,
   }},
