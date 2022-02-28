@@ -29,7 +29,6 @@ function Layouts({ children, title, imgsrc }) {
       {showHeader3 && <Header2 />}
       {showHeader4 && <Header2 />}
       {showHeader5 && <Header2 />}
-      {showHeader6 && <Header2 />}
       {showHeader7 && <Header2 />}
       {children}
       {showBlog && <Homeblog />}

@@ -3,80 +3,157 @@ import groq from "groq";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 import Header2 from "../../components/header2";
+
+import Link from "next/link";
 import client from "../../client";
 import React, { useState, useEffect } from "react";
 import styles from "../../styles/singlepost.module.css";
 import sanityClient from "../../client";
 import Layouts from "../../components/layouts";
 
+import {
+  Container,
+  Nav,
+  Navbar,
+  ProgressBar,
+  Card,
+  Button,
+  Row,
+  Col,
+} from "react-bootstrap";
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
   return builder.image(source);
 }
 
-const Post = ({ post, slug }) => {
+const Post = ({ post, slug, posts }) => {
   const [postData, setPost] = useState(null);
 
-  const headImage = post?.mainImage?.asset?.url;
-  Header2.imgsrc = headImage;
   const headtitle = post?.title;
   Header2.title = headtitle;
 
   useEffect(() => {
     sanityClient
       .fetch(
-        `*[slug.current == "${slug}"]{
-                title,
-                _id,
-                slug,
-                mainImage{
-                    asset->{
-                        _id,
-                        url
-                    }
-                },
-                body,
-                "name": author->name,
-                "authorImage": author->image
-            }`
+        groq`
+        *[_type == "post"] | order(date desc, _createdAt desc) {
+          _id,
+          title,
+          slug,
+          excerpt,
+          author -> {
+            name,
+            image {
+              asset ->
+            }
+          },
+          mainImage {
+            asset -> {
+              _id,
+              url
+            }
+          },
+          categories[0] ->,
+          publishedAt,
+          body,
+        }`
       )
       .then((data) => setPost(data))
       .catch(console.error);
-  }, []);
+  }, [post]);
 
   return (
-    <article>
-      <h1>{post?.title}</h1>
-      <span>By {post?.name}</span>
-      {post?.categories && (
-        <ul>
-          Posted in
-          {categories.map((category) => (
-            <li key={category}>{category}</li>
-          ))}
-        </ul>
-      )}
-      {post?.authorImage && (
-        <div>
-          <img src={urlFor(post?.authorImage).width(100).url()} />
-        </div>
-      )}
-      <BlockContent
-        blocks={post?.body}
-        imageOptions={{ w: 320, h: 240, fit: "max" }}
-        {...client.config()}
-      />
-
-      <div>
+    <>
+      <div className={styles.postimage}>
         <img
           src={post?.mainImage?.asset?.url}
-          width={250}
-          height={200}
           alt={post?.mainImage}
           className={styles.mainImage}
         />
+        <h1>{post?.title}</h1>
       </div>
-    </article>
+      <Container>
+        <Row>
+          <Col xs={12} md={8}>
+            <article>
+              {post?.categories && (
+                <ul>
+                  Posted in
+                  {categories.map((category) => (
+                    <li key={category}>{category}</li>
+                  ))}
+                </ul>
+              )}
+              {post?.authorImage && (
+                <div className={styles.authorimage}>
+                  <img src={urlFor(post?.authorImage).width(50).url()} />
+                  <span>By {post?.name}</span>
+                </div>
+              )}
+              <BlockContent
+                blocks={post?.body}
+                imageOptions={{ w: 320, h: 240, fit: "max" }}
+                {...client.config()}
+              />
+            </article>
+          </Col>
+          <Col xs={12} md={4}>
+            {postData &&
+              postData
+                .map(
+                  (
+                    {
+                      _id,
+                      title = "",
+                      slug = "",
+                      publishedAt = "",
+                      mainImage = "",
+                      excerpt = "",
+                    },
+                    allPosts,
+                    post,
+                    posts
+                  ) =>
+                    post && (
+                      <Col md={12}>
+                        <div className={styles.sidepost}>
+                          <div>
+                            <div class="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow">
+                              <Link
+                                href="/blog/[slug]"
+                                as={`/blog/${slug.current}`}
+                                className={styles.bloglinks}
+                              >
+                                <a className={styles.bloglinks}>
+                                  <img
+                                    src={mainImage?.asset?.url}
+                                    width={100}
+                                    alt={mainImage?.alt}
+                                    className={styles.section6image}
+                                  />
+
+                                  <h6>
+                                    {title.replace(/^(.{50}[^\s]*).*/, "$1")}
+                                  </h6>
+
+                                  <p>
+                                    {excerpt?.replace(/^(.{20}[^\s]*).*/, "$1")}
+                                    ...
+                                  </p>
+                                </a>
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </Col>
+                    )
+                )
+                .slice(0, 4)}
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
@@ -118,6 +195,7 @@ export async function getStaticProps(context) {
       props: {
         post,
         notfound: true,
+        posts: post,
       },
     };
   }

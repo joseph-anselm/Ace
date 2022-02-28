@@ -32,68 +32,85 @@ const index = ({}) => {
             </div>
             <Row>
               <Col xs={6} md={3}>
-                <div>
-                  <Image
-                    src="/img/exp1.jpg"
-                    width={200}
-                    height={200}
-                    className={styles.tabimage}
-                  />
-                  <h3>Expertise</h3>
-                  <p>
-                    We welcome skilled and experienced professionals who are
-                    willing to commit to the cause of the organization. your
-                    expertise can make the work faster
-                  </p>
-                </div>
+                <Link href="#">
+                  <a>
+                    <div>
+                      <Image
+                        src="/img/exp1.jpg"
+                        width={200}
+                        height={200}
+                        className={styles.tabimage}
+                      />
+                      <h3>Expertise</h3>
+                      <p>
+                        We welcome skilled and experienced professionals who are
+                        willing to commit to the cause of the organization. your
+                        expertise can make the work faster
+                      </p>
+                    </div>
+                  </a>
+                </Link>
               </Col>
               <Col xs={6} md={3}>
-                <div>
-                  <Image
-                    src="/img/donation2.jpg"
-                    width={200}
-                    height={200}
-                    className={styles.tabimage}
-                  />
-                  <h3>Donations</h3>
-                  <p>
-                    We rely strongly on donations and fundings to enable us
-                    carry out our specific activities, every penny goes along
-                    way in making that required change we truly desire.
-                  </p>
-                </div>
+                <Link href="#">
+                  <a>
+                    <div>
+                      <Image
+                        src="/img/donation2.jpg"
+                        width={200}
+                        height={200}
+                        className={styles.tabimage}
+                      />
+                      <h3>Donations</h3>
+                      <p>
+                        We rely strongly on donations and fundings to enable us
+                        carry out our specific activities, every penny goes
+                        along way in making that required change we truly
+                        desire.
+                      </p>
+                    </div>
+                  </a>
+                </Link>
               </Col>
               <Col xs={6} md={3}>
-                <div>
-                  <Image
-                    src="/img/volunteer1.jpg"
-                    width={200}
-                    height={200}
-                    className={styles.tabimage}
-                  />
-                  <h3>Volunteers</h3>
-                  <p>
-                    Our pool of Volunteers have made many of our accomplishments
-                    possible, you too can make a difference by becoming a
-                    volunteer member
-                  </p>
-                </div>
+                <Link href="#">
+                  <a>
+                    <div>
+                      <Image
+                        src="/img/volunteer1.jpg"
+                        width={200}
+                        height={200}
+                        className={styles.tabimage}
+                      />
+                      <h3>Volunteers</h3>
+                      <p>
+                        Our pool of Volunteers have made many of our
+                        accomplishments possible, you too can make a difference
+                        by becoming a volunteer member
+                      </p>
+                    </div>
+                  </a>
+                </Link>
               </Col>
               <Col xs={6} md={3}>
-                <div>
-                  <Image
-                    src="/img/research1.jpg"
-                    width={200}
-                    height={200}
-                    className={styles.tabimage}
-                  />
-                  <h3>Research</h3>
-                  <p>
-                    Research & analysis is the bedrock upon which our major
-                    activities is built upon, you can volunteer as a key member
-                    of our research team and make a difference today
-                  </p>
-                </div>
+                <Link href="#">
+                  <a>
+                    <div>
+                      <Image
+                        src="/img/research1.jpg"
+                        width={200}
+                        height={200}
+                        className={styles.tabimage}
+                      />
+                      <h3>Research</h3>
+                      <p>
+                        Research & analysis is the bedrock upon which our major
+                        activities is built upon, you can volunteer as a key
+                        member of our research team and make a difference today
+                      </p>
+                    </div>
+                  </a>
+                </Link>
               </Col>
             </Row>
           </Container>

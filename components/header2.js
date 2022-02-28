@@ -12,7 +12,7 @@ const Header2 = ({ title }) => {
     <div
       className={styles.hero2}
       style={{
-        backgroundImage: `url(${Header2.imgsrc})`,
+        background: `url(${Header2.imgsrc})`,
         objectFit: "contain",
       }}
     >

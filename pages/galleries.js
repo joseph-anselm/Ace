@@ -15,7 +15,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
+const Galleries = ({ gallery, caption, images, galleries }) => {
   const [postData, setPost] = useState("");
 
   const postItems = `
@@ -47,9 +47,9 @@ const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
         {galleries &&
           galleries.map(
             ({ gallery }) =>
-              images && (
+              gallery && (
                 <div>
-                  <img src={gallery.images.asset.url} width={400} />
+                  <img src={mages.asset.url} width={400} />
                 </div>
               )
           )}
@@ -63,8 +63,9 @@ const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
 
 const query = groq`
 *[_type == "gallery"][0]{   
+  
  
-  "imageUrls": images[*].asset->url,
+  "imageUrls": images[].asset->url,
 caption,
 images[0]{
   asset->{    
