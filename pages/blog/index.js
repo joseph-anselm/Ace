@@ -27,7 +27,7 @@ function urlFor(source) {
 
 Header2.title = "Post, News and Events";
 Header2.imgsrc = "/img/ace3.jpg";
-const Index = ({ posts, post }) => {
+const Index = ({ posts, post, slug }) => {
   const [postData, setPost] = useState(null);
 
   const headtitle = post?.title;
@@ -61,75 +61,70 @@ const Index = ({ posts, post }) => {
       )
       .then((data) => setPost(data))
       .catch(console.error);
-  }, []);
+  }, [slug]);
 
   return (
-    <div>
-      <h1>Welcome to a blog!</h1>
-      {posts &&
-        posts.map(
-          ({
-            _id,
-            title = "",
-            slug = "",
-            publishedAt = "",
-            excerpt = "",
-            mainImage = "",
-          }) =>
-            posts && (
-              <div key={_id}>
-                <Container>
-                  <Row>
-                    <Col
-                      xs={6}
-                      md={3}
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <Card style={{ display: "flex" }}>
-                        <Card.Img variant="top" src={mainImage?.asset?.url} />
-                        <Card.Body>
-                          <Card.Title>{title}</Card.Title>
-                          <Card.Text>{excerpt}</Card.Text>
-                          <Button variant="primary">
-                            <Link
-                              href="/blog/[slug]"
-                              as={`/blog/${slug.current}`}
-                            >
-                              <a
-                                style={{
-                                  width: "15rem",
-                                  flex: "3",
-                                  color: "white",
-                                }}
+    <>
+      <Container>
+        <h3>Our recent Post</h3>
+        <Row>
+          <Col className={styles.cardpage}>
+            {posts &&
+              posts.map(
+                ({
+                  _id,
+                  title = "",
+                  slug = "",
+                  publishedAt = "",
+                  excerpt = "",
+                  mainImage = "",
+                }) =>
+                  posts && (
+                    <div key={_id}>
+                      <div className={styles.cards}>
+                        <Card style={{ width: "15em" }}>
+                          <Card.Img variant="top" src={mainImage?.asset?.url} />
+                          <Card.Body>
+                            <Card.Title>{title}</Card.Title>
+                            <Card.Text>{excerpt}</Card.Text>
+                            <Button variant="primary">
+                              <Link
+                                href="/blog/[slug]"
+                                as={`/blog/${slug.current}`}
                               >
-                                Read more
-                              </a>
-                            </Link>
-                          </Button>
-                        </Card.Body>
-                        <Card.Footer>
-                          <small className="text-muted">
-                            Last updated {publishedAt}
-                          </small>
-                        </Card.Footer>
-                      </Card>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-            )
-        )}
-    </div>
+                                <a
+                                  style={{
+                                    color: "white",
+                                    textDecoration: "none",
+                                  }}
+                                >
+                                  Read more
+                                </a>
+                              </Link>
+                            </Button>
+                          </Card.Body>
+                          <Card.Footer>
+                            <small className="text-muted">
+                              Last updated {publishedAt}
+                            </small>
+                          </Card.Footer>
+                        </Card>
+                      </div>
+                    </div>
+                  )
+              )}
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 
 export async function getStaticProps() {
-  const posts = await client.fetch(groq`
+  const allPosts = await client.fetch(groq`
       *[_type == "post" && publishedAt < now()] | order(publishedAt desc){
-        title,   
+        title, 
+        slug,  
         "name": author->name,
         mainImage{
           asset->{
@@ -146,7 +141,7 @@ export async function getStaticProps() {
     `);
   return {
     props: {
-      posts,
+      posts: allPosts,
     },
   };
 }

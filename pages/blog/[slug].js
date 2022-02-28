@@ -119,37 +119,42 @@ const Post = ({ post, slug, posts }) => {
                       <Col md={12}>
                         <div className={styles.sidepost}>
                           <div>
-                            <div class="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow">
-                              <Link
-                                href="/blog/[slug]"
-                                as={`/blog/${slug.current}`}
-                                className={styles.bloglinks}
-                              >
-                                <a className={styles.bloglinks}>
-                                  <img
-                                    src={mainImage?.asset?.url}
-                                    width={100}
-                                    alt={mainImage?.alt}
-                                    className={styles.section6image}
-                                  />
+                            <Row>
+                              <div class="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow">
+                                <Link
+                                  href="/blog/[slug]"
+                                  as={`/blog/${slug.current}`}
+                                  className={styles.bloglinks}
+                                >
+                                  <a className={styles.bloglinks}>
+                                    <img
+                                      src={mainImage?.asset?.url}
+                                      width={100}
+                                      alt={mainImage?.alt}
+                                      className={styles.section6image}
+                                    />
 
-                                  <h6>
-                                    {title.replace(/^(.{50}[^\s]*).*/, "$1")}
-                                  </h6>
+                                    <h6>
+                                      {title.replace(/^(.{50}[^\s]*).*/, "$1")}
+                                    </h6>
 
-                                  <p>
-                                    {excerpt?.replace(/^(.{20}[^\s]*).*/, "$1")}
-                                    ...
-                                  </p>
-                                </a>
-                              </Link>
-                            </div>
+                                    <p>
+                                      {excerpt?.replace(
+                                        /^(.{20}[^\s]*).*/,
+                                        "$1"
+                                      )}
+                                      ...
+                                    </p>
+                                  </a>
+                                </Link>
+                              </div>
+                            </Row>
                           </div>
                         </div>
                       </Col>
                     )
                 )
-                .slice(0, 4)}
+                .slice(0, 10)}
           </Col>
         </Row>
       </Container>

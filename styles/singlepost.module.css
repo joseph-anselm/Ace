@@ -38,8 +38,11 @@
 /* blog posts pages */
 .cardpage {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .cardpage .cards {
+  padding: 5px 10px;
 }
 
 /* media queries */
