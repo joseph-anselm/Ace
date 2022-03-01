@@ -66,7 +66,6 @@ const Index = ({ posts, post, slug }) => {
   return (
     <>
       <Container>
-        <h3>Our recent Post</h3>
         <Row>
           <Col className={styles.cardpage}>
             {posts &&
