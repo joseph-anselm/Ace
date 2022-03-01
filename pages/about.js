@@ -58,11 +58,10 @@ const about = ({ author, slug }) => {
           <Col xs={12} md={4}>
             <div className={styles.section1tabs}>
               <img src="/img/research2.jpg" width={250} height={250} />
-              <h5>There are many variations</h5>
+              <h5>Making a Difference</h5>
               <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected
+                Our ecosystem is a built around volunteers and professionals who
+                are passioante about making a difference in our world.
               </p>
             </div>
           </Col>
@@ -70,11 +69,11 @@ const about = ({ author, slug }) => {
             {" "}
             <div className={styles.section1tabs}>
               <img src="/img/research3.jpg" width={250} height={250} />
-              <h5>There are many variations</h5>
+              <h5>Re-Invent</h5>
               <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected
+                We are passionate about reinventing a structure that will
+                enhance a more civil, positive and modern Africa. We Reinvent
+                always!
               </p>
             </div>
           </Col>
@@ -82,11 +81,11 @@ const about = ({ author, slug }) => {
             {" "}
             <div className={styles.section1tabs}>
               <img src="/img/research1.jpg" width={250} height={250} />
-              <h5>There are many variations</h5>
+              <h5>Research</h5>
               <p>
-                There are many variations of passages of Lorem Ipsum available,
-                but the majority have suffered alteration in some form, by
-                injected
+                Our primary tool of extensive research expertise is the bedrock
+                upon which our various activities and humanitarian services are
+                developed.
               </p>
             </div>
           </Col>
@@ -212,7 +211,8 @@ const about = ({ author, slug }) => {
             <Col xs={12} md={6}>
               <div>
                 <h3>
-                  Specialist moves? we are a company that can deliver it always
+                  Wanna make a difference? we are a group that can deliver it
+                  always
                 </h3>
                 <p>
                   We are committed to see Africa develop by bridging the gap

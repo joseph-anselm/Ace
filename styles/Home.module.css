@@ -123,6 +123,10 @@ a .bloglinks {
   font-size: 1.25rem;
   line-height: 1.5;
 }
+.section6 {
+  display: flex;
+  overflow: hidden;
+}
 
 .logo {
   height: 1em;
@@ -289,8 +293,12 @@ a .bloglinks {
 .section6title h2 span {
   color: #3c9234;
 }
-.section6tabs {
+.p-3 {
   text-align: center;
+  flex: 1;
+  padding-bottom: 100%;
+  margin-bottom: -100%;
+  border: 1px solid red;
 }
 .cards {
   max-height: 200px;

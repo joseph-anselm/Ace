@@ -52,7 +52,7 @@ const Homeblog = ({ posts, post }) => {
   return (
     <div className={styles.section6}>
       <Container>
-        <Row>
+        <Row className={styles.section6}>
           <div className={styles.section6title}>
             <h2>
               Blogs <span> & </span>Events
@@ -76,9 +76,9 @@ const Homeblog = ({ posts, post }) => {
                 ) =>
                   post && (
                     <Col xs={6} md={3} justify-content-md-center>
-                      <div className={styles.section6tabs}>
-                        <div>
-                          <div class="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow cards">
+                      <div>
+                        <div className="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow section6tabs">
+                          <div>
                             <Link
                               href="/blog/[slug]"
                               as={`/blog/${slug.current}`}
