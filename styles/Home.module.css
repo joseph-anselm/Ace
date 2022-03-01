@@ -98,6 +98,13 @@ a .bloglinks {
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
+.homelinks {
+  color: #333333;
+  text-decoration: none;
+}
+.homelinks:hover {
+  color: #3c9234;
+}
 
 .card:hover,
 .card:focus,
@@ -285,11 +292,17 @@ a .bloglinks {
 .section6tabs {
   text-align: center;
 }
+.cards {
+  max-height: 200px;
+}
+.p-3 {
+  height: 230px;
+}
 .section6image {
-  border-radius: 10px;
+  border-radius: 5px;
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 150px;
   object-fit: cover;
 }
 .section6btn {
@@ -301,7 +314,7 @@ a .bloglinks {
   font-style: italic;
   text-transform: capitalize;
   font-weight: 700;
-  padding: 30px;
+  padding: 20px;
 }
 /* media queries */
 

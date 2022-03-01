@@ -88,7 +88,7 @@ const Post = ({ post, slug, posts }) => {
               {post?.authorImage && (
                 <div className={styles.authorimage}>
                   <img src={urlFor(post?.authorImage).width(50).url()} />
-                  <span>By {post?.name}</span>
+                  <span> By {post?.name}</span>
                 </div>
               )}
               <BlockContent

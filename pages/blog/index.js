@@ -86,8 +86,10 @@ const Index = ({ posts, post, slug }) => {
                           <Card.Img variant="top" src={mainImage?.asset?.url} />
                           <Card.Body>
                             <Card.Title>{title}</Card.Title>
-                            <Card.Text>{excerpt}</Card.Text>
-                            <Button variant="primary">
+                            <Card.Text>
+                              {excerpt?.replace(/^(.{40}[^\s]*).*/, "$1")}....
+                            </Card.Text>
+                            <Button variant="primary" size="sm">
                               <Link
                                 href="/blog/[slug]"
                                 as={`/blog/${slug.current}`}
@@ -125,6 +127,8 @@ export async function getStaticProps() {
       *[_type == "post" && publishedAt < now()] | order(publishedAt desc){
         title, 
         slug,  
+        excerpt,
+        publishedAt,
         "name": author->name,
         mainImage{
           asset->{

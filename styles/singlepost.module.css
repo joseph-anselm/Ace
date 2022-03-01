@@ -44,7 +44,15 @@
 .cardpage .cards {
   padding: 5px 10px;
 }
-
+.cards img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: cover;
+}
+.cards .body {
+  max-height: 120px;
+}
 /* media queries */
 @media screen and (max-width: 450px) {
   .postimage::before {

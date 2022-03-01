@@ -33,7 +33,7 @@ const index = ({}) => {
             <Row>
               <Col xs={6} md={3}>
                 <Link href="#">
-                  <a>
+                  <a className={styles.homelinks}>
                     <div>
                       <Image
                         src="/img/exp1.jpg"
@@ -53,7 +53,7 @@ const index = ({}) => {
               </Col>
               <Col xs={6} md={3}>
                 <Link href="#">
-                  <a>
+                  <a className={styles.homelinks}>
                     <div>
                       <Image
                         src="/img/donation2.jpg"
@@ -74,7 +74,7 @@ const index = ({}) => {
               </Col>
               <Col xs={6} md={3}>
                 <Link href="#">
-                  <a>
+                  <a className={styles.homelinks}>
                     <div>
                       <Image
                         src="/img/volunteer1.jpg"
@@ -94,7 +94,7 @@ const index = ({}) => {
               </Col>
               <Col xs={6} md={3}>
                 <Link href="#">
-                  <a>
+                  <a className={styles.homelinks}>
                     <div>
                       <Image
                         src="/img/research1.jpg"

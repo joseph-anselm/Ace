@@ -123,7 +123,13 @@ const about = ({ author, slug }) => {
                     <Col xs={6} md={3}>
                       <div className={styles.section3team}>
                         <Link href="/[slug]" as={`/${slug?.current}`}>
-                          <a>
+                          <a
+                            style={{
+                              color: "black",
+                              textDecoration: "none",
+                            }}
+                            className={styles.links}
+                          >
                             <div>
                               <img src={urlFor(image).url()} />
                               <h5>{name}</h5>
