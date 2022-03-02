@@ -13,7 +13,8 @@ const Header2 = ({ title }) => {
       className={styles.hero2}
       style={{
         background: `url(${Header2.imgsrc})`,
-        objectFill: "cover",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <div className={styles.headoverlay}>
@@ -28,8 +29,6 @@ const Header2 = ({ title }) => {
         </div>
         <Breadcrumb className={styles.breadcrumb}>
           <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/blog">Blog</Breadcrumb.Item>
-          <Breadcrumb.Item active>current page</Breadcrumb.Item>
         </Breadcrumb>
       </div>
     </div>
