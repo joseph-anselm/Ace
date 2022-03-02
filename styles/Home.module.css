@@ -164,7 +164,7 @@ a .bloglinks {
 }
 
 .section3tab1 {
-  background: url("../public/img/ace-banner.jpg");
+  background: url("../public/img/ace-home1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 300px;
@@ -298,7 +298,6 @@ a .bloglinks {
   flex: 1;
   padding-bottom: 100%;
   margin-bottom: -100%;
-  border: 1px solid red;
 }
 .cards {
   max-height: 200px;
