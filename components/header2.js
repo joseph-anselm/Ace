@@ -13,7 +13,7 @@ const Header2 = ({ title }) => {
       className={styles.hero2}
       style={{
         background: `url(${Header2.imgsrc})`,
-        objectFit: "contain",
+        objectFill: "cover",
       }}
     >
       <div className={styles.headoverlay}>

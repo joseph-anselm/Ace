@@ -10,16 +10,16 @@ import groq from "groq";
 Header2.title = "Pictures speaks volume";
 Header2.imgsrc = "/img/ace3.jpg";
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source);
 }
 
-const Galleries = ({ gallery, caption, images, galleries }) => {
+const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
   const [postData, setPost] = useState("");
 
   const postItems = `
-*[_type == "gallery"][0] {  
+*[_type == "gallery"]{  
   images,
   caption,
   images[]{
@@ -34,12 +34,12 @@ const Galleries = ({ gallery, caption, images, galleries }) => {
       .fetch(postItems)
       .then((data) => setPost(data))
       .catch(console.error);
-  }, [images]);
+  }, []);
 
   return (
     <div>
       <div>
-        <img src={gallery.imageUrls} width={400} />
+        <img src={imageUrls} width={400} />
         <p>{gallery?.caption}</p>
       </div>
 
@@ -49,7 +49,7 @@ const Galleries = ({ gallery, caption, images, galleries }) => {
             ({ gallery }) =>
               gallery && (
                 <div>
-                  <img src={mages.asset.url} width={400} />
+                  <img src={images.asset.url} width={400} />
                 </div>
               )
           )}
@@ -65,7 +65,7 @@ const query = groq`
 *[_type == "gallery"][0]{   
   
  
-  "imageUrls": images[].asset->url,
+  "imageUrls": images[image].asset->url,
 caption,
 images[0]{
   asset->{    

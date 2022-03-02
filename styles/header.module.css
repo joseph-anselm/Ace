@@ -70,9 +70,9 @@
   width: 100%;
   /* background: url("../public/img/ace-banner.jpg"); */
   background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: contain;
+  object-fit: cover;
   color: #ffffff;
+  background-position: center top;
 }
 .hero2:before {
   content: "";
