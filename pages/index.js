@@ -157,24 +157,25 @@ const index = ({}) => {
                 >
                   <Image
                     variant="top"
-                    src="/img/ace1.jpg"
+                    src="/img/ace-waste.jpg"
                     width={250}
                     height={200}
                   />
 
                   <Card.Body className={styles.cardbody}>
                     <ProgressBar
-                      now={60}
+                      now={30}
                       variant="success"
                       color="primary"
                       className={styles.progress}
                     />
                     <span>
-                      <Card.Text>Raised: $300,000</Card.Text>
-                      <Card.Text>Goal: $500, 000</Card.Text>
+                      <Card.Text>Raised: ₦300,000</Card.Text>
+                      <Card.Text>Goal: ₦1000, 000</Card.Text>
                     </span>
                     <Card.Title className="mb-5">
-                      African children need more food and water
+                      Clear plastic wastes in drainages and streams in rural
+                      areas. Ogun State, Nigeria
                     </Card.Title>
                     <Button variant="dark" className={styles.section4btn}>
                       Donate Now
@@ -189,7 +190,7 @@ const index = ({}) => {
                 >
                   <Image
                     variant="top"
-                    src="/img/ace1.jpg"
+                    src="/img/ace-training.jpg"
                     width={250}
                     height={200}
                   />
@@ -202,11 +203,12 @@ const index = ({}) => {
                       className={styles.progress}
                     />
                     <span>
-                      <Card.Text>Raised: $300,000</Card.Text>
-                      <Card.Text>Goal: $500, 000</Card.Text>
+                      <Card.Text>Raised: ₦300,000</Card.Text>
+                      <Card.Text>Goal: ₦500, 000</Card.Text>
                     </span>
                     <Card.Title className="mb-5">
-                      African children need more food and water
+                      Waste management sensitization in rural areas in Ogun
+                      State, Nigeria.
                     </Card.Title>
                     <Button variant="dark" className={styles.section4btn}>
                       Donate Now
@@ -221,7 +223,7 @@ const index = ({}) => {
                 >
                   <Image
                     variant="top"
-                    src="/img/ace1.jpg"
+                    src="/img/ace-ppe.jpg"
                     width={250}
                     height={200}
                   />
@@ -234,11 +236,12 @@ const index = ({}) => {
                       className={styles.progress}
                     />
                     <span>
-                      <Card.Text>Raised: $300,000</Card.Text>
-                      <Card.Text>Goal: $500, 000</Card.Text>
+                      <Card.Text>Raised: ₦300,000</Card.Text>
+                      <Card.Text>Goal: ₦500, 000</Card.Text>
                     </span>
                     <Card.Title className="mb-5">
-                      African children need more food and water
+                      Personal protective equipment for waste workers in Ogun
+                      State, Nigeria.
                     </Card.Title>
                     <Button variant="dark" className={styles.section4btn}>
                       Donate Now

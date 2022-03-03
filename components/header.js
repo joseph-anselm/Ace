@@ -8,7 +8,9 @@ const Header = () => {
         <br /> focused group
       </h1>
       <p>
-        We aim to see Africa develop through research and strategic orientation
+        We aim to see Africa develop through through research, intervention
+        programmes, effective communications and community development
+        activities.
       </p>
       <div className="bton">
         <button className="headbutton">
