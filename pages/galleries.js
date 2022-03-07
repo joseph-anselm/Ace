@@ -1,7 +1,7 @@
 import styles from "../styles/Gallery.module.css";
 import Header2 from "../components/header2";
 import client from "../client";
-import Img from "next/image";
+import Image from "next/image";
 import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client";
@@ -15,7 +15,14 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
+const Galleries = ({
+  gallery,
+  caption,
+  images,
+  galleries,
+  imageUrls,
+  imagegallery,
+}) => {
   const [postData, setPost] = useState("");
 
   const postItems = `
@@ -39,22 +46,18 @@ const Galleries = ({ gallery, caption, images, galleries, imageUrls }) => {
   return (
     <div>
       <div>
-        <img src={imageUrls} width={400} />
+        <img src={gallery.imageUrls} width={50} />
         <p>{gallery?.caption}</p>
       </div>
 
       <div>
-        {galleries &&
-          galleries.map(
-            ({ gallery }) =>
-              gallery && (
-                <div>
-                  <img src={images.asset.url} width={400} />
-                </div>
-              )
-          )}
-        ;
-        <img src={gallery.images?.asset?.url} width={400} />
+        {/* {gallery.map((galleries) => {
+          <div>
+            <img src={galleries.imageUrls} width={400} />
+          </div>;
+        })}
+        ; */}
+        <img src={urlFor(gallery.imagegallery).url()} width={50} />
         <p>{caption}test</p>
       </div>
     </div>
@@ -65,9 +68,9 @@ const query = groq`
 *[_type == "gallery"][0]{   
   
  
-  "imageUrls": images[image].asset->url,
+  "imageUrls": images[0].asset->url,
 caption,
-images[0]{
+'imagegallery':images[2]{
   asset->{    
     url,
   }},
