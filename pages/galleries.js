@@ -14,63 +14,40 @@ const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source);
 }
-
-const Galleries = ({
-  gallery,
-  caption,
-  images,
-  galleries,
-  imageUrls,
-  imagegallery,
-}) => {
+export default function Galleries() {
   const [postData, setPost] = useState("");
 
   const postItems = `
-*[_type == "gallery"]{  
-  images,
+*[_type == 'gallery'][0]{
   caption,
   images[]{
     asset->{
-     url
-    }},  
-  
+      url
+    }
+  }
 }`;
 
   useEffect(() => {
-    sanityClient
-      .fetch(postItems)
-      .then((data) => setPost(data))
-      .catch(console.error);
+    sanityClient.fetch(postItems).then((data) => setPost(data));
   }, []);
 
-  return (
-    <div>
-      <div>
-        <img src={gallery.imageUrls} width={50} />
-        <p>{gallery?.caption}</p>
-      </div>
+  if (!postData) return "Loading...";
 
-      <div>
-        {/* {gallery.map((galleries) => {
-          <div>
-            <img src={galleries.imageUrls} width={400} />
-          </div>;
-        })}
-        ; */}
-        <img src={urlFor(gallery.imagegallery).url()} width={50} />
-        <p>{caption}test</p>
-      </div>
-    </div>
+  return (
+    <>
+      {postData?.images.map((image) => (
+        <img src={image.asset.url} width={100} />
+      ))}
+    </>
   );
-};
+}
 
 const query = groq`
-*[_type == "gallery"][0]{   
-  
+*[_type == "gallery"][0]{  
  
-  "imageUrls": images[0].asset->url,
+  
 caption,
-'imagegallery':images[2]{
+images[]{
   asset->{    
     url,
   }},
@@ -85,5 +62,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-export default Galleries;
