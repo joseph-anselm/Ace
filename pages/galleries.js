@@ -14,51 +14,43 @@ const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source);
 }
-export default function Galleries() {
+const Galleries = () => {
   const [postData, setPost] = useState("");
 
   const postItems = `
-*[_type == 'gallery'][0]{
+*[_type == "gallery"]{  
+  images,
   caption,
   images[]{
     asset->{
-      url
-    }
-  }
+     url
+    }},  
+  
 }`;
 
   useEffect(() => {
-    sanityClient.fetch(postItems).then((data) => setPost(data));
+    sanityClient
+      .fetch(postItems)
+      .then((data) => setPost(data))
+      .catch(console.error);
   }, []);
 
-  if (!postData) return "Loading...";
-
-  return (
-    <>
-      {postData?.images.map((image) => (
-        <img src={image.asset.url} width={100} />
+  return !postData ? (
+    <>Loading...</>
+  ) : (
+    <div>
+      {postData?.map((gallery) => (
+        <div>
+          <h2>{gallery.caption}</h2>
+          <div>
+            {gallery.images?.map((image) => (
+              <img src={image.asset.url} width={100} />
+            ))}
+          </div>
+        </div>
       ))}
-    </>
+    </div>
   );
-}
+};
 
-const query = groq`
-*[_type == "gallery"][0]{  
- 
-  
-caption,
-images[]{
-  asset->{    
-    url,
-  }},
- 
-}`;
-export async function getStaticProps() {
-  const gallery = await client.fetch(query);
-
-  return {
-    props: {
-      gallery,
-    },
-  };
-}
+export default Galleries;
