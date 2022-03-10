@@ -10,6 +10,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../../styles/singlepost.module.css";
 import sanityClient from "../../client";
 import Layouts from "../../components/layouts";
+import Comments from "../../components/comments";
 
 import {
   Container,
@@ -27,7 +28,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const Post = ({ post, slug, posts }) => {
+const Post = ({ post, slug, posts, comments }) => {
   const [postData, setPost] = useState(null);
 
   const headtitle = post?.title;
@@ -97,6 +98,7 @@ const Post = ({ post, slug, posts }) => {
                 {...client.config()}
               />
             </article>
+            <Comments comments={post?.comments} />
           </Col>
           <Col xs={12} md={4}>
             {postData &&
@@ -173,7 +175,14 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   },
   "categories": categories[]->title,
   "authorImage": author->image,
-  body
+  body, 
+        'comments': *[_type == "comment" && post._ref == ^._id && approved == true]{
+          _id, 
+          name, 
+          email, 
+          comment, 
+          _createdAt
+      }, 
 }`;
 export async function getStaticPaths() {
   const paths = await client.fetch(

@@ -126,6 +126,7 @@ export async function getStaticProps() {
       *[_type == "post" && publishedAt < now()] | order(publishedAt desc){
         title, 
         slug,  
+        
         excerpt,
         publishedAt,
         "name": author->name,
@@ -138,7 +139,7 @@ export async function getStaticProps() {
         },
         "categories": categories[]->title,
         "authorImage": author->image,
-        body
+        body     
 
       }
     `);

@@ -7,6 +7,17 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client";
 import groq from "groq";
 
+import {
+  Container,
+  Nav,
+  Navbar,
+  ProgressBar,
+  Card,
+  Button,
+  Row,
+  Col,
+} from "react-bootstrap";
+
 Header2.title = "Pictures speaks volume";
 Header2.imgsrc = "/img/ace3.jpg";
 
@@ -39,16 +50,22 @@ const Galleries = () => {
     <>Loading...</>
   ) : (
     <div>
-      {postData?.map((gallery) => (
-        <div>
-          <h2>{gallery.caption}</h2>
-          <div>
-            {gallery.images?.map((image) => (
-              <img src={image.asset.url} width={100} />
-            ))}
-          </div>
+      <Container>
+        <div className={styles.row}>
+          {postData?.map((gallery) => (
+            <div>
+              <h2>{gallery.caption}</h2>
+              <div className={styles.column}>
+                {gallery.images?.map((image) => (
+                  <div>
+                    <img src={image.asset.url} width={100} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </Container>
     </div>
   );
 };
