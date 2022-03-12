@@ -11,6 +11,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaTiktok } from "react-icons/fa";
 const classNames = require("classnames");
 
 const Menubar = () => {
@@ -63,6 +64,17 @@ const Menubar = () => {
               <i className="bi bi-youtube" style={{ color: "white" }}></i>
             </a>
           </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="https://vm.tiktok.com/ZMLhoQ2TF"
+              target="_blank"
+            >
+              <i>
+                <FaTiktok style={{ color: "white" }} />
+              </i>
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -89,8 +101,8 @@ const Menubar = () => {
               <Nav.Link href="/contact">Contact us</Nav.Link>
               <Nav.Link href="/galleries">Gallery</Nav.Link>
               <Nav.Link href="/blog">Blog</Nav.Link>
-              <Nav.Link href="#">Volunteer</Nav.Link>
-              <Nav.Link href="#">Donate</Nav.Link>
+              <Nav.Link href="/">Volunteer</Nav.Link>
+              <Nav.Link href="/">Donate</Nav.Link>
               {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">

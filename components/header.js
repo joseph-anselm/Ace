@@ -7,11 +7,7 @@ const Header = () => {
         <br /> A Sustainable development
         <br /> focused group
       </h1>
-      <p>
-        We aim to see Africa develop through through research, intervention
-        programmes, effective communications and community development
-        activities.
-      </p>
+      <p>We are focused on achieving healthy environment in Africa.</p>
       <div className="bton">
         <button className="headbutton">
           <a href="">Donate Now</a>{" "}

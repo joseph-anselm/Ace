@@ -27,7 +27,7 @@ const index = ({}) => {
           <Container>
             <div>
               <h1>
-                How could <span>you help?</span>
+                How you<span>can help</span>
               </h1>
             </div>
             <Row>
@@ -128,12 +128,12 @@ const index = ({}) => {
                   non-profit team
                 </h2>
                 <p>
-                  We are committed to see Africa develop by bridging the gap
-                  through research, intervention programmes and community
-                  development activities. We are a non profit team with passion
-                  to ensure growth and measurable development in Africa. Our
-                  projects relies heavily on both human and financial resources
-                  from donors and volunterr members.
+                  We are committed to seeing a healthy environment in Africa by
+                  bridging the gap through research, intervention programmes and
+                  community development activities. We are a non-profit team
+                  with passion to ensure growth and measurable development in
+                  Africa. Our projects rely heavily on both human and financial
+                  resources from donors and volunteer members.
                 </p>
                 <button className={styles.section3btn}>Donate now</button>
               </div>

@@ -6,6 +6,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client";
 import groq from "groq";
+import Link from "next/link";
 
 import {
   Container,
@@ -25,8 +26,19 @@ const builder = imageUrlBuilder(client);
 function urlFor(source) {
   return builder.image(source);
 }
-const Galleries = () => {
+
+const Galleries = ({ image }) => {
   const [postData, setPost] = useState("");
+  var modalImg = document.getElementByClass("img01");
+
+  const [modalIsOpen, setIsOpen] = useState(false);
+  function openModal() {
+    modalImg.src = image.asset.url;
+    setIsOpen(true);
+  }
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const postItems = `
 *[_type == "gallery"]{  
@@ -55,17 +67,44 @@ const Galleries = () => {
           {postData?.map((gallery) => (
             <div>
               <h2>{gallery.caption}</h2>
-              <div className={styles.column}>
+              <Col className={styles.column}>
                 {gallery.images?.map((image) => (
                   <div>
-                    <img src={image.asset.url} width={100} />
+                    <img
+                      src={image.asset.url}
+                      width={100}
+                      data-opt-src={image.asset.url}
+                      layout="fill"
+                      onClick={openModal()}
+                    />
+
+                    <Link href={`${image.asset.url}`}>
+                      <a>
+                        <img
+                          src={image.asset.url}
+                          height={600}
+                          width={400}
+                          data-opt-src={image.asset.url}
+                          className="img01"
+                        />
+                        img link
+                      </a>
+                    </Link>
                   </div>
                 ))}
-              </div>
+              </Col>
             </div>
           ))}
         </div>
       </Container>
+
+      <div
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Example Modal"
+      >
+        <img src={image?.asset.url} layout="fill" />
+      </div>
     </div>
   );
 };
