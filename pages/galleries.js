@@ -29,11 +29,9 @@ function urlFor(source) {
 
 const Galleries = ({ image }) => {
   const [postData, setPost] = useState("");
-  var modalImg = document.getElementByClass("img01");
 
   const [modalIsOpen, setIsOpen] = useState(false);
   function openModal() {
-    modalImg.src = image.asset.url;
     setIsOpen(true);
   }
   function closeModal() {
@@ -75,7 +73,7 @@ const Galleries = ({ image }) => {
                       width={100}
                       data-opt-src={image.asset.url}
                       layout="fill"
-                      onClick={openModal()}
+                      onClick={openModal}
                     />
 
                     <Link href={`${image.asset.url}`}>
@@ -85,7 +83,6 @@ const Galleries = ({ image }) => {
                           height={600}
                           width={400}
                           data-opt-src={image.asset.url}
-                          className="img01"
                         />
                         img link
                       </a>
