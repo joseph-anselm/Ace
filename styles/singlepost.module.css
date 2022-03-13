@@ -72,10 +72,9 @@
     max-height: 240px;
   }
   .sidepost {
-    display: flex;
     justify-content: center;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-line-clamp: 2;
     overflow: hidden;
   }

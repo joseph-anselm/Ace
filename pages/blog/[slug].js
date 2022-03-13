@@ -100,7 +100,7 @@ const Post = ({ post, slug, posts, comments }) => {
             </article>
             <Comments comments={post?.comments} />
           </Col>
-          <Col xs={12} md={3} class="shadow p-2 mt-auto">
+          <Col xs={12} md={3}>
             <h3 class="shadow p-2 mt-auto">Related post</h3>
             {postData &&
               postData
