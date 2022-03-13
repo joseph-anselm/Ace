@@ -121,7 +121,7 @@ const Post = ({ post, slug, posts, comments }) => {
                     post && (
                       <Col>
                         <div className={styles.sidepost}>
-                          <div>
+                          <div class="p-2 mt-auto">
                             <Row class="p-2 mt-5">
                               <div class="shadow p-2 mb-3 bg-white rounded img-fluid hover-shadow">
                                 <Link
