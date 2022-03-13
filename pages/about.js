@@ -20,10 +20,10 @@ import {
   Col,
 } from "react-bootstrap";
 
-Header2.title = "About Page";
+Header2.title = "About us";
 Header2.imgsrc = "/img/ace1.jpg";
 Header2.excerpt =
-  "We are a dedicated and focused group aiming to achieve sustainable development in Africa through research, intervention programmes and community development activities. ";
+  "We are a focused group aiming to achieve sustainable development in Africa through research, intervention programmes and community development activities. ";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {

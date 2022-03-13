@@ -77,7 +77,7 @@ const Homeblog = ({ posts, post }) => {
                   post && (
                     <Col xs={6} md={3} justify-content-md-center>
                       <div>
-                        <div className="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow section6tabs">
+                        <div className="shadow p-1 mb-5 bg-white rounded img-fluid hover-shadow section6tabs">
                           <div>
                             <Link
                               href="/blog/[slug]"
@@ -91,7 +91,7 @@ const Homeblog = ({ posts, post }) => {
                                   className={styles.section6image}
                                 />
 
-                                <h6>
+                                <h6 className={styles.blogtitle}>
                                   {title.replace(/^(.{50}[^\s]*).*/, "$1")}
                                 </h6>
 

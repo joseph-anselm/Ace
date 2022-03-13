@@ -53,6 +53,14 @@
 .cards .body {
   max-height: 120px;
 }
+
+.blogtitle {
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 50px;
+}
 /* media queries */
 @media screen and (max-width: 450px) {
   .postimage::before {

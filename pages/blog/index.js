@@ -84,7 +84,9 @@ const Index = ({ posts, post, slug }) => {
                         <Card style={{ width: "15em" }}>
                           <Card.Img variant="top" src={mainImage?.asset?.url} />
                           <Card.Body>
-                            <Card.Title>{title}</Card.Title>
+                            <Card.Title className={styles.blogtitle}>
+                              {title}
+                            </Card.Title>
                             <Card.Text>
                               {excerpt?.replace(/^(.{40}[^\s]*).*/, "$1")}....
                             </Card.Text>

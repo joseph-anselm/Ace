@@ -263,6 +263,15 @@ a .bloglinks {
   padding: 40px;
 }
 
+.blogtitle {
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 50px;
+  padding-top: 5px;
+}
+
 /* .section5::after {
   content: "";
   position: absolute;
