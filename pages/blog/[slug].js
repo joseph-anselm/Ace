@@ -101,6 +101,7 @@ const Post = ({ post, slug, posts, comments }) => {
             <Comments comments={post?.comments} />
           </Col>
           <Col xs={12} md={4}>
+            <h3 class="shadow p-2 mt-5">Related post</h3>
             {postData &&
               postData
                 .map(
@@ -118,11 +119,11 @@ const Post = ({ post, slug, posts, comments }) => {
                     posts
                   ) =>
                     post && (
-                      <Col md={12}>
+                      <Col>
                         <div className={styles.sidepost}>
                           <div>
                             <Row>
-                              <div class="shadow p-3 mb-5 bg-white rounded img-fluid hover-shadow">
+                              <div class="shadow p-2 mb-3 bg-white rounded img-fluid hover-shadow">
                                 <Link
                                   href="/blog/[slug]"
                                   as={`/blog/${slug.current}`}
