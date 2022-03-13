@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
 import sanityClient from "../client";
 import groq from "groq";
 import Link from "next/link";
+import Gallery from "react-grid-gallery";
 
 import {
   Container,
@@ -30,13 +31,14 @@ function urlFor(source) {
 const Galleries = ({ image }) => {
   const [postData, setPost] = useState("");
 
-  const [modalIsOpen, setIsOpen] = useState(false);
-  function openModal() {
-    setIsOpen(true);
-  }
-  function closeModal() {
-    setIsOpen(false);
-  }
+  const [lightboxDisplay, setLightBoxDisplay] = useState(false);
+  const [imageToShow, setImageToShow] = useState("");
+  const showImage = (image) => {
+    //set imageToShow to be the one that's been clicked on
+    setImageToShow(image);
+    //set lightbox visibility to true
+    setLightBoxDisplay(true);
+  };
 
   const postItems = `
 *[_type == "gallery"]{  
@@ -71,9 +73,8 @@ const Galleries = ({ image }) => {
                     <img
                       src={image.asset.url}
                       width={100}
-                      data-opt-src={image.asset.url}
                       layout="fill"
-                      onClick={openModal}
+                      onClick={() => showImage(image)}
                     />
 
                     <Link href={`${image.asset.url}`}>
@@ -93,15 +94,16 @@ const Galleries = ({ image }) => {
             </div>
           ))}
         </div>
+        <div>
+          {lightboxDisplay ? (
+            <div id="lightbox">
+              <img id="lightbox-img" src={imageToShow}></img>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </Container>
-
-      <div
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Example Modal"
-      >
-        <img src={image?.asset.url} layout="fill" />
-      </div>
     </div>
   );
 };

@@ -25,7 +25,7 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-Header2.title = "Post, News and Events";
+Header2.title = "Blogs, News and Events";
 Header2.imgsrc = "/img/ace3.jpg";
 const Index = ({ posts, post, slug }) => {
   const [postData, setPost] = useState(null);
