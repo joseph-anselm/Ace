@@ -6,7 +6,7 @@
 .postimage::before {
   content: " ";
   position: absolute;
-  background: rgb(44, 9, 9, 0.5);
+  background: rgb(44, 9, 9, 0.6);
   z-index: 0;
   width: 100%;
   height: 300px;
@@ -66,10 +66,14 @@
   .postimage::before {
     content: " ";
     position: absolute;
-    background: rgb(44, 9, 9, 0.7);
+    background: rgb(44, 9, 9, 0.6);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 0;
     width: 100%;
-    max-height: 240px;
+    height: 200px;
   }
   .sidepost {
     justify-content: center;
