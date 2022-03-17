@@ -101,7 +101,7 @@ const Post = ({ post, slug, posts, comments }) => {
             <Comments comments={post?.comments} />
           </Col>
           <Col xs={12} md={3}>
-            <h3 class="shadow p-2 mt-auto">Related post</h3>
+            <h3 class="shadow p-2 mt-auto text-center fs-0.1">Related post</h3>
             {postData &&
               postData
                 .map(

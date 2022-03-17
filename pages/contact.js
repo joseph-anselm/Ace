@@ -131,8 +131,8 @@ const contact = () => {
                   ></i>
                   Location
                 </h5>
-                <p>121 Olisa street, Ajah Lagos.</p>
-                <p>Ajah, Lekki. Nigeria</p>
+                <p>44 Olisa street, Ijebu Ode .</p>
+                <p>Ogun state. Nigeria</p>
               </div>
             </Col>
             <Col xs={6} md={3} className={styles.section2tabs}>
