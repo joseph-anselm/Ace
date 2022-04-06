@@ -169,10 +169,10 @@ const index = ({}) => {
                       color="primary"
                       className={styles.progress}
                     />
-                    <span>
+                    {/* <span>
                       <Card.Text>Raised: ₦300,000</Card.Text>
                       <Card.Text>Goal: ₦1000, 000</Card.Text>
-                    </span>
+                    </span> */}
                     <Card.Title className="mb-5">
                       Clear plastic wastes in drainages and streams in rural
                       areas. Ogun State, Nigeria
@@ -202,10 +202,10 @@ const index = ({}) => {
                       color="primary"
                       className={styles.progress}
                     />
-                    <span>
+                    {/* <span>
                       <Card.Text>Raised: ₦300,000</Card.Text>
                       <Card.Text>Goal: ₦500, 000</Card.Text>
-                    </span>
+                    </span> */}
                     <Card.Title className="mb-5">
                       Waste management sensitization in rural areas in Ogun
                       State, Nigeria.
@@ -235,10 +235,10 @@ const index = ({}) => {
                       color="primary"
                       className={styles.progress}
                     />
-                    <span>
+                    {/* <span>
                       <Card.Text>Raised: ₦300,000</Card.Text>
                       <Card.Text>Goal: ₦500, 000</Card.Text>
-                    </span>
+                    </span> */}
                     <Card.Title className="mb-5">
                       Personal protective equipment for waste workers in Ogun
                       State, Nigeria.
