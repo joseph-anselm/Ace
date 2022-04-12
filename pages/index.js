@@ -15,7 +15,9 @@ import {
   Col,
 } from "react-bootstrap";
 
-const index = ({}) => {
+index.title = "Homepage";
+
+export default function index() {
   return (
     <div>
       <div>
@@ -271,6 +273,4 @@ const index = ({}) => {
       </div>
     </div>
   );
-};
-
-export default index;
+}

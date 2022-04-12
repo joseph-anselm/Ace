@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import Menubar from "./menubar";
 import Header from "./header";
 import Header2 from "./header2";
+import Head from "next/head";
 import Homeblog from "./homeblog";
 import { useRouter } from "next/router";
 import { useHistory } from "react-router";
@@ -22,6 +23,11 @@ function Layouts({ children, title, imgsrc }) {
 
   return (
     <div>
+      <Head>
+        <title>Welcome to Ace Initiatives Website - {Layouts.title}</title>
+
+        <link rel="icon" href="/img/favicon.png" />
+      </Head>
       <Menubar />
 
       {showHeader && <Header />}

@@ -227,6 +227,10 @@ a .bloglinks {
 
 .cardbody .progress {
   color: #3c9234 !important;
+  position: relative;
+  top: 50%;
+  text-align: center;
+  margin: auto;
 }
 
 .sectioncard .bar {
@@ -238,8 +242,7 @@ a .bloglinks {
   position: relative;
 }
 .sectioncards {
-  display: flex;
-  margin: 15px;
+  margin: 0 auto;
 }
 .cardbody span {
   display: flex;

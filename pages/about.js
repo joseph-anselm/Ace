@@ -20,6 +20,7 @@ import {
   Col,
 } from "react-bootstrap";
 
+Layouts.title = "About us";
 Header2.title = "About us";
 Header2.imgsrc = "/img/ace1.jpg";
 Header2.excerpt =
@@ -30,7 +31,8 @@ function urlFor(source) {
   return builder.image(source);
 }
 
-const about = ({ author, slug }) => {
+const about = ({ author, slug, title }) => {
+  title = "Aboutpage";
   const [postData, setPost] = useState(null);
 
   const postItems = `

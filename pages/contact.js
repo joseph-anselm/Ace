@@ -13,6 +13,7 @@ import {
   Form,
 } from "react-bootstrap";
 
+Layouts.title = "Contact us";
 Header2.title = "Contact Page";
 
 Header2.title = "Reach out to us";
