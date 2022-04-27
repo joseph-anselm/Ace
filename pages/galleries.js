@@ -6,6 +6,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client";
 import groq from "groq";
+import Layouts from "../components/layouts";
 import Link from "next/link";
 import Gallery from "react-grid-gallery";
 
