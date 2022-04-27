@@ -80,12 +80,10 @@ const Menubar = () => {
 
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/" className={styles.logoimg}>
             <img
               alt=""
-              src="/img/2.png"
-              width="90"
-              height="90"
+              src="/img/logo2.png"
               className="d-inline-block align-top logo-img"
             />{" "}
           </Navbar.Brand>

@@ -9,6 +9,11 @@
   display: flex;
   list-style: none;
 }
+.logoimg img {
+  width: 80px;
+
+  object-fit: contain;
+}
 
 .navlink {
   color: #000000 !important;
