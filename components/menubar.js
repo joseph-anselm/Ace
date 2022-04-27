@@ -83,10 +83,10 @@ const Menubar = () => {
           <Navbar.Brand href="/">
             <img
               alt=""
-              src="/img/logo-1.png"
-              width="150"
-              height="55"
-              className="d-inline-block align-top"
+              src="/img/2.png"
+              width="90"
+              height="90"
+              className="d-inline-block align-top logo-img"
             />{" "}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />

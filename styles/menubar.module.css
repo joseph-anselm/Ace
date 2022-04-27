@@ -17,3 +17,9 @@
 .navitem {
   background: red;
 }
+@media (max-width: 720px) {
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+}

@@ -22,6 +22,7 @@ import {
 
 Header2.title = "Pictures speaks volume";
 Header2.imgsrc = "/img/ace3.jpg";
+Layouts.title = "Galleries";
 
 const builder = imageUrlBuilder(client);
 function urlFor(source) {
