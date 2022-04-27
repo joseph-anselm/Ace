@@ -10,8 +10,8 @@
   list-style: none;
 }
 .logoimg img {
-  width: 80px;
-
+  width: 90px;
+  height: auto;
   object-fit: contain;
 }
 

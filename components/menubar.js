@@ -83,7 +83,7 @@ const Menubar = () => {
           <Navbar.Brand href="/" className={styles.logoimg}>
             <img
               alt=""
-              src="/img/logo2.png"
+              src="/img/2.png"
               className="d-inline-block align-top logo-img"
             />{" "}
           </Navbar.Brand>
