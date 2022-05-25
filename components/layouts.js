@@ -25,7 +25,6 @@ function Layouts({ children, title, imgsrc }) {
     <div>
       <Head>
         <title>Welcome to Ace Initiatives Website - {Layouts.title}</title>
-
         <link rel="icon" href="/img/favicon.png" />
       </Head>
       <Menubar />
