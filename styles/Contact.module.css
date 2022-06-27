@@ -1,0 +1,33 @@
+/* section 1 form  */
+
+.section1 {
+  padding: 50px 10px;
+}
+.section1 img {
+  width: 70%;
+  height: auto;
+}
+.section1 form {
+  margin: 30px 5px;
+}
+
+.section2 p {
+  font-size: 0.9em;
+  line-height: normal;
+}
+.section2tabs {
+  padding: 5px 10px;
+}
+.map iframe {
+  width: 100%;
+  max-height: 350px;
+  margin-bottom: 50px;
+}
+/* media queries */
+
+@media screen and (max-width: 600px) {
+  .section2 p {
+    font-size: 0.8em;
+    line-height: normal;
+  }
+}

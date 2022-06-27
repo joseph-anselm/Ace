@@ -1,0 +1,30 @@
+.navmenu {
+  display: flex;
+  justify-content: space-around;
+}
+.nav-link .bi {
+  color: #ffffff;
+}
+.links {
+  display: flex;
+  list-style: none;
+}
+.logoimg img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+}
+
+.navlink {
+  color: #000000 !important;
+  text-decoration: none;
+}
+.navitem {
+  background: red;
+}
+@media (max-width: 720px) {
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+}
