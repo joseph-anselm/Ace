@@ -27,7 +27,7 @@ const contact = () => {
     <div>
       <>
         <Container className={styles.section1}>
-          <Row className="justify-content-center m-5">
+          <Row className="justify-content-center mt-5 mb-5">
             <Col xs={12} md={10} sm={12} className={styles.form}>
               <div>
                 <div className="text-center">
