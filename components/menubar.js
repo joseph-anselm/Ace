@@ -99,7 +99,7 @@ const Menubar = () => {
               <Nav.Link href="/contact">Contact us</Nav.Link>
               <Nav.Link href="/galleries">Gallery</Nav.Link>
               <Nav.Link href="/blog">Blog</Nav.Link>
-              <Nav.Link href="/">Volunteer</Nav.Link>
+              <Nav.Link href="/volunteer">Volunteer</Nav.Link>
               <Nav.Link href="/">Donate</Nav.Link>
               {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>

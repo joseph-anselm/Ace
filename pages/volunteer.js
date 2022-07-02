@@ -1,6 +1,6 @@
 import Header2 from "../components/header2";
 import Layouts from "../components/layouts";
-import styles from "../styles/Contact.module.css";
+import styles from "../styles/Volunteer.module.css";
 import {
   Container,
   Nav,
@@ -13,13 +13,13 @@ import {
   Form,
 } from "react-bootstrap";
 
-Layouts.title = "Contact us";
-Header2.title = "Contact Page";
+Layouts.title = "Volunteer";
+Header2.title = "Volunteer Page";
 
-Header2.title = "Reach out to us";
+Header2.title = "Every little effort counts";
 Header2.imgsrc = "/img/ace-banner3.jpg";
 Header2.excerpt =
-  "We ensure all queries are well attended to, all our available contact options is a way to help us reach our audience and also keep us connected always  ";
+  "Every little effort means a lot towards making our world a better place. BE A VOLUNTEER! ";
 
 const contact = () => {
   return (
@@ -27,15 +27,16 @@ const contact = () => {
     <div>
       <>
         <Container className={styles.section1}>
-          <Row>
-            <Col xs={12} md={6}>
-              <img src="/img/ace-contact2.png" />
-            </Col>
-
-            <Col xs={12} md={6} className={styles.form}>
+          <Row className="justify-content-center m-5">
+            <Col xs={9} md={8} className={styles.form}>
               <div>
-                <h2>You can reach out to us now!</h2>
-                <p>We always respond between 24 - 48 hours.</p>
+                <div className="text-center">
+                  <h2>BE A VOLUNTEER!</h2>
+                  <p>
+                    Every little effort means a lot towards making our world a
+                    better place. BE A VOLUNTEER!
+                  </p>
+                </div>
 
                 <Form>
                   <Row className="mb-3">
@@ -43,12 +44,19 @@ const contact = () => {
                       <Form.Label>First Name</Form.Label>
                       <Form.Control type="email" placeholder="Enter name" />
                     </Form.Group>
+                    <Form.Group as={Col} controlId="formGridEmail">
+                      <Form.Label>Last Name</Form.Label>
+                      <Form.Control type="email" placeholder="Enter name" />
+                    </Form.Group>
+                  </Row>
 
+                  <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label>Email</Form.Label>
                       <Form.Control type="password" placeholder="Email" />
                     </Form.Group>
                   </Row>
+
                   <Row className="mb-3">
                     <Form.Group
                       as={Col}
@@ -56,17 +64,78 @@ const contact = () => {
                       controlId="formGridAddress1"
                     >
                       <Form.Label>Phone number</Form.Label>
-                      <Form.Control placeholder="1234567890" />
+                      <Form.Control placeholder="+2348067890000" />
                     </Form.Group>
+                  </Row>
 
+                  <Row className="mb-3">
                     <Form.Group
                       as={Col}
                       className="mb-3"
-                      controlId="formGridAddress2"
+                      controlId="formGridAddress1"
                     >
-                      <Form.Label>Subject</Form.Label>
-                      <Form.Control placeholder="Message subject" />
+                      <Form.Label>Location Landmark</Form.Label>
+                      <Form.Control placeholder="Lagos" />
                     </Form.Group>
+                  </Row>
+
+                  <Row className="mb-3">
+                    <Form.Label>Gender</Form.Label>
+                    {["radio"].map((type) => (
+                      <div key={`inline-${type}`} className="mb-3">
+                        <Form.Check
+                          inline
+                          label="Male"
+                          name="group1"
+                          type={type}
+                          id={`inline-${type}-1`}
+                        />
+                        <Form.Check
+                          inline
+                          label="Female"
+                          name="group1"
+                          type={type}
+                          id={`inline-${type}-2`}
+                        />
+                      </div>
+                    ))}
+                  </Row>
+
+                  <Row className="mb-3">
+                    <Form.Label>Areas of Interest</Form.Label>
+                    {["radio"].map((type) => (
+                      <div key={`inline-${type}`} className="mb-3">
+                        <Form.Check
+                          inline
+                          label="Research"
+                          name="group1"
+                          type={type}
+                          id={`inline-${type}-1`}
+                        />
+                        <Form.Check
+                          inline
+                          label="IT and Media"
+                          name="group1"
+                          type={type}
+                          id={`inline-${type}-2`}
+                        />
+
+                        <Form.Check
+                          inline
+                          label="Publicity"
+                          name="group1"
+                          type={type}
+                          id={`inline-${type}-3`}
+                        />
+                        <Form.Check
+                          inline
+                          label="Finance"
+                          name="group1"
+                          type={type}
+                          id={`inline-${type}-4`}
+                        />
+                      </div>
+                    ))}
                   </Row>
 
                   <Row className="mb-3">
@@ -74,24 +143,30 @@ const contact = () => {
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1"
                     >
-                      <Form.Label>Message</Form.Label>
-                      <Form.Control as="textarea" rows={5} />
+                      <Form.Label>
+                        Mention the experiences you find relevant for any of the
+                        above programs
+                      </Form.Label>
+                      <Form.Control as="textarea" rows={3} />
                     </Form.Group>
                   </Row>
 
-                 
+                  <Form.Group className="mb-3" id="formGridCheckbox">
+                    <Form.Check type="checkbox" label="Check me out" />
+                  </Form.Group>
 
-                  <Button className="mt-5"
+                  <Button
+                    className="mt-3"
                     variant="primary"
                     type="submit"
                     size="lg"
                     style={{
                       background: "#3c9234",
-                      display:"block",
-                      width:"100%"
+                      display: "block",
+                      width: "100%",
                     }}
                   >
-                    Send
+                    Submit
                   </Button>
                 </Form>
               </div>
