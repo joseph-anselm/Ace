@@ -38,14 +38,14 @@ const contact = () => {
                   </p>
                 </div>
 
-                <Form>
+                <Form className="fw-bold">
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
-                      <Form.Label>First Name</Form.Label>
+                      <Form.Label className="fw-bold">First Name</Form.Label>
                       <Form.Control type="email" placeholder="Enter name" />
                     </Form.Group>
                     <Form.Group as={Col} controlId="formGridEmail">
-                      <Form.Label>Last Name</Form.Label>
+                      <Form.Label className="fw-bold">Last Name</Form.Label>
                       <Form.Control type="email" placeholder="Enter name" />
                     </Form.Group>
                   </Row>
@@ -68,7 +68,7 @@ const contact = () => {
                     </Form.Group>
                   </Row>
 
-                  <Row className="mb-3">
+                  <Row className="mb-3 text-bold">
                     <Form.Group
                       as={Col}
                       className="mb-3"
@@ -151,9 +151,9 @@ const contact = () => {
                     </Form.Group>
                   </Row>
 
-                  <Form.Group className="mb-3" id="formGridCheckbox">
+                  {/* <Form.Group className="mb-3" id="formGridCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
-                  </Form.Group>
+                  </Form.Group> */}
 
                   <Button
                     className="mt-3"
@@ -166,7 +166,7 @@ const contact = () => {
                       width: "100%",
                     }}
                   >
-                    Submit
+                    Be A Volunteer
                   </Button>
                 </Form>
               </div>
