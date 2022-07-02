@@ -34,7 +34,7 @@ const contact = () => {
                   <h2>BE A VOLUNTEER!</h2>
                   <p>
                     Every little effort means a lot towards making our world a
-                    better place. BE A VOLUNTEER!
+                    better place. VOLUNTEER NOW!
                   </p>
                 </div>
 
@@ -82,7 +82,7 @@ const contact = () => {
                   <Row className="mb-3">
                     <Form.Label>Gender</Form.Label>
                     {["radio"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
+                      <div key={`inline-${type}`} className="mb-3 fw-normal">
                         <Form.Check
                           inline
                           label="Male"
@@ -104,7 +104,7 @@ const contact = () => {
                   <Row className="mb-3">
                     <Form.Label>Areas of Interest</Form.Label>
                     {["radio"].map((type) => (
-                      <div key={`inline-${type}`} className="mb-3">
+                      <div key={`inline-${type}`} className="mb-3 fw-normal">
                         <Form.Check
                           inline
                           label="Research"
