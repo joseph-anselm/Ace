@@ -13,7 +13,7 @@ const Header = () => {
           <a href="">Donate Now</a>{" "}
         </button>
         <button className="header-button">
-          <a>Volunteer</a>
+          <a href="/volunteer">Volunteer</a>
         </button>
       </div>
     </div>
