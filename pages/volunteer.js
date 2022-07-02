@@ -197,7 +197,7 @@ const contact = () => {
       {/* Section 2 */}
       <>
         <Container className={styles.section2}>
-          <Row>
+          <Row className="mt-5">
             <Col xs={6} md={3} className={styles.section2tabs}>
               <div>
                 <h5>
