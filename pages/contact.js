@@ -1,6 +1,9 @@
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Header2 from "../components/header2";
 import Layouts from "../components/layouts";
 import styles from "../styles/Contact.module.css";
+import { useState } from "react";
 import {
   Container,
   Nav,
@@ -22,6 +25,24 @@ Header2.excerpt =
   "We ensure all queries are well attended to, all our available contact options is a way to help us reach our audience and also keep us connected always  ";
 
 const contact = () => {
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const [state, handleSubmit] = useForm("mayvgywz");
+  if (state.succeeded) {
+    return (
+      <p
+        className="fw-bolder alert alert-success m-5 text-center "
+        role="alert"
+      >
+        Thanks for Contacting us! We will ensure to respond in less than
+        48hours.
+      </p>
+    );
+  }
+
   return (
     // section 1 form
     <div>
@@ -37,16 +58,42 @@ const contact = () => {
                 <h2>You can reach out to us now!</h2>
                 <p>We always respond between 24 - 48 hours.</p>
 
-                <Form>
+                <Form onSubmit={handleSubmit}>
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
-                      <Form.Label>First Name</Form.Label>
-                      <Form.Control type="email" placeholder="Enter name" />
+                      <Form.Label>Full Name</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="fullname"
+                        placeholder="Enter Full name"
+                        value={fullname}
+                        onChange={(e) => {
+                          setFullname(e.target.value);
+                        }}
+                      />
+                      <ValidationError
+                        prefix="Full Name"
+                        field="fullname"
+                        errors={state.errors}
+                      />
                     </Form.Group>
 
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="password" placeholder="Email" />
+                      <Form.Control
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={email}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                        }}
+                      />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
                   <Row className="mb-3">
@@ -56,7 +103,12 @@ const contact = () => {
                       controlId="formGridAddress1"
                     >
                       <Form.Label>Phone number</Form.Label>
-                      <Form.Control placeholder="1234567890" />
+                      <Form.Control placeholder="1234567890" name="phone" />
+                      <ValidationError
+                        prefix="Phone Number"
+                        field="phone"
+                        errors={state.errors}
+                      />
                     </Form.Group>
 
                     <Form.Group
@@ -65,7 +117,19 @@ const contact = () => {
                       controlId="formGridAddress2"
                     >
                       <Form.Label>Subject</Form.Label>
-                      <Form.Control placeholder="Message subject" />
+                      <Form.Control
+                        placeholder="Message subject"
+                        name="subject"
+                        value={subject}
+                        onChange={(e) => {
+                          setSubject(e.target.value);
+                        }}
+                      />
+                      <ValidationError
+                        prefix="Message Subject"
+                        field="subject"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
 
@@ -75,20 +139,33 @@ const contact = () => {
                       controlId="exampleForm.ControlTextarea1"
                     >
                       <Form.Label>Message</Form.Label>
-                      <Form.Control as="textarea" rows={5} />
+                      <Form.Control
+                        as="textarea"
+                        rows={5}
+                        name="message"
+                        value={message}
+                        onChange={(e) => {
+                          setMessage(e.target.value);
+                        }}
+                      />
+                      <ValidationError
+                        prefix="Message"
+                        field="message"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
 
-                 
-
-                  <Button className="mt-5"
-                    variant="primary"
+                  <Button
                     type="submit"
+                    disabled={state.submitting}
+                    className="mt-5"
+                    variant="primary"
                     size="lg"
                     style={{
                       background: "#3c9234",
-                      display:"block",
-                      width:"100%"
+                      display: "block",
+                      width: "100%",
                     }}
                   >
                     Send
