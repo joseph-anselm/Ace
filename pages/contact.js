@@ -25,21 +25,23 @@ Header2.excerpt =
   "We ensure all queries are well attended to, all our available contact options is a way to help us reach our audience and also keep us connected always  ";
 
 const contact = () => {
-  const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-
   const [state, handleSubmit] = useForm("mayvgywz");
   if (state.succeeded) {
     return (
-      <p
-        className="fw-bolder alert alert-success m-5 text-center "
-        role="alert"
-      >
-        Thanks for Contacting us! We will ensure to respond in less than
-        48hours.
-      </p>
+      <div className="d-flex flex-column justify-content-between">
+        <p
+          className="fw-bolder alert alert-success m-5 text-center "
+          role="alert"
+        >
+          Thanks for Contacting us! We will ensure to respond in less than
+          48hours.
+          <span class="badge bg-success m-4">
+            <a href="/" className="text-light">
+              Back to home
+            </a>
+          </span>
+        </p>
+      </div>
     );
   }
 
@@ -66,10 +68,6 @@ const contact = () => {
                         type="text"
                         name="fullname"
                         placeholder="Enter Full name"
-                        value={fullname}
-                        onChange={(e) => {
-                          setFullname(e.target.value);
-                        }}
                       />
                       <ValidationError
                         prefix="Full Name"
@@ -84,10 +82,6 @@ const contact = () => {
                         type="email"
                         placeholder="Email"
                         name="email"
-                        value={email}
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                        }}
                       />
                       <ValidationError
                         prefix="Email"
@@ -120,10 +114,6 @@ const contact = () => {
                       <Form.Control
                         placeholder="Message subject"
                         name="subject"
-                        value={subject}
-                        onChange={(e) => {
-                          setSubject(e.target.value);
-                        }}
                       />
                       <ValidationError
                         prefix="Message Subject"
@@ -139,15 +129,7 @@ const contact = () => {
                       controlId="exampleForm.ControlTextarea1"
                     >
                       <Form.Label>Message</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        rows={5}
-                        name="message"
-                        value={message}
-                        onChange={(e) => {
-                          setMessage(e.target.value);
-                        }}
-                      />
+                      <Form.Control as="textarea" rows={5} name="message" />
                       <ValidationError
                         prefix="Message"
                         field="message"

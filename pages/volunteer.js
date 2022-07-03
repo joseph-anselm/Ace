@@ -1,3 +1,5 @@
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import Header2 from "../components/header2";
 import Layouts from "../components/layouts";
 import styles from "../styles/Volunteer.module.css";
@@ -22,6 +24,10 @@ Header2.excerpt =
   "Every little effort means a lot towards making our world a better place. BE A VOLUNTEER! ";
 
 const contact = () => {
+  const [state, handleSubmit] = useForm("xeqnbqqo");
+  if (state.succeeded) {
+    return <p>Thanks for joining us!</p>;
+  }
   return (
     // section 1 form
     <div>
@@ -38,7 +44,7 @@ const contact = () => {
                   </p>
                 </div>
 
-                <Form className="fw-bold">
+                <Form className="fw-bold" onSubmit={handleSubmit}>
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label className="fw-bold">First Name</Form.Label>
