@@ -24,11 +24,11 @@ Header2.imgsrc = "/img/ace-banner3.jpg";
 Header2.excerpt =
   "We ensure all queries are well attended to, all our available contact options is a way to help us reach our audience and also keep us connected always  ";
 
-const contact = () => {
+function Contactform() {
   const [state, handleSubmit] = useForm("mayvgywz");
   if (state.succeeded) {
     return (
-      <div className="d-flex flex-column justify-content-between">
+      <div className="d-flex flex-column">
         <p
           className="fw-bolder alert alert-success m-5 text-center "
           role="alert"
@@ -243,6 +243,9 @@ const contact = () => {
       <div id="map"></div>
     </div>
   );
-};
+}
+function contact() {
+  return <Contactform />;
+}
 
 export default contact;

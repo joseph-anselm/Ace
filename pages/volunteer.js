@@ -23,10 +23,24 @@ Header2.imgsrc = "/img/ace-banner3.jpg";
 Header2.excerpt =
   "Every little effort means a lot towards making our world a better place. BE A VOLUNTEER! ";
 
-const contact = () => {
+function Contactform() {
   const [state, handleSubmit] = useForm("xeqnbqqo");
   if (state.succeeded) {
-    return <p>Thanks for joining us!</p>;
+    return (
+      <div className="d-flex flex-column">
+        <p
+          className="fw-bolder alert alert-success m-5 text-center "
+          role="alert"
+        >
+          Thanks for joining us! We will ensure to respond in less than 48hours.
+          <span class="badge bg-success m-4">
+            <a href="/" className="text-light">
+              Back to home
+            </a>
+          </span>
+        </p>
+      </div>
+    );
   }
   return (
     // section 1 form
@@ -48,18 +62,48 @@ const contact = () => {
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label className="fw-bold">First Name</Form.Label>
-                      <Form.Control type="email" placeholder="Enter name" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter name"
+                        name="firstname"
+                      />
+                      <ValidationError
+                        prefix="First Name"
+                        field="name"
+                        errors={state.errors}
+                      />
                     </Form.Group>
+
                     <Form.Group as={Col} controlId="formGridEmail">
                       <Form.Label className="fw-bold">Last Name</Form.Label>
-                      <Form.Control type="email" placeholder="Enter name" />
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter name"
+                        name="lastname"
+                        required
+                      />
+                      <ValidationError
+                        prefix="Last Name"
+                        field="lname"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
 
                   <Row className="mb-3">
                     <Form.Group as={Col} controlId="formGridPassword">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="password" placeholder="Email" />
+                      <Form.Control
+                        type="email"
+                        placeholder="Email"
+                        required
+                        name="email"
+                      />
+                      <ValidationError
+                        prefix="Email"
+                        field="email"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
 
@@ -70,7 +114,17 @@ const contact = () => {
                       controlId="formGridAddress1"
                     >
                       <Form.Label>Phone number</Form.Label>
-                      <Form.Control placeholder="+2348067890000" />
+                      <Form.Control
+                        placeholder="+2348067890000"
+                        type="number"
+                        name="phone"
+                        required
+                      />
+                      <ValidationError
+                        prefix="Phone Number"
+                        field="phone"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
 
@@ -81,7 +135,12 @@ const contact = () => {
                       controlId="formGridAddress1"
                     >
                       <Form.Label>Location Landmark</Form.Label>
-                      <Form.Control placeholder="Lagos" />
+                      <Form.Control placeholder="Lagos" name="location" />
+                      <ValidationError
+                        prefix="location"
+                        field="location"
+                        errors={state.errors}
+                      />
                     </Form.Group>
                   </Row>
 
@@ -92,16 +151,21 @@ const contact = () => {
                         <Form.Check
                           inline
                           label="Male"
-                          name="group1"
+                          name="gender"
                           type={type}
                           id={`inline-${type}-1`}
                         />
                         <Form.Check
                           inline
                           label="Female"
-                          name="group1"
+                          name="gender"
                           type={type}
                           id={`inline-${type}-2`}
+                        />
+                        <ValidationError
+                          prefix="Choose your gender"
+                          field="gender"
+                          errors={state.errors}
                         />
                       </div>
                     ))}
@@ -112,14 +176,14 @@ const contact = () => {
                     {["radio"].map((type) => (
                       <div key={`inline-${type}`} className="mb-3 fw-normal">
                         <Form.Check
-                          inline
+                          block
                           label="Research"
                           name="group1"
                           type={type}
                           id={`inline-${type}-1`}
                         />
                         <Form.Check
-                          inline
+                          block
                           label="IT and Media"
                           name="group1"
                           type={type}
@@ -127,14 +191,14 @@ const contact = () => {
                         />
 
                         <Form.Check
-                          inline
+                          block
                           label="Publicity"
                           name="group1"
                           type={type}
                           id={`inline-${type}-3`}
                         />
                         <Form.Check
-                          inline
+                          block
                           label="Finance"
                           name="group1"
                           type={type}
@@ -153,7 +217,7 @@ const contact = () => {
                         Mention the experiences you find relevant for any of the
                         above programs
                       </Form.Label>
-                      <Form.Control as="textarea" rows={3} />
+                      <Form.Control as="textarea" rows={3} name="experience" />
                     </Form.Group>
                   </Row>
 
@@ -162,9 +226,10 @@ const contact = () => {
                   </Form.Group> */}
 
                   <Button
+                    type="submit"
+                    disabled={state.submitting}
                     className="mt-3"
                     variant="primary"
-                    type="submit"
                     size="lg"
                     style={{
                       background: "#3c9234",
@@ -265,6 +330,9 @@ const contact = () => {
       <div id="map"></div>
     </div>
   );
-};
+}
+function App() {
+  return <Contactform />;
+}
 
-export default contact;
+export default App;

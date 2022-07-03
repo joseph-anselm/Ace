@@ -28,8 +28,8 @@ export default function index() {
         <div className={styles.section2}>
           <Container>
             <div>
-              <h1>
-                How you<span>can help</span>
+              <h1 className="mb-4">
+                How you<span className="p-2">can help</span>
               </h1>
             </div>
             <Row>
