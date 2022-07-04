@@ -34,7 +34,7 @@ export default function index() {
             </div>
             <Row>
               <Col xs={6} md={3}>
-                <Link href="/">
+                <Link href="/volunteer">
                   <a className={styles.homelinks}>
                     <div>
                       <Image
@@ -54,7 +54,7 @@ export default function index() {
                 </Link>
               </Col>
               <Col xs={6} md={3}>
-                <Link href="/">
+                <Link href="/volunteer">
                   <a className={styles.homelinks}>
                     <div>
                       <Image
@@ -75,7 +75,7 @@ export default function index() {
                 </Link>
               </Col>
               <Col xs={6} md={3}>
-                <Link href="/">
+                <Link href="/volunteer">
                   <a className={styles.homelinks}>
                     <div>
                       <Image
@@ -95,7 +95,7 @@ export default function index() {
                 </Link>
               </Col>
               <Col xs={6} md={3}>
-                <Link href="#">
+                <Link href="/volunteer">
                   <a className={styles.homelinks}>
                     <div>
                       <Image
