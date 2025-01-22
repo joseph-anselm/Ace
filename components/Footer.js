@@ -92,7 +92,7 @@ const Footer = () => {
                   <span>Email</span>{" "}
                 </i>
                 <span>info@ace-initiative.org</span>
-                <span>support@aceinitiative.org</span>
+                <span>support@ace-initiative.org</span>
               </div>
             </Col>
           </Row>
